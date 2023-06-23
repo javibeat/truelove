@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // GALERÍA PORTFOLIO
   const menuButtons = document.querySelectorAll(".portfolio-menu-btn");
-  const galleryItems = document.querySelectorAll(".portfolio-item");
+  const galleryItems = Array.from(document.querySelectorAll(".portfolio-item"));
 
   menuButtons.forEach((button) => {
     button.addEventListener("click", function() {
@@ -104,7 +104,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
       galleryItems.forEach((item) => {
         const category = item.getAttribute("data-category");
-        item.style.display = filter === "all" || category === filter ? "block" : "none";
+
+        if (filter === "all" || category === filter) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
       });
     });
   });
