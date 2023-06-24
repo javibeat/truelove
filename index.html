@@ -33,8 +33,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="stylesv=1.css">
+  <link rel="stylesheet" type="text/css" href="stylesv=1.css" defer>
 
+  <script>
+    WebFontConfig = {
+      google: { families: ['Montserrat:400,700'] }
+    };
+    (function(d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.async = true;
+      s.parentNode.insertBefore(wf, s);
+    })(document);
+  </script>
+  
 </head>
 
 <body>
@@ -117,8 +129,7 @@
       </div>
     </div>
   </section>
-
-
+  
   <section id="about" class="section">
     <div class="section-content">
       <h1 class="section-title">About Me</h1>
@@ -169,7 +180,6 @@
   </section>
 
   <button id="scrollToTopBtn" onclick="scrollToTop()" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></button>
-
 
   <script src="script.js"></script>
 
