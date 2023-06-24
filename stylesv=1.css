@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body, html {
   height: 100%;
   font-family: "Montserrat", sans-serif;
 }
@@ -81,7 +80,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed; /* Fija el fondo */
+  background-attachment: fixed;
   overflow: hidden;
 }
 
@@ -334,7 +333,7 @@ button#scrollToTopBtn i {
   padding: 5px 10px;
   border: none;
   background-color: transparent;
-  color: #ffffff; /* Cambia el color de la tipografía a blanco */
+  color: #ffffff;
   font-size: 16px;
   cursor: pointer;
 }
