@@ -7,46 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Elements
   const header = document.querySelector('.glass-header');
   const mainNav = document.getElementById('mainNav');
-  const menuToggle = document.getElementById('menuToggle');
   const scrollTopBtn = document.getElementById('scrollTop');
   const filterBtns = document.querySelectorAll('.filter-btn');
   const portfolioItems = document.querySelectorAll('.portfolio-item');
   const revealElements = document.querySelectorAll('.reveal');
-  const navLinks = document.querySelectorAll('.main-nav a');
+  const navLinks = document.querySelectorAll('.pill-nav .nav-item');
 
   // =====================
-  // Mobile Menu Toggle
+  // Navigation Active State
   // =====================
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      menuToggle.classList.toggle('active', isOpen);
-      menuToggle.setAttribute('aria-expanded', isOpen);
-
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    // Close menu when clicking a nav link
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mainNav.classList.contains('open')) {
-        mainNav.classList.remove('open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-    });
-  }
 
   // =====================
   // Smooth Scroll
@@ -70,26 +39,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // =====================
   // Active Navigation
   // =====================
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -80% 0px',
-    threshold: 0
-  };
+  const sections = document.querySelectorAll('section[id]');
 
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-        });
+  function highlightNavigation() {
+    // 1. Force Contact active if at bottom of page (strict override)
+    if ((window.innerHeight + Math.ceil(window.scrollY)) >= document.documentElement.scrollHeight - 5) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#contact');
+      });
+      return;
+    }
+
+    // 2. Standard ScrollSpy: Active = The last section that has crossed the trigger line
+    // We use a top offset (header size + buffer) so active state updates as soon as section hits top area.
+    const triggerPoint = window.scrollY + 150;
+    let activeId = '';
+
+    sections.forEach(section => {
+      if (triggerPoint >= section.offsetTop) {
+        activeId = section.getAttribute('id');
       }
     });
-  }, observerOptions);
 
-  document.querySelectorAll('section[id]').forEach(section => {
-    sectionObserver.observe(section);
-  });
+    // 3. Update nav links
+    if (activeId) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+      });
+    }
+  }
+
+  window.addEventListener('scroll', highlightNavigation);
+  // Initial check (delay slightly to ensure layout is done)
+  setTimeout(highlightNavigation, 100);
 
   // =====================
   // Portfolio Filtering
@@ -241,15 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // =====================
   document.addEventListener('keydown', (e) => {
     // Focus visible styles are handled by CSS :focus-visible
-
-    // Close modals/menus on Escape
-    if (e.key === 'Escape') {
-      if (mainNav?.classList.contains('open')) {
-        mainNav.classList.remove('open');
-        menuToggle?.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
   });
 
   console.log('✨ TRUE LOVE CREATIVE loaded successfully');

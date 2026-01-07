@@ -6,6 +6,7 @@
 const translations = {
   en: {
     // Navigation
+    'nav.home': 'Home',
     'nav.portfolio': 'Portfolio',
     'nav.about': 'About',
     'nav.contact': 'Contact',
@@ -47,6 +48,7 @@ const translations = {
 
   es: {
     // Navigation
+    'nav.home': 'Inicio',
     'nav.portfolio': 'Portafolio',
     'nav.about': 'Sobre mí',
     'nav.contact': 'Contacto',
