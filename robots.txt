@@ -1,2 +1,11 @@
+# TRUE LOVE CREATIVE - Robots.txt
+# https://truelovecreative.es
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://truelovecreative.es/sitemap.xml
+
+# Crawl delay (optional - be nice to crawlers)
+Crawl-delay: 1
