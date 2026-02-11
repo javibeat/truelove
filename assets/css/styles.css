@@ -11,10 +11,10 @@
   --bg-card: #0a0a0a;
   --bg-card-hover: #111111;
 
-  --accent: #C14E33;
-  /* Terracotta/Burnt Orange */
-  --accent-light: #d6644b;
-  --accent-glow: rgba(193, 78, 51, 0.4);
+  --accent: #FF0000;
+  /* Standard Bright Red */
+  --accent-light: #ff3333;
+  --accent-glow: rgba(255, 0, 0, 0.4);
   --blue-glow: rgba(0, 102, 255, 0.1);
 
   --text-primary: #ffffff;
@@ -233,6 +233,14 @@ h6 {
   font-weight: 900;
   text-decoration: none;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-icon {
+  height: 1.5em;
+  width: auto;
 }
 
 .main-nav {
@@ -568,6 +576,14 @@ h6 {
 .footer-logo {
   font-size: 4rem;
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo .logo-icon {
+  height: 1em;
+  width: auto;
 }
 
 .footer-tagline {

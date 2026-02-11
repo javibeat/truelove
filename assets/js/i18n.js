@@ -12,7 +12,9 @@ const translations = {
     'nav.contact': 'Contact',
 
     // Hero
-    'hero.greeting': 'TRUE LOVE',
+    'hero.true': 'TRUE',
+    'hero.love': 'LOVE',
+    'hero.creative': 'CREATIVE',
     'hero.tagline': 'HIGH-END DIGITAL EXPERIENCES',
     'hero.scroll': 'Scroll to Explore',
 
@@ -65,7 +67,9 @@ const translations = {
     'nav.contact': 'Contacto',
 
     // Hero
-    'hero.greeting': 'TRUE LOVE',
+    'hero.true': 'TRUE',
+    'hero.love': 'LOVE',
+    'hero.creative': 'CREATIVE',
     'hero.tagline': 'EXPERIENCIAS DIGITALES HIGH-END',
     'hero.scroll': 'Desliza para explorar',
 
