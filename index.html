@@ -27,7 +27,7 @@
   <meta property="og:title" content="TRUE LOVE CREATIVE | Web & Graphic Design Studio">
   <meta property="og:description"
     content="Premium web design, graphic design, and app development. Creating stunning digital experiences with love.">
-  <meta property="og:image" content="https://truelovecreative.es/og-image.jpg">
+  <meta property="og:image" content="https://truelovecreative.es/assets/img/meta/og-image.jpg">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
   <meta property="og:site_name" content="TRUE LOVE CREATIVE">
@@ -37,11 +37,11 @@
   <meta name="twitter:url" content="https://truelovecreative.es/">
   <meta name="twitter:title" content="TRUE LOVE CREATIVE | Web & Graphic Design Studio">
   <meta name="twitter:description" content="Premium web design, graphic design, and app development.">
-  <meta name="twitter:image" content="https://truelovecreative.es/og-image.jpg">
+  <meta name="twitter:image" content="https://truelovecreative.es/assets/img/meta/og-image.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/brand/favicon.png">
 
   <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +56,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -66,8 +66,8 @@
     "name": "TRUE LOVE CREATIVE",
     "alternateName": "TLC",
     "url": "https://truelovecreative.es",
-    "logo": "https://truelovecreative.es/favicon.png",
-    "description": "Premium web design, graphic design, and app development studio based in Dubai.",
+    "logo": "https://truelovecreative.es/assets/img/brand/favicon.png",
+    "description": "Premium web design, graphic design, and app development studio based in Dubai. Specialized in high-end minimalist digital experiences.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Dubai",
@@ -83,217 +83,221 @@
     "areaServed": {
       "@type": "Place",
       "name": "Worldwide"
+    },
+    "offers": {
+      "@type": "Offer",
+      "itemOffered": [
+        {
+          "@type": "Service",
+          "name": "Custom Web Design"
+        },
+        {
+          "@type": "Service",
+          "name": "Brand Identity Design"
+        }
+      ]
     }
   }
   </script>
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="glass-header">
-    <a href="#" class="logo" aria-label="TRUE LOVE CREATIVE - Home">
-      <img src="favicon.png" alt="" width="32" height="32">
-      <span class="logo-text">TRUE LOVE <span>CREATIVE</span></span>
-    </a>
+  <!-- Cinematic Noise Filter -->
+  <svg class="noise-filter" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.15 0" />
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noise)" />
+  </svg>
 
-    <div class="header-actions">
-      <div class="lang-switcher" role="group" aria-label="Language selector">
-        <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-      </div>
+  <!-- Decoration -->
+  <div class="blur-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#" class="site-logo" aria-label="TRUE LOVE CREATIVE - Home">
+        <span class="logo-text">TLC</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <a href="#contact" class="btn btn-contact" data-i18n="nav.contact">Let's Talk</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Floating Pill Navigation -->
-  <nav class="pill-nav" id="mainNav" aria-label="Main navigation">
-    <a href="#home" class="nav-item active" aria-label="Home" data-i18n-aria="nav.home">
-      <i class="fas fa-home"></i>
-      <span class="nav-text" data-i18n="nav.home">Home</span>
-    </a>
-    <a href="#portfolio" class="nav-item" data-i18n-aria="nav.portfolio">
-      <i class="fas fa-th-large"></i>
-      <span class="nav-text" data-i18n="nav.portfolio">Portfolio</span>
-    </a>
-    <a href="#about" class="nav-item" data-i18n-aria="nav.about">
-      <i class="fas fa-user"></i>
-      <span class="nav-text" data-i18n="nav.about">About</span>
-    </a>
-    <a href="#contact" class="nav-item" data-i18n-aria="nav.contact">
-      <i class="fas fa-envelope"></i>
-      <span class="nav-text" data-i18n="nav.contact">Contact</span>
-    </a>
-    <div class="pill-indicator"></div>
-  </nav>
-
   <!-- Main Content -->
   <main>
-    <div class="bento-container">
-
-      <!-- Hero Section -->
-      <section class="bento-card bento-full bento-hero reveal" id="home">
-        <p class="hero-subtitle" data-i18n="hero.greeting">Hello Stranger!</p>
+    <!-- Hero Section -->
+    <section class="section section-hero" id="home">
+      <div class="hero-content">
         <h1 class="hero-title">
-          TRUE LOVE
-          <span class="accent">CREATIVE</span>
+          <span class="line reveal" data-i18n="hero.greeting">TRUE LOVE</span>
+          <span class="line accent reveal" style="transition-delay: 0.2s">CREATIVE</span>
         </h1>
-        <p class="hero-tagline" data-i18n="hero.tagline">Web & Graphic Design</p>
-      </section>
-
-      <!-- Portfolio Section -->
-      <section class="bento-card bento-full reveal" id="portfolio">
-        <div class="section-header">
-          <h2 class="section-title" data-i18n="portfolio.title">Portfolio</h2>
-          <div class="portfolio-filters" role="group" aria-label="Portfolio filters">
-            <button class="filter-btn active" data-filter="all" data-i18n="portfolio.all">All</button>
-            <button class="filter-btn" data-filter="website" data-i18n="portfolio.websites">Websites</button>
-            <button class="filter-btn" data-filter="graphic" data-i18n="portfolio.graphic">Graphic Design</button>
-            <button class="filter-btn" data-filter="apps" data-i18n="portfolio.apps">Apps</button>
+        <div class="hero-bottom reveal" style="transition-delay: 0.4s">
+          <p class="hero-tagline" data-i18n="hero.tagline">High-end Digital Experiences</p>
+          <div class="scroll-indicator">
+            <span data-i18n="hero.scroll">Scroll to Explore</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="portfolio-grid reveal-stagger">
+    <!-- Intro Section -->
+    <section class="section section-intro reveal" id="about">
+      <div class="container">
+        <h2 class="intro-text">
+          <span data-i18n="intro.text">We craft high-impact digital experiences. Minimalist design, premium execution.
+            From Dubai to the world.</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-services reveal">
+      <div class="container">
+        <h2 class="section-title" data-i18n="services.title">SERVICES</h2>
+        <div class="services-list">
+          <div class="service-item">
+            <h3 data-i18n="services.web">Web Design</h3>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+          <div class="service-item">
+            <h3 data-i18n="services.graphic">Graphic Design</h3>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+          <div class="service-item">
+            <h3 data-i18n="services.apps">App Development</h3>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+          <div class="service-item">
+            <h3 data-i18n="services.branding">Branding</h3>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section section-portfolio reveal" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="portfolio.title">SELECTED WORKS</h2>
+        </div>
+
+        <div class="portfolio-bento">
           <!-- Kiko Navarro -->
-          <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer" class="portfolio-item"
-            data-category="website">
-            <img src="kikonavarro.png" alt="Kiko Navarro - DJ & Producer Website" loading="lazy">
-            <div class="portfolio-info">
-              <h3>Kiko Navarro</h3>
-              <span>Website</span>
+          <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer"
+            class="bento-item card-large reveal">
+            <div class="item-media">
+              <img src="assets/img/portfolios/kikonavarro.png" alt="Kiko Navarro Website Design" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="category">Web Design</span>
+                  <span class="year">2024</span>
+                </div>
+                <h3 class="item-title">Kiko Navarro</h3>
+                <p class="item-description">Legendary DJ & Producer personal website.</p>
+                <span class="view-project">View Project <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </a>
 
           <!-- Jessica Morari -->
-          <a href="https://jessicamorari.com" target="_blank" rel="noopener noreferrer" class="portfolio-item"
-            data-category="website">
-            <img src="jesscoach.png" alt="Jessica Morari - Expat Coach Website" loading="lazy">
-            <div class="portfolio-info">
-              <h3>Jessica Morari</h3>
-              <span>Website</span>
+          <a href="https://jessicamorari.com" target="_blank" rel="noopener noreferrer"
+            class="bento-item card-tall reveal">
+            <div class="item-media">
+              <img src="assets/img/portfolios/jesscoach.png" alt="Jessica Morari Portfolio" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="category">Branding & Web</span>
+                  <span class="year">2023</span>
+                </div>
+                <h3 class="item-title">Jessica Morari</h3>
+                <p class="item-description">Coaching and wellness platform.</p>
+                <span class="view-project">View Project <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </a>
 
           <!-- Javi Beat -->
-          <a href="https://javibeat.com" target="_blank" rel="noopener noreferrer" class="portfolio-item"
-            data-category="website">
-            <img src="javibeat.png" alt="Javi Beat - DJ Dubai Website" loading="lazy">
-            <div class="portfolio-info">
-              <h3>Javi Beat</h3>
-              <span>Website</span>
+          <a href="https://javibeat.com" target="_blank" rel="noopener noreferrer" class="bento-item reveal">
+            <div class="item-media">
+              <img src="assets/img/portfolios/javibeat.png" alt="Javi Beat Personal Site" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="category">Identity</span>
+                  <span class="year">2024</span>
+                </div>
+                <h3 class="item-title">Javi Beat</h3>
+                <span class="view-project">View Project <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </a>
 
           <!-- Estrela Photo -->
-          <a href="https://estrela.photo" target="_blank" rel="noopener noreferrer" class="portfolio-item"
-            data-category="website">
-            <img src="estrela.jpg" alt="Estrela Photo - Photography Portfolio" loading="lazy">
-            <div class="portfolio-info">
-              <h3>Estrela Photo</h3>
-              <span>Website</span>
+          <a href="https://estrela.photo" target="_blank" rel="noopener noreferrer" class="bento-item reveal">
+            <div class="item-media">
+              <img src="assets/img/portfolios/estrela.png" alt="Estrela Photography Website" loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span class="category">Portfolio</span>
+                  <span class="year">2023</span>
+                </div>
+                <h3 class="item-title">Estrela Photo</h3>
+                <span class="view-project">View Project <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
           </a>
-
-          <!-- Julio Cuba -->
-          <a href="https://juliocuba.es" target="_blank" rel="noopener noreferrer" class="portfolio-item"
-            data-category="website">
-            <img src="juliocuba.jpg" alt="Julio Cuba - Artist Website" loading="lazy">
-            <div class="portfolio-info">
-              <h3>Julio Cuba</h3>
-              <span>Website</span>
-            </div>
-          </a>
-
-          <!-- Graphic Design Placeholder -->
-          <div class="portfolio-item portfolio-placeholder" data-category="graphic">
-            <div class="placeholder-content">
-              <i class="fas fa-palette"></i>
-              <span data-i18n="portfolio.coming">Coming soon...</span>
-            </div>
-            <div class="portfolio-info">
-              <h3 data-i18n="portfolio.graphic">Graphic Design</h3>
-              <span>2026</span>
-            </div>
-          </div>
-
-          <!-- Apps Placeholder -->
-          <div class="portfolio-item portfolio-placeholder" data-category="apps">
-            <div class="placeholder-content">
-              <i class="fas fa-mobile-alt"></i>
-              <span data-i18n="portfolio.coming">Coming soon...</span>
-            </div>
-            <div class="portfolio-info">
-              <h3 data-i18n="portfolio.apps">Apps</h3>
-              <span>2026</span>
-            </div>
-          </div>
-
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- About Section -->
-      <section class="bento-card bento-full reveal" id="about">
-        <h2 class="section-title" data-i18n="about.title">About Me</h2>
-        <div class="about-content">
-          <p data-i18n="about.p1">
-            Hi, I'm Javi Beat, a passionate designer and DJ based in Dubai. I believe that design is an art form, and I
-            pour my creativity and love into every project I work on. With over 6 years of experience in the industry, I
-            have helped numerous clients create visually stunning and impactful designs that leave a lasting impression.
-          </p>
-          <p data-i18n="about.p2">
-            Designing is not just a job for me; it's my way of expressing myself and bringing ideas to life. I
-            specialize in both graphic and web design, offering a range of services to meet the unique needs of each
-            client. Whether it's creating a captivating website, designing stunning visual identities, or developing
-            innovative app interfaces, I always strive for excellence and innovation.
-          </p>
-          <p data-i18n="about.p3">
-            Beyond design, music is another passion of mine. As a DJ, I understand the power of rhythm and how it
-            connects people on a deeper level. I bring this understanding into my design work, infusing it with a sense
-            of harmony and rhythm that resonates with the target audience.
-          </p>
-          <p data-i18n="about.p4">
-            If you're looking for a dedicated and talented designer who can bring your ideas to life and create visually
-            captivating experiences, I would love to work with you. Let's collaborate and make your vision a reality!
-          </p>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section class="bento-card bento-full reveal" id="contact">
-        <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
-        <div class="contact-grid">
-          <div class="contact-item">
-            <span class="contact-label" data-i18n="contact.email">Email</span>
-            <a href="mailto:info@truelovecreative.es" class="contact-value">info@truelovecreative.es</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label" data-i18n="contact.phone">Phone</span>
-            <a href="https://wa.me/+971585324519" class="contact-value">+971 58 532 4519</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label" data-i18n="contact.social">Social</span>
-            <div class="social-icons">
-              <a href="https://www.instagram.com/javibeat" target="_blank" rel="noopener noreferrer" class="social-icon"
-                aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.tiktok.com/@javibeatdxb" target="_blank" rel="noopener noreferrer"
-                class="social-icon" aria-label="TikTok">
-                <i class="fab fa-tiktok"></i>
-              </a>
-              <a href="https://mas.to/@javibeat" target="_blank" rel="noopener noreferrer" class="social-icon"
-                aria-label="Mastodon">
-                <i class="fab fa-mastodon"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
+    <!-- CTA Section -->
+    <section class="section section-cta reveal" id="contact">
+      <div class="cta-container">
+        <a href="mailto:info@truelovecreative.es" class="cta-large-link">
+          <span class="cta-text" data-i18n="cta.text">LET'S WORK TOGETHER</span>
+        </a>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 TRUE LOVE CREATIVE. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  <footer class="site-footer reveal">
+    <div class="footer-container container">
+      <div class="footer-col brand">
+        <h2 class="footer-logo">TLC</h2>
+        <p class="footer-tagline">Premium solutions in web & graphic design.</p>
+      </div>
+      <div class="footer-col menu">
+        <h4 data-i18n="footer.sitemap">SITEMAP</h4>
+        <nav>
+          <a href="#home" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#portfolio" data-i18n="nav.portfolio">Work</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col contact">
+        <h4 data-i18n="footer.contact">CONTACT</h4>
+        <p>Dubai, UAE</p>
+        <p><a href="mailto:info@truelovecreative.es">info@truelovecreative.es</a></p>
+        <p><a href="tel:+971585324519">+971 58 532 4519</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TRUE LOVE CREATIVE. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </div>
   </footer>
 
   <!-- Scroll to Top -->
@@ -302,8 +306,8 @@
   </button>
 
   <!-- Scripts -->
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

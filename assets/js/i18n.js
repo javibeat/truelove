@@ -7,28 +7,39 @@ const translations = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.portfolio': 'Portfolio',
+    'nav.portfolio': 'Work',
     'nav.about': 'About',
     'nav.contact': 'Contact',
 
     // Hero
-    'hero.greeting': 'Hello Stranger!',
-    'hero.tagline': 'Web & Graphic Design',
+    'hero.greeting': 'TRUE LOVE',
+    'hero.tagline': 'HIGH-END DIGITAL EXPERIENCES',
+    'hero.scroll': 'Scroll to Explore',
+
+    // Intro
+    'intro.text': "We craft high-impact digital experiences. Minimalist design, premium execution. From Dubai to the world.",
+
+    // Services
+    'services.title': 'SERVICES',
+    'services.web': 'Web Design',
+    'services.graphic': 'Graphic Design',
+    'services.apps': 'App Development',
+    'services.branding': 'Branding',
 
     // Portfolio
-    'portfolio.title': 'Portfolio',
+    'portfolio.title': 'SELECTED WORKS',
     'portfolio.all': 'All',
     'portfolio.websites': 'Websites',
     'portfolio.graphic': 'Graphic Design',
     'portfolio.apps': 'Apps',
     'portfolio.coming': 'Coming soon...',
 
-    // About
+    // CTA
+    'cta.text': "LET'S WORK TOGETHER",
+
+    // About (Legacy but kept for fallback)
     'about.title': 'About Me',
-    'about.p1': "Hi, I'm Javi Beat, a passionate designer and DJ based in Dubai. I believe that design is an art form, and I pour my creativity and love into every project I work on. With over 4 years of experience in the industry, I have helped numerous clients create visually stunning and impactful designs that leave a lasting impression.",
-    'about.p2': "Designing is not just a job for me; it's my way of expressing myself and bringing ideas to life. I specialize in both graphic and web design, offering a range of services to meet the unique needs of each client. Whether it's creating a captivating website, designing stunning visual identities, or developing innovative app interfaces, I always strive for excellence and innovation.",
-    'about.p3': "Beyond design, music is another passion of mine. As a DJ, I understand the power of rhythm and how it connects people on a deeper level. I bring this understanding into my design work, infusing it with a sense of harmony and rhythm that resonates with the target audience.",
-    'about.p4': "If you're looking for a dedicated and talented designer who can bring your ideas to life and create visually captivating experiences, I would love to work with you. Let's collaborate and make your vision a reality!",
+    'about.p1': "Hi, I'm Javi Beat, a passionate designer and DJ based in Dubai.",
 
     // Contact
     'contact.title': 'Get in Touch',
@@ -37,40 +48,51 @@ const translations = {
     'contact.social': 'Social',
 
     // Footer
+    'footer.sitemap': 'SITEMAP',
+    'footer.contact': 'CONTACT',
     'footer.rights': 'All rights reserved.',
     'footer.made': 'Made with',
 
     // Accessibility
     'aria.scrollTop': 'Scroll to top',
-    'aria.openMenu': 'Open menu',
-    'aria.closeMenu': 'Close menu'
   },
 
   es: {
     // Navigation
     'nav.home': 'Inicio',
-    'nav.portfolio': 'Portafolio',
+    'nav.portfolio': 'Trabajos',
     'nav.about': 'Sobre mí',
     'nav.contact': 'Contacto',
 
     // Hero
-    'hero.greeting': '¡Hola!',
-    'hero.tagline': 'Diseño Web y Gráfico',
+    'hero.greeting': 'TRUE LOVE',
+    'hero.tagline': 'EXPERIENCIAS DIGITALES HIGH-END',
+    'hero.scroll': 'Desliza para explorar',
+
+    // Intro
+    'intro.text': "Transformamos ideas en experiencias digitales de alto impacto. Diseño minimalista, ejecución premium. Desde Dubái para el mundo.",
+
+    // Services
+    'services.title': 'SERVICIOS',
+    'services.web': 'Diseño Web',
+    'services.graphic': 'Diseño Gráfico',
+    'services.apps': 'Desarrollo de Apps',
+    'services.branding': 'Branding',
 
     // Portfolio
-    'portfolio.title': 'Portafolio',
+    'portfolio.title': 'TRABAJOS SELECCIONADOS',
     'portfolio.all': 'Todo',
     'portfolio.websites': 'Webs',
     'portfolio.graphic': 'Diseño Gráfico',
     'portfolio.apps': 'Apps',
     'portfolio.coming': 'Próximamente...',
 
-    // About
+    // CTA
+    'cta.text': 'TRABAJEMOS JUNTOS',
+
+    // About (Legacy)
     'about.title': 'Sobre Mí',
-    'about.p1': "Hola, soy Javi Beat, un apasionado diseñador y DJ con base en Dubai. Creo que el diseño es una forma de arte, y pongo mi creatividad y amor en cada proyecto en el que trabajo. Con más de 4 años de experiencia en la industria, he ayudado a numerosos clientes a crear diseños visualmente impresionantes e impactantes que dejan una huella duradera.",
-    'about.p2': "Diseñar no es solo un trabajo para mí; es mi forma de expresarme y dar vida a las ideas. Me especializo tanto en diseño gráfico como web, ofreciendo una gama de servicios para satisfacer las necesidades únicas de cada cliente. Ya sea creando un sitio web cautivador, diseñando identidades visuales impresionantes o desarrollando interfaces de aplicaciones innovadoras, siempre busco la excelencia y la innovación.",
-    'about.p3': "Más allá del diseño, la música es otra de mis pasiones. Como DJ, entiendo el poder del ritmo y cómo conecta a las personas a un nivel más profundo. Llevo esta comprensión a mi trabajo de diseño, infundiéndolo con un sentido de armonía y ritmo que resuena con el público objetivo.",
-    'about.p4': "Si buscas un diseñador dedicado y talentoso que pueda dar vida a tus ideas y crear experiencias visualmente cautivadoras, me encantaría trabajar contigo. ¡Colaboremos y hagamos realidad tu visión!",
+    'about.p1': "Hola, soy Javi Beat, un apasionado diseñador y DJ con base en Dubai.",
 
     // Contact
     'contact.title': 'Contacto',
@@ -79,13 +101,13 @@ const translations = {
     'contact.social': 'Redes',
 
     // Footer
+    'footer.sitemap': 'MAPA DEL SITIO',
+    'footer.contact': 'CONTACTO',
     'footer.rights': 'Todos los derechos reservados.',
     'footer.made': 'Hecho con',
 
     // Accessibility
     'aria.scrollTop': 'Volver arriba',
-    'aria.openMenu': 'Abrir menú',
-    'aria.closeMenu': 'Cerrar menú'
   }
 };
 
