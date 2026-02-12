@@ -476,7 +476,7 @@ h6 {
   text-transform: uppercase;
   filter: grayscale(100%) opacity(0.5);
   transition: all 0.4s var(--ease-out);
-  cursor: default;
+  cursor: pointer;
   white-space: nowrap;
 }
 
