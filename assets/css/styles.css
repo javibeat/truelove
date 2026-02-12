@@ -62,8 +62,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg-primary);
   overflow-x: hidden;
-  overscroll-behavior-y: none;
-  /* Prevent bounce issues on mobile */
 }
 
 /* Noise Filter */
@@ -76,6 +74,11 @@ html {
   pointer-events: none;
   z-index: 10000;
   opacity: 0.15;
+  touch-action: none;
+}
+
+.noise-filter * {
+  pointer-events: none;
 }
 
 body {
@@ -289,12 +292,19 @@ h6 {
 
 /* === HERO SECTION === */
 .section-hero {
-  height: 100vh;
+  height: 100svh;
+  height: 100vh; /* fallback for older browsers */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding-bottom: 5vh;
+}
+
+@supports (height: 100svh) {
+  .section-hero {
+    height: 100svh;
+  }
 }
 
 .hero-title {
