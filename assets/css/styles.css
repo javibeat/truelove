@@ -292,19 +292,14 @@ h6 {
 
 /* === HERO SECTION === */
 .section-hero {
+  height: 100vh;
   height: 100svh;
-  height: 100vh; /* fallback for older browsers */
+  /* Small viewport height — avoids mobile address bar issue */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding-bottom: 5vh;
-}
-
-@supports (height: 100svh) {
-  .section-hero {
-    height: 100svh;
-  }
 }
 
 .hero-title {
