@@ -62,6 +62,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg-primary);
   overflow-x: hidden;
+  overscroll-behavior-y: none;
+  /* Prevent bounce issues on mobile */
 }
 
 /* Noise Filter */
@@ -408,6 +410,102 @@ h6 {
   transform: translateX(10px);
 }
 
+/* === LOGO MARQUEE === */
+.section-marquee {
+  padding: 4rem 0;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+}
+
+.marquee-wrapper {
+  display: flex;
+  width: 200%;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  animation: marquee 30s linear infinite;
+  padding: 0 3rem;
+}
+
+.logo-slide {
+  flex-shrink: 0;
+}
+
+.logo-slide img {
+  height: clamp(30px, 5vw, 50px);
+  width: auto;
+  filter: grayscale(100%) brightness(1.5) opacity(0.5);
+  transition: all 0.4s var(--ease-out);
+}
+
+.logo-slide:hover img {
+  filter: grayscale(0%) brightness(1) opacity(1);
+  transform: scale(1.1);
+}
+
+.logo-text-javibeat {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: #fff;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  filter: grayscale(100%) opacity(0.5);
+  transition: all 0.4s var(--ease-out);
+  cursor: default;
+  white-space: nowrap;
+}
+
+.logo-text-javibeat:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+.logo-text-jessicamorari {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  filter: grayscale(100%) opacity(0.5);
+  transition: all 0.4s var(--ease-out);
+  cursor: default;
+  white-space: nowrap;
+}
+
+.logo-text-jessicamorari:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-content {
+    gap: 3rem;
+    animation-duration: 20s;
+  }
+
+  .logo-slide img {
+    height: 30px;
+  }
+}
+
 /* === PORTFOLIO SECTION === */
 .section-portfolio .section-title {
   font-size: 0.8rem;
@@ -731,6 +829,14 @@ h6 {
 
   .hero-title {
     font-size: clamp(3rem, 12vw, 6rem);
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .site-logo {
+    gap: 0;
   }
 }
 

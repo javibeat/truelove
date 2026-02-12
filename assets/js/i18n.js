@@ -26,7 +26,6 @@ const translations = {
     'services.web': 'Web Design',
     'services.graphic': 'Graphic Design',
     'services.apps': 'App Development',
-    'services.branding': 'Branding',
 
     // Portfolio
     'portfolio.title': 'SELECTED WORKS',
@@ -81,7 +80,6 @@ const translations = {
     'services.web': 'Diseño Web',
     'services.graphic': 'Diseño Gráfico',
     'services.apps': 'Desarrollo de Apps',
-    'services.branding': 'Branding',
 
     // Portfolio
     'portfolio.title': 'TRABAJOS SELECCIONADOS',
