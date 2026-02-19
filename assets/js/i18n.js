@@ -29,6 +29,8 @@ const translations = {
 
     // Portfolio
     'portfolio.title': 'SELECTED WORKS',
+    'graphic.title': 'GRAPHIC DESIGN',
+    'portfolio.view': 'View Project',
     'portfolio.all': 'All',
     'portfolio.websites': 'Websites',
     'portfolio.graphic': 'Graphic Design',
@@ -88,6 +90,8 @@ const translations = {
 
     // Portfolio
     'portfolio.title': 'TRABAJOS SELECCIONADOS',
+    'graphic.title': 'DISEÑO GRÁFICO',
+    'portfolio.view': 'Ver Proyecto',
     'portfolio.all': 'Todo',
     'portfolio.websites': 'Webs',
     'portfolio.graphic': 'Diseño Gráfico',

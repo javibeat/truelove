@@ -185,5 +185,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =====================
+  // Lightbox Gallery
+  // =====================
+  const lightbox = document.getElementById('galleryLightbox');
+  const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+  const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+  const lightboxOverlay = lightbox ? lightbox.querySelector('.lightbox-overlay') : null;
+  const galleryItems = document.querySelectorAll('[data-gallery="graphic"]');
+
+  const openLightbox = (src, alt) => {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || 'Gallery Image';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    // Clear src after transition to avoid flicker next time
+    setTimeout(() => {
+      if (lightboxImg) lightboxImg.src = '';
+    }, 400);
+  };
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const fullSrc = item.getAttribute('data-full-src');
+      const imgAlt = item.querySelector('img')?.alt;
+      if (fullSrc) openLightbox(fullSrc, imgAlt);
+    });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
   console.log('✨ Jesper Redesign loaded successfully');
 });

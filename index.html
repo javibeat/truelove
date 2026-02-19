@@ -226,10 +226,10 @@
             <h3 data-i18n="services.web">Web Design</h3>
             <i class="fas fa-arrow-right"></i>
           </a>
-          <div class="service-item" data-modal="coming-soon">
+          <a href="#graphic-design" class="service-item">
             <h3 data-i18n="services.graphic">Graphic Design</h3>
             <i class="fas fa-arrow-right"></i>
-          </div>
+          </a>
           <div class="service-item" data-modal="coming-soon">
             <h3 data-i18n="services.apps">App Development</h3>
             <i class="fas fa-arrow-right"></i>
@@ -345,6 +345,51 @@
       </div>
     </section>
 
+    <!-- Graphic Design Section -->
+    <section class="section section-graphic reveal" id="graphic-design">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="graphic.title">GRAPHIC DESIGN</h2>
+        </div>
+
+        <div class="graphic-grid">
+          <!-- Mama Calling -->
+          <div class="graphic-item reveal" data-full-src="assets/img/graphic/mama-calling.png" data-gallery="graphic">
+            <div class="item-media">
+              <img src="assets/img/graphic/mama-calling.png" alt="Buika x Kiko Navarro - Mama Calling Vinyl Cover"
+                loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span>Vinyl Cover</span>
+                </div>
+                <h3 class="item-title">MAMA CALLING</h3>
+                <p class="item-description">Buika x Kiko Navarro</p>
+                <span class="view-project">View Design <i class="fas fa-expand"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- El Silencio -->
+          <div class="graphic-item reveal" style="transition-delay: 0.1s"
+            data-full-src="assets/img/graphic/el-silencio.png" data-gallery="graphic">
+            <div class="item-media">
+              <img src="assets/img/graphic/el-silencio.png" alt="Buika x Kiko Navarro - El Silencio Vinyl Cover"
+                loading="lazy">
+              <div class="item-overlay">
+                <div class="item-meta">
+                  <span>Vinyl Cover</span>
+                </div>
+                <h3 class="item-title">EL SILENCIO</h3>
+                <p class="item-description">Buika x Kiko Navarro</p>
+                <span class="view-project">View Design <i class="fas fa-expand"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- CTA Section -->
     <section class="section section-cta reveal" id="contact">
       <div class="cta-container">
@@ -410,6 +455,15 @@
   </div>
 
   <!-- Scripts -->
+  <!-- Lightbox Gallery -->
+  <div class="lightbox" id="galleryLightbox">
+    <div class="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img">
+      <button class="lightbox-close"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
