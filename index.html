@@ -48,7 +48,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"
     rel="stylesheet">
 
   <!-- Font Awesome -->
@@ -221,15 +222,15 @@
       <div class="container">
         <h2 class="section-title" data-i18n="services.title">SERVICES</h2>
         <div class="services-list">
-          <div class="service-item">
+          <a href="#portfolio" class="service-item">
             <h3 data-i18n="services.web">Web Design</h3>
             <i class="fas fa-arrow-right"></i>
-          </div>
-          <div class="service-item">
+          </a>
+          <div class="service-item" data-modal="coming-soon">
             <h3 data-i18n="services.graphic">Graphic Design</h3>
             <i class="fas fa-arrow-right"></i>
           </div>
-          <div class="service-item">
+          <div class="service-item" data-modal="coming-soon">
             <h3 data-i18n="services.apps">App Development</h3>
             <i class="fas fa-arrow-right"></i>
           </div>
@@ -389,6 +390,24 @@
   <button class="scroll-top" id="scrollTop" data-i18n-aria="aria.scrollTop" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
+
+  <!-- Coming Soon Modal -->
+  <div class="modal" id="comingSoonModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content reveal">
+      <h2 data-i18n="modal.title"></h2>
+      <p data-i18n="modal.text"></p>
+      <button class="modal-close" data-i18n="modal.close"></button>
+    </div>
+  </div>
+
+  <!-- Scroll Percentage Indicator -->
+  <div id="scroll-to-top">
+    <div id="progress-circle">
+      <span id="progress-text">0%</span>
+      <i id="arrow" class="fas fa-arrow-up"></i>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="assets/js/i18n.js"></script>

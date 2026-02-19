@@ -56,6 +56,11 @@ const translations = {
 
     // Accessibility
     'aria.scrollTop': 'Scroll to top',
+
+    // Modal
+    'modal.title': 'COMING SOON',
+    'modal.text': 'We are currently working on this section to bring you the best experience.',
+    'modal.close': 'Close',
   },
 
   es: {
@@ -110,6 +115,11 @@ const translations = {
 
     // Accessibility
     'aria.scrollTop': 'Volver arriba',
+
+    // Modal
+    'modal.title': 'PRÓXIMAMENTE',
+    'modal.text': 'Estamos trabajando en esta sección para ofrecerte la mejor experiencia.',
+    'modal.close': 'Cerrar',
   }
 };
 

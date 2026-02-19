@@ -108,5 +108,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // =====================
+  // Coming Soon Modal
+  // =====================
+  const modal = document.getElementById('comingSoonModal');
+  const modalBtns = document.querySelectorAll('[data-modal="coming-soon"]');
+  const modalClose = document.querySelector('.modal-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  const openModal = () => {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  modalBtns.forEach(btn => btn.addEventListener('click', openModal));
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+  // =====================
+  // Scroll Percentage Indicator
+  // =====================
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  const progressCircle = document.getElementById('progress-circle');
+  const progressText = document.getElementById('progress-text');
+
+  const updateScrollProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Avoid division by zero
+    if (docHeight <= 0) return;
+
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    const clampedPercent = Math.min(Math.floor(scrollPercent), 100);
+
+    // Update visibility of the container
+    if (scrollTop > 200) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
+
+    // Update progress circle (conic-gradient)
+    if (progressCircle) {
+      const angle = clampedPercent * 3.6;
+      progressCircle.style.background = `conic-gradient(var(--accent) ${angle}deg, rgba(255, 255, 255, 0.1) ${angle}deg 360deg)`;
+    }
+
+    // Update text
+    if (progressText) {
+      progressText.textContent = `${clampedPercent}%`;
+    }
+
+    // Switch to arrow at 100%
+    if (clampedPercent >= 99) {
+      scrollToTopBtn.classList.add('active');
+    } else {
+      scrollToTopBtn.classList.remove('active');
+    }
+  };
+
+  if (scrollToTopBtn) {
+    window.addEventListener('scroll', updateScrollProgress);
+    updateScrollProgress();
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   console.log('✨ Jesper Redesign loaded successfully');
 });
