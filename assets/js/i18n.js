@@ -37,6 +37,12 @@ const translations = {
     'portfolio.apps': 'Apps',
     'portfolio.coming': 'Coming soon...',
 
+    // Home-Agent
+    'portfolio.homeagent.title': 'Realtor Portfolio',
+    'portfolio.homeagent.desc': 'Personal real estate platform ready for acquisition.',
+    'portfolio.homeagent.category': 'Web Platform',
+    'portfolio.homeagent.view': 'Acquire Project',
+
     // CTA
     'cta.text': "LET'S WORK TOGETHER",
 
@@ -97,6 +103,12 @@ const translations = {
     'portfolio.graphic': 'Diseño Gráfico',
     'portfolio.apps': 'Apps',
     'portfolio.coming': 'Próximamente...',
+
+    // Home-Agent
+    'portfolio.homeagent.title': 'Portfolio Inmobiliario',
+    'portfolio.homeagent.desc': 'Plataforma personal inmobiliaria lista para ser adquirida.',
+    'portfolio.homeagent.category': 'Web Platform',
+    'portfolio.homeagent.view': 'Adquirir Proyecto',
 
     // CTA
     'cta.text': 'TRABAJEMOS JUNTOS',
