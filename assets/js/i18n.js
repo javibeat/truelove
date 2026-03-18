@@ -49,6 +49,8 @@ const translations = {
     'portfolio.manu.desc': 'Luxury Saxophonist personal brand and booking platform.',
     'portfolio.julio.cat': 'Identity',
     'portfolio.julio.desc': 'Violinist performance and artistic portfolio.',
+    'portfolio.sergio.cat': 'Web Design',
+    'portfolio.sergio.desc': 'Professional trumpet player portfolio.',
 
     // Home-Agent
     'portfolio.homeagent.title': 'Realtor Portfolio',
@@ -133,6 +135,8 @@ const translations = {
     'portfolio.manu.desc': 'Marca personal y plataforma de booking de saxofonista de lujo.',
     'portfolio.julio.cat': 'Identidad',
     'portfolio.julio.desc': 'Portfolio artístico y de performances de violinista.',
+    'portfolio.sergio.cat': 'Diseño Web',
+    'portfolio.sergio.desc': 'Portfolio profesional para trompetista.',
 
     // Home-Agent
     'portfolio.homeagent.title': 'Portfolio Inmobiliario',
