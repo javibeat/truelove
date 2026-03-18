@@ -51,10 +51,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Alex+Brush&display=swap"
-    rel="stylesheet">
+  <!-- Fonts (Async) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Alex+Brush&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Alex+Brush&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Alex+Brush&display=swap"></noscript>
 
   <!-- Font Awesome (Async) -->
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -370,7 +370,7 @@
           <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer"
             class="bento-item card-large reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/kikonavarro.jpg" alt="Kiko Navarro Website Design" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/kikonavarro.jpg" alt="Kiko Navarro Website Design" width="1200" height="953" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.kiko.cat">Web Design</span>
@@ -387,7 +387,7 @@
           <a href="https://jessicamorari.com" target="_blank" rel="noopener noreferrer"
             class="bento-item card-tall reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/jesslnk.webp" alt="Jessica Morari Portfolio" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/jesslnk.webp" alt="Jessica Morari Portfolio" width="990" height="1128" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.jess.cat">Branding &amp; Web</span>
@@ -403,7 +403,7 @@
           <!-- Javi Beat -->
           <a href="https://javibeat.com" target="_blank" rel="noopener noreferrer" class="bento-item reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/javibeat.jpg" alt="Javi Beat Personal Site" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/javibeat.jpg" alt="Javi Beat Personal Site" width="800" height="532" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.javi.cat">Identity</span>
@@ -418,7 +418,7 @@
           <!-- Estrela Photo -->
           <a href="https://estrela.photo" target="_blank" rel="noopener noreferrer" class="bento-item reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/estrela.jpg" alt="Estrela Photography Website" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/estrela.jpg" alt="Estrela Photography Website" width="1200" height="807" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.estrela.cat">Portfolio</span>
@@ -433,7 +433,7 @@
           <!-- Manuel KevSax -->
           <a href="https://manuelkevsax.com" target="_blank" rel="noopener noreferrer" class="bento-item reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/manusax.webp" alt="Manuel KevSax" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/manusax.webp" alt="Manuel KevSax" width="2048" height="1365" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.manu.cat">Web Design</span>
@@ -449,7 +449,7 @@
           <!-- Sergio Trumpet -->
           <a href="https://javibeat.github.io/SergioTrumpet/" target="_blank" rel="noopener noreferrer" class="bento-item reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/sergio.jpg" alt="Sergio Trumpet Portfolio" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/sergio.jpg" alt="Sergio Trumpet Portfolio" width="1200" height="800" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.sergio.cat">Web Design</span>
@@ -463,9 +463,9 @@
           </a>
 
           <!-- Julio Cuba -->
-          <a href="https://juliocuba.es" target="_blank" rel="noopener noreferrer" class="bento-item reveal">
+          <a href="https://juliocuba.es" target="_blank" rel="noopener noreferrer" class="bento-item card-tall reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/julio.webp" alt="Julio Cuba" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/julio.webp" alt="Julio Cuba" width="3508" height="2482" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.julio.cat">Identity</span>
@@ -481,7 +481,7 @@
           <!-- Realtor Portfolio -->
           <a href="https://home-agent-3aaniri2q-javibeat-gmailcoms-projects.vercel.app/proforma" target="_blank" rel="noopener noreferrer" class="bento-item card-large reveal">
             <div class="item-media">
-              <img src="assets/img/portfolios/homeagent.png" alt="Realtor Portfolio Platform" loading="lazy" decoding="async">
+              <img src="assets/img/portfolios/homeagent.png" alt="Realtor Portfolio Platform" width="640" height="640" loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span class="category" data-i18n="portfolio.homeagent.category">Web Platform</span>
@@ -509,7 +509,7 @@
           <!-- Mama Calling -->
           <div class="graphic-item reveal" data-full-src="assets/img/graphic/mama-calling.png" data-gallery="graphic" role="button" tabindex="0" aria-label="View Mama Calling design cover full size">
             <div class="item-media">
-              <img src="assets/img/graphic/mama-calling.png" alt="Buika x Kiko Navarro - Mama Calling Vinyl Cover"
+              <img src="assets/img/graphic/mama-calling.png" alt="Buika x Kiko Navarro - Mama Calling Vinyl Cover" width="1200" height="642"
                 loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
@@ -526,8 +526,8 @@
           <div class="graphic-item reveal" style="transition-delay: 0.1s"
             data-full-src="assets/img/graphic/el-silencio.png" data-gallery="graphic" role="button" tabindex="0" aria-label="View El Silencio design cover full size">
             <div class="item-media">
-              <img src="assets/img/graphic/el-silencio.png" alt="Buika x Kiko Navarro - El Silencio Vinyl Cover"
-                loading="lazy">
+              <img src="assets/img/graphic/el-silencio.png" alt="Buika x Kiko Navarro - El Silencio Vinyl Cover" width="1200" height="642"
+                loading="lazy" decoding="async">
               <div class="item-overlay">
                 <div class="item-meta">
                   <span data-i18n="graphic.vinylCover">Vinyl Cover</span>
