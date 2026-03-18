@@ -35,6 +35,8 @@
   --font-display: 'Syne', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-script: 'Alex Brush', cursive;
 
   /* Spacing */
   --gap: clamp(1rem, 2vw, 2.5rem);
@@ -100,15 +102,32 @@ body {
 body::after {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  /* Simple grain pattern */
-  opacity: 0.05;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.8;
   pointer-events: none;
   z-index: 9999;
+}
+
+/* Giant Script Watermark */
+.bg-watermark {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  transform: translateY(-50%);
+  font-family: var(--font-script);
+  font-size: clamp(10rem, 25vw, 30rem);
+  color: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  user-select: none;
+  line-height: 1;
+}
+.bg-watermark--right {
+  left: auto;
+  right: -5%;
 }
 
 /* Blue Vignette Glow */
@@ -527,10 +546,13 @@ h6 {
 
 /* === SERVICES SECTION === */
 .section-services .section-title {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--text-primary);
   margin-bottom: 4rem;
-  letter-spacing: 0.3em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.02em;
 }
 
 .services-list {
@@ -698,10 +720,13 @@ h6 {
 
 /* === PORTFOLIO SECTION === */
 .section-portfolio .section-title {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--text-primary);
   margin-bottom: 3rem;
-  letter-spacing: 0.3em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.02em;
 }
 
 .portfolio-bento {
@@ -719,6 +744,26 @@ h6 {
   overflow: hidden;
   display: block;
   border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+/* Mac OS Window Controls */
+.bento-item::before {
+  content: '';
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #ff5f56;
+  box-shadow: 14px 0 0 #ffbd2e, 28px 0 0 #27c93f;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.bento-item:hover::before {
+  opacity: 1;
 }
 
 .bento-item.card-large {
@@ -793,20 +838,24 @@ h6 {
 }
 
 .item-meta span {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #000;
-  font-weight: 700;
-  background: var(--accent-neon);
-  padding: 0.15em 0.5em;
-  border: 1px solid var(--accent-neon);
+  letter-spacing: 0.1em;
+  color: #fff;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  display: inline-block;
 }
 
 .item-meta .year {
-  color: var(--text-secondary);
   background: transparent;
-  border: 1px solid var(--text-tertiary);
+  color: var(--text-secondary);
+  border-color: rgba(255,255,255,0.05);
 }
 
 .item-title {
@@ -864,10 +913,13 @@ h6 {
 }
 
 .section-graphic .section-title {
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--text-primary);
   margin-bottom: 4rem;
-  letter-spacing: 0.3em;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.02em;
 }
 
 .graphic-grid {
