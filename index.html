@@ -56,10 +56,12 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Alex+Brush&display=swap"
     rel="stylesheet">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  <!-- Font Awesome (Async) -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -215,8 +217,8 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="es">ES</button>
+          <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+          <button class="lang-btn" data-lang="es" aria-label="Switch to Spanish">ES</button>
         </div>
         <a href="#contact" class="btn btn-contact" data-i18n="nav.contact">Let's Talk</a>
       </nav>
@@ -336,7 +338,7 @@
             <h3 data-i18n="services.graphic">Graphic Design</h3>
             <i class="fas fa-arrow-right"></i>
           </a>
-          <div class="service-item" data-modal="coming-soon">
+          <div class="service-item" data-modal="coming-soon" role="button" tabindex="0" aria-label="App Development Details">
             <span class="service-number">03</span>
             <h3 data-i18n="services.apps">App Development</h3>
             <i class="fas fa-arrow-right"></i>
@@ -505,7 +507,7 @@
 
         <div class="graphic-grid">
           <!-- Mama Calling -->
-          <div class="graphic-item reveal" data-full-src="assets/img/graphic/mama-calling.png" data-gallery="graphic">
+          <div class="graphic-item reveal" data-full-src="assets/img/graphic/mama-calling.png" data-gallery="graphic" role="button" tabindex="0" aria-label="View Mama Calling design cover full size">
             <div class="item-media">
               <img src="assets/img/graphic/mama-calling.png" alt="Buika x Kiko Navarro - Mama Calling Vinyl Cover"
                 loading="lazy" decoding="async">
@@ -522,7 +524,7 @@
 
           <!-- El Silencio -->
           <div class="graphic-item reveal" style="transition-delay: 0.1s"
-            data-full-src="assets/img/graphic/el-silencio.png" data-gallery="graphic">
+            data-full-src="assets/img/graphic/el-silencio.png" data-gallery="graphic" role="button" tabindex="0" aria-label="View El Silencio design cover full size">
             <div class="item-media">
               <img src="assets/img/graphic/el-silencio.png" alt="Buika x Kiko Navarro - El Silencio Vinyl Cover"
                 loading="lazy">
@@ -604,7 +606,7 @@
     <div class="modal-content reveal">
       <h2 data-i18n="modal.title"></h2>
       <p data-i18n="modal.text"></p>
-      <button class="modal-close" data-i18n="modal.close"></button>
+      <button class="modal-close" data-i18n="modal.close" aria-label="Close modal window"></button>
     </div>
   </div>
 
@@ -622,7 +624,7 @@
     <div class="lightbox-overlay"></div>
     <div class="lightbox-content">
       <img src="" alt="" class="lightbox-img">
-      <button class="lightbox-close"><i class="fas fa-times"></i></button>
+      <button class="lightbox-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
     </div>
   </div>
 

@@ -164,6 +164,14 @@ body::before {
   border-radius: 50%;
   opacity: 0.3;
   animation: blob-float 20s infinite alternate var(--ease-in-out);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .blob {
+    animation: none;
+    filter: blur(60px);
+  }
 }
 
 .blob-1 {
