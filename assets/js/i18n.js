@@ -19,7 +19,7 @@ const translations = {
     'hero.scroll': 'Scroll to Explore',
 
     // Intro
-    'intro.text': "We craft high-impact digital experiences. Minimalist design, premium execution. From Dubai to the world.",
+    'intro.text': 'We craft <span class="highlight">high-impact</span> digital experiences. <span class="highlight">Minimalist</span> design, premium execution. From Dubai to the world.',
 
     // Services
     'services.title': 'SERVICES',
@@ -86,7 +86,7 @@ const translations = {
     'hero.scroll': 'Desliza para explorar',
 
     // Intro
-    'intro.text': "Transformamos ideas en experiencias digitales de alto impacto. Diseño minimalista, ejecución premium. Desde Dubái para el mundo.",
+    'intro.text': 'Transformamos ideas en experiencias digitales de <span class="highlight">alto impacto</span>. Diseño <span class="highlight">minimalista</span>, ejecución premium. Desde Dubái para el mundo.',
 
     // Services
     'services.title': 'SERVICIOS',
@@ -217,7 +217,13 @@ class I18n {
   updateAllTranslations() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      el.textContent = this.t(key);
+      const translation = this.t(key);
+      // Use innerHTML for elements with data-i18n-html attribute (supports highlight spans)
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = translation;
+      } else {
+        el.textContent = translation;
+      }
     });
 
     // Update aria-labels

@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.style.top = e.clientY + 'px';
   });
 
-  document.querySelectorAll('a, button, .service-item, .bento-item').forEach(el => {
+  document.querySelectorAll('a, button, .service-item, .bento-item, .hero-sticker, .graphic-item').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('active'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
   });
@@ -230,5 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  console.log('✨ Jesper Redesign loaded successfully');
+  // =====================
+  // Hero Sticker Parallax
+  // =====================
+  const heroSticker = document.querySelector('.hero-sticker');
+  if (heroSticker && window.matchMedia('(hover: hover)').matches) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY < window.innerHeight) {
+        heroSticker.style.transform = `rotate(6deg) translateY(${scrollY * 0.15}px)`;
+      }
+    });
+  }
+
+  console.log('✨ Rebellious Designer Redesign loaded successfully');
 });
