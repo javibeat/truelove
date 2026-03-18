@@ -30,18 +30,34 @@ const translations = {
     // Portfolio
     'portfolio.title': 'SELECTED WORKS',
     'graphic.title': 'GRAPHIC DESIGN',
-    'portfolio.view': 'View Project',
+    'portfolio.view': 'View Project <i class="fas fa-arrow-right"></i>',
+    'portfolio.viewDesign': 'View Design <i class="fas fa-expand"></i>',
     'portfolio.all': 'All',
     'portfolio.websites': 'Websites',
     'portfolio.graphic': 'Graphic Design',
     'portfolio.apps': 'Apps',
     'portfolio.coming': 'Coming soon...',
 
+    // Portfolio Items
+    'portfolio.kiko.cat': 'Web Design',
+    'portfolio.kiko.desc': 'Legendary DJ & Producer personal website.',
+    'portfolio.jess.cat': 'Branding & Web',
+    'portfolio.jess.desc': 'Coaching and wellness platform.',
+    'portfolio.javi.cat': 'Identity',
+    'portfolio.estrela.cat': 'Portfolio',
+    'portfolio.manu.cat': 'Web Design',
+    'portfolio.manu.desc': 'Luxury Saxophonist personal brand and booking platform.',
+    'portfolio.julio.cat': 'Identity',
+    'portfolio.julio.desc': 'Violinist performance and artistic portfolio.',
+
     // Home-Agent
     'portfolio.homeagent.title': 'Realtor Portfolio',
     'portfolio.homeagent.desc': 'Personal real estate platform ready for acquisition.',
     'portfolio.homeagent.category': 'Web Platform',
     'portfolio.homeagent.view': 'Acquire Project',
+
+    // Graphic Design
+    'graphic.vinylCover': 'Vinyl Cover',
 
     // CTA
     'cta.text': "LET'S WORK TOGETHER",
@@ -61,6 +77,7 @@ const translations = {
     'footer.contact': 'CONTACT',
     'footer.rights': 'All rights reserved.',
     'footer.made': 'Made with',
+    'footer.tagline': 'Premium solutions in web & graphic design.',
 
     // Accessibility
     'aria.scrollTop': 'Scroll to top',
@@ -86,7 +103,7 @@ const translations = {
     'hero.scroll': 'Desliza para explorar',
 
     // Intro
-    'intro.text': 'Transformamos ideas en experiencias digitales de <span class="highlight">alto impacto</span>. Diseño <span class="highlight">minimalista</span>, ejecución premium. Desde Dubái para el mundo.',
+    'intro.text': 'Creamos experiencias digitales de <span class="highlight">alto impacto</span>. Diseño <span class="highlight">minimalista</span>, ejecución premium. Desde Dubai para el mundo.',
 
     // Services
     'services.title': 'SERVICIOS',
@@ -97,18 +114,34 @@ const translations = {
     // Portfolio
     'portfolio.title': 'TRABAJOS SELECCIONADOS',
     'graphic.title': 'DISEÑO GRÁFICO',
-    'portfolio.view': 'Ver Proyecto',
+    'portfolio.view': 'Ver Proyecto <i class="fas fa-arrow-right"></i>',
+    'portfolio.viewDesign': 'Ver Diseño <i class="fas fa-expand"></i>',
     'portfolio.all': 'Todo',
     'portfolio.websites': 'Webs',
     'portfolio.graphic': 'Diseño Gráfico',
     'portfolio.apps': 'Apps',
     'portfolio.coming': 'Próximamente...',
 
+    // Portfolio Items
+    'portfolio.kiko.cat': 'Diseño Web',
+    'portfolio.kiko.desc': 'Web personal de DJ & Productor legendario.',
+    'portfolio.jess.cat': 'Branding & Web',
+    'portfolio.jess.desc': 'Plataforma de coaching y bienestar.',
+    'portfolio.javi.cat': 'Identidad',
+    'portfolio.estrela.cat': 'Portfolio',
+    'portfolio.manu.cat': 'Diseño Web',
+    'portfolio.manu.desc': 'Marca personal y plataforma de booking de saxofonista de lujo.',
+    'portfolio.julio.cat': 'Identidad',
+    'portfolio.julio.desc': 'Portfolio artístico y de performances de violinista.',
+
     // Home-Agent
     'portfolio.homeagent.title': 'Portfolio Inmobiliario',
     'portfolio.homeagent.desc': 'Plataforma personal inmobiliaria lista para ser adquirida.',
     'portfolio.homeagent.category': 'Web Platform',
     'portfolio.homeagent.view': 'Adquirir Proyecto',
+
+    // Graphic Design
+    'graphic.vinylCover': 'Portada de Vinilo',
 
     // CTA
     'cta.text': 'TRABAJEMOS JUNTOS',
@@ -128,6 +161,7 @@ const translations = {
     'footer.contact': 'CONTACTO',
     'footer.rights': 'Todos los derechos reservados.',
     'footer.made': 'Hecho con',
+    'footer.tagline': 'Soluciones premium en diseño web y gráfico.',
 
     // Accessibility
     'aria.scrollTop': 'Volver arriba',

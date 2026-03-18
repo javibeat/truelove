@@ -231,14 +231,30 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =====================
-  // Hero Sticker Parallax
+  // Hero Grid Parallax + Sticker
   // =====================
+  const heroSection = document.querySelector('.section-hero');
   const heroSticker = document.querySelector('.hero-sticker');
-  if (heroSticker && window.matchMedia('(hover: hover)').matches) {
+
+  if (heroSection && window.matchMedia('(hover: hover)').matches) {
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        heroSticker.style.transform = `rotate(6deg) translateY(${scrollY * 0.15}px)`;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const vh = window.innerHeight;
+          if (scrollY < vh) {
+            const progress = scrollY / vh;
+            // Grid moves at 40% speed — creates depth
+            heroSection.style.setProperty('--grid-offset', `${scrollY * 0.4}px`);
+            // Sticker drifts with rotation
+            if (heroSticker) {
+              heroSticker.style.transform = `rotate(${6 - progress * 6}deg) translateY(${scrollY * 0.2}px)`;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     });
   }
