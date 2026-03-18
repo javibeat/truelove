@@ -755,25 +755,6 @@ h6 {
   border-radius: 12px;
 }
 
-/* Mac OS Window Controls */
-.bento-item::before {
-  content: '';
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background-color: #ff5f56;
-  box-shadow: 14px 0 0 #ffbd2e, 28px 0 0 #27c93f;
-  z-index: 10;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-.bento-item:hover::before {
-  opacity: 1;
-}
-
 .bento-item.card-large {
   grid-column: span 8;
   grid-row: span 2;
