@@ -6,8 +6,17 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://truelovecreative.es/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://truelovecreative.es/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://truelovecreative.es/"/>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://truelovecreative.es/behind.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://truelovecreative.es/behind.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://truelovecreative.es/behind.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://truelovecreative.es/behind.html"/>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
