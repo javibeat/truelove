@@ -94,8 +94,8 @@ const translations = {
     'nav.behind': 'Behind the Scenes',
 
     // Behind the Scenes
-    'bts.hero1': 'Design is my',
-    'bts.hero2': 'second life.',
+    'bts.hero1': 'Not my job.',
+    'bts.hero2': 'My obsession.',
     'bts.name': 'Javi Beat',
     'bts.role': 'Founder & Creative Director',
     'bts.bio': 'By day I work in a completely different world. Design is where I go when the day job ends — the space where I actually get to build things the way I think they should be built.',
@@ -105,7 +105,7 @@ const translations = {
     'bts.yearsDubai': 'Years in Dubai',
     'bts.projects': 'Projects Delivered',
     'bts.nights': 'Designed After Hours',
-    'bts.quote': '"Good design is the difference between a brand people <span class="highlight">remember</span> and one they scroll past."',
+    'bts.quote': 'No agency. No rules.',
   },
 
   es: {
@@ -198,8 +198,8 @@ const translations = {
     'nav.behind': 'Detrás de las Cámaras',
 
     // Behind the Scenes
-    'bts.hero1': 'El diseño es mi',
-    'bts.hero2': 'segunda vida.',
+    'bts.hero1': 'No es mi trabajo.',
+    'bts.hero2': 'Es mi obsesión.',
     'bts.name': 'Javi Beat',
     'bts.role': 'Fundador y Director Creativo',
     'bts.bio': 'De día trabajo en un mundo completamente distinto. El diseño es donde voy cuando termina la jornada — el espacio donde realmente puedo construir las cosas como creo que deberían ser.',
@@ -209,7 +209,7 @@ const translations = {
     'bts.yearsDubai': 'Años en Dubai',
     'bts.projects': 'Proyectos Entregados',
     'bts.nights': 'Diseñado Fuera de Horas',
-    'bts.quote': '"El buen diseño es la diferencia entre una marca que la gente <span class="highlight">recuerda</span> y una por la que pasan de largo."',
+    'bts.quote': 'Sin agencia. Sin reglas.',
   }
 };
 
