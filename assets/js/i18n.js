@@ -84,10 +84,19 @@ const translations = {
     // Accessibility
     'aria.scrollTop': 'Scroll to top',
 
-    // Modal
-    'modal.title': 'COMING SOON',
-    'modal.text': 'We are currently working on this section to bring you the best experience.',
-    'modal.close': 'Close',
+    // App Development
+    'appdev.title': 'APP DEVELOPMENT',
+    'appdev.badge': 'Live on iOS, Android & Web',
+    'appdev.tagline': 'The marketplace that actually works.',
+    'appdev.desc': 'Buy. Sell. Bid. Donate. 6 sections, 4 pricing models, real-time chat, zero commissions.',
+    'appdev.view': 'View Project <i class="fas fa-arrow-right"></i>',
+    'appdev.feat1': 'Categories',
+    'appdev.feat2': 'Pricing Models',
+    'appdev.feat3': 'Platforms',
+    'appdev.feat4': 'Commission',
+    'appdev.ios': '100% SwiftUI. Native performance.',
+    'appdev.android': 'Material Design. Pixel perfect.',
+    'appdev.web': 'Progressive Web App. Any browser.',
 
     // Nav (overlay)
     'nav.graphic': 'Graphic Design',
@@ -188,10 +197,19 @@ const translations = {
     // Accessibility
     'aria.scrollTop': 'Volver arriba',
 
-    // Modal
-    'modal.title': 'PRÓXIMAMENTE',
-    'modal.text': 'Estamos trabajando en esta sección para ofrecerte la mejor experiencia.',
-    'modal.close': 'Cerrar',
+    // App Development
+    'appdev.title': 'DESARROLLO DE APPS',
+    'appdev.badge': 'Disponible en iOS, Android y Web',
+    'appdev.tagline': 'El marketplace que realmente funciona.',
+    'appdev.desc': 'Compra. Vende. Puja. Dona. 6 secciones, 4 modelos de precio, chat en tiempo real, cero comisiones.',
+    'appdev.view': 'Ver Proyecto <i class="fas fa-arrow-right"></i>',
+    'appdev.feat1': 'Categorías',
+    'appdev.feat2': 'Modelos de Precio',
+    'appdev.feat3': 'Plataformas',
+    'appdev.feat4': 'Comisión',
+    'appdev.ios': '100% SwiftUI. Rendimiento nativo.',
+    'appdev.android': 'Material Design. Pixel perfect.',
+    'appdev.web': 'App Web Progresiva. Cualquier navegador.',
 
     // Nav (overlay)
     'nav.graphic': 'Diseño Gráfico',

@@ -358,11 +358,11 @@
             <h3 data-i18n="services.graphic">Graphic Design</h3>
             <i class="fas fa-arrow-right"></i>
           </a>
-          <div class="service-item" data-modal="coming-soon" role="button" tabindex="0" aria-label="App Development Details">
+          <a href="#app-development" class="service-item">
             <span class="service-number">03</span>
             <h3 data-i18n="services.apps">App Development</h3>
             <i class="fas fa-arrow-right"></i>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -612,6 +612,74 @@
     </section>
 
 
+    <!-- App Development Section -->
+    <section class="section section-appdev reveal" id="app-development">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="appdev.title">APP DEVELOPMENT</h2>
+        </div>
+
+        <div class="appdev-showcase">
+          <!-- Hero Card -->
+          <a href="https://nibango.com/uiapp/" target="_blank" rel="noopener noreferrer" class="appdev-hero-card reveal">
+            <div class="appdev-hero-content">
+              <div class="appdev-badge" data-i18n="appdev.badge">Live on iOS, Android & Web</div>
+              <h3 class="appdev-app-name">nibango</h3>
+              <p class="appdev-tagline" data-i18n="appdev.tagline">The marketplace that actually works.</p>
+              <p class="appdev-desc" data-i18n="appdev.desc">Buy. Sell. Bid. Donate. 6 sections, 4 pricing models, real-time chat, zero commissions.</p>
+              <span class="view-project" data-i18n="appdev.view" data-i18n-html>View Project <i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="appdev-hero-visual">
+              <div class="appdev-mockup-stack">
+                <img src="https://nibango.com/static/web/img/mockup-1.png" alt="nibango app splash screen" width="300" height="600" loading="lazy" decoding="async">
+                <img src="https://nibango.com/static/web/img/mockup-3.png" alt="nibango app home screen" width="300" height="600" loading="lazy" decoding="async">
+                <img src="https://nibango.com/static/web/img/mockup-2.png" alt="nibango app categories" width="300" height="600" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </a>
+
+          <!-- Features Grid -->
+          <div class="appdev-features">
+            <div class="appdev-feature reveal">
+              <span class="appdev-feature-number">6</span>
+              <p data-i18n="appdev.feat1">Categories</p>
+            </div>
+            <div class="appdev-feature reveal" style="transition-delay: 0.1s">
+              <span class="appdev-feature-number">4</span>
+              <p data-i18n="appdev.feat2">Pricing Models</p>
+            </div>
+            <div class="appdev-feature reveal" style="transition-delay: 0.2s">
+              <span class="appdev-feature-number">3</span>
+              <p data-i18n="appdev.feat3">Platforms</p>
+            </div>
+            <div class="appdev-feature reveal" style="transition-delay: 0.3s">
+              <span class="appdev-feature-number">0%</span>
+              <p data-i18n="appdev.feat4">Commission</p>
+            </div>
+          </div>
+
+          <!-- Tech Cards -->
+          <div class="appdev-tech-grid">
+            <div class="appdev-tech-card reveal">
+              <i class="fab fa-apple"></i>
+              <h4>iOS</h4>
+              <p data-i18n="appdev.ios">100% SwiftUI. Native performance.</p>
+            </div>
+            <div class="appdev-tech-card reveal" style="transition-delay: 0.1s">
+              <i class="fab fa-android"></i>
+              <h4>Android</h4>
+              <p data-i18n="appdev.android">Material Design. Pixel perfect.</p>
+            </div>
+            <div class="appdev-tech-card reveal" style="transition-delay: 0.2s">
+              <i class="fas fa-globe"></i>
+              <h4>Web</h4>
+              <p data-i18n="appdev.web">Progressive Web App. Any browser.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Text Strip before CTA -->
     <div class="text-strip text-strip--accent">
       <div class="text-strip-content">
@@ -668,16 +736,6 @@
   <button class="scroll-top" id="scrollTop" data-i18n-aria="aria.scrollTop" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
-
-  <!-- Coming Soon Modal -->
-  <div class="modal" id="comingSoonModal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content reveal">
-      <h2 data-i18n="modal.title"></h2>
-      <p data-i18n="modal.text"></p>
-      <button class="modal-close" data-i18n="modal.close" aria-label="Close modal window"></button>
-    </div>
-  </div>
 
   <!-- Scroll Percentage Indicator -->
   <div id="scroll-to-top">

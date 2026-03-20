@@ -140,28 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =====================
-  // Coming Soon Modal
-  // =====================
-  const modal = document.getElementById('comingSoonModal');
-  const modalBtns = document.querySelectorAll('[data-modal="coming-soon"]');
-  const modalClose = document.querySelector('.modal-close');
-  const modalOverlay = document.querySelector('.modal-overlay');
-
-  const openModal = () => {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  modalBtns.forEach(btn => btn.addEventListener('click', openModal));
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
-
-  // =====================
   // Scroll Percentage Indicator
   // =====================
   const scrollToTopBtn = document.getElementById('scroll-to-top');
