@@ -88,6 +88,24 @@ const translations = {
     'modal.title': 'COMING SOON',
     'modal.text': 'We are currently working on this section to bring you the best experience.',
     'modal.close': 'Close',
+
+    // Nav (overlay)
+    'nav.graphic': 'Graphic Design',
+    'nav.behind': 'Behind the Scenes',
+
+    // Behind the Scenes
+    'bts.hero1': 'Design is my',
+    'bts.hero2': 'second life.',
+    'bts.name': 'Javi Beat',
+    'bts.role': 'Founder & Creative Director',
+    'bts.bio': 'By day I work in a completely different world. Design is where I go when the day job ends — the space where I actually get to build things the way I think they should be built.',
+    'bts.bio2': 'Dubai has been home for over a decade now. What started as a move became a life — and somewhere along the way, this city\'s energy pushed me to start creating on my own terms.',
+    'bts.bio3': 'I started True Love Creative because I kept seeing websites that looked like everyone else\'s. No soul, no intention. A small studio with <span class="highlight">real taste</span> can deliver work that stands next to — or above — the big agencies.',
+    'bts.bio4': 'Every project here was designed at night, on weekends, between flights. Not because I have to, but because I genuinely can\'t stop.',
+    'bts.yearsDubai': 'Years in Dubai',
+    'bts.projects': 'Projects Delivered',
+    'bts.nights': 'Designed After Hours',
+    'bts.quote': '"Good design is the difference between a brand people <span class="highlight">remember</span> and one they scroll past."',
   },
 
   es: {
@@ -174,6 +192,24 @@ const translations = {
     'modal.title': 'PRÓXIMAMENTE',
     'modal.text': 'Estamos trabajando en esta sección para ofrecerte la mejor experiencia.',
     'modal.close': 'Cerrar',
+
+    // Nav (overlay)
+    'nav.graphic': 'Diseño Gráfico',
+    'nav.behind': 'Detrás de las Cámaras',
+
+    // Behind the Scenes
+    'bts.hero1': 'El diseño es mi',
+    'bts.hero2': 'segunda vida.',
+    'bts.name': 'Javi Beat',
+    'bts.role': 'Fundador y Director Creativo',
+    'bts.bio': 'De día trabajo en un mundo completamente distinto. El diseño es donde voy cuando termina la jornada — el espacio donde realmente puedo construir las cosas como creo que deberían ser.',
+    'bts.bio2': 'Dubai lleva siendo mi casa más de una década. Lo que empezó como una mudanza se convirtió en una vida — y en algún momento, la energía de esta ciudad me empujó a crear bajo mis propias reglas.',
+    'bts.bio3': 'Fundé True Love Creative porque estaba cansado de ver webs que parecían todas iguales. Sin alma, sin intención. Un estudio pequeño con <span class="highlight">buen criterio</span> puede entregar trabajo que esté al nivel — o por encima — de las grandes agencias.',
+    'bts.bio4': 'Cada proyecto de aquí fue diseñado de noche, en fines de semana, entre vuelos. No porque tenga que hacerlo, sino porque genuinamente no puedo parar.',
+    'bts.yearsDubai': 'Años en Dubai',
+    'bts.projects': 'Proyectos Entregados',
+    'bts.nights': 'Diseñado Fuera de Horas',
+    'bts.quote': '"El buen diseño es la diferencia entre una marca que la gente <span class="highlight">recuerda</span> y una por la que pasan de largo."',
   }
 };
 

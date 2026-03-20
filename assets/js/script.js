@@ -8,8 +8,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
   const revealElements = document.querySelectorAll('.reveal');
   const langBtns = document.querySelectorAll('.lang-btn');
+  const menuToggle = document.getElementById('menuToggle');
+  const overlayMenu = document.getElementById('overlayMenu');
+  const overlayLinks = document.querySelectorAll('.overlay-link');
 
   // =====================
+  // Overlay Menu Toggle
+  // =====================
+  if (menuToggle && overlayMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isActive = overlayMenu.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      document.body.style.overflow = isActive ? 'hidden' : '';
+      menuToggle.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
+    });
+
+    // Close on link click
+    overlayLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        overlayMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlayMenu.classList.contains('active')) {
+        overlayMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
   // Smooth Scroll
   // =====================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -256,6 +287,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         ticking = true;
       }
+    });
+  }
+
+  // =====================
+  // Hero Letter-by-Letter Animation
+  // =====================
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    const lines = heroTitle.querySelectorAll('.line');
+    let globalIndex = 0;
+
+    lines.forEach(line => {
+      // Get all direct text nodes and spans
+      const children = Array.from(line.childNodes);
+      line.innerHTML = '';
+
+      children.forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          // Split text into letters
+          const text = child.textContent;
+          text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'hero-letter';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.animationDelay = `${globalIndex * 0.06}s`;
+            line.appendChild(span);
+            globalIndex++;
+          });
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          // Clone the element and wrap its text in letters
+          const wrapper = child.cloneNode(false);
+          const text = child.textContent;
+          text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'hero-letter';
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.animationDelay = `${globalIndex * 0.06}s`;
+            wrapper.appendChild(span);
+            globalIndex++;
+          });
+          line.appendChild(wrapper);
+        }
+      });
     });
   }
 
