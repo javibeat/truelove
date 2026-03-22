@@ -1241,6 +1241,12 @@ h6 {
   grid-row: span 2;
 }
 
+.bento-item.card-full {
+  grid-column: span 12;
+  grid-row: span 1;
+  aspect-ratio: 21/9;
+}
+
 .item-media {
   width: 100%;
   height: 100%;
@@ -1665,7 +1671,8 @@ h6 {
 
   .bento-item,
   .bento-item.card-large,
-  .bento-item.card-tall {
+  .bento-item.card-tall,
+  .bento-item.card-full {
     grid-column: span 1;
     grid-row: span 1;
     aspect-ratio: 16/10;
