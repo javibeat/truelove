@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.style.top = e.clientY + 'px';
   });
 
-  document.querySelectorAll('a, button, .service-item, .bento-item, .hero-sticker, .graphic-item').forEach(el => {
+  document.querySelectorAll('a, button, .service-item, .bento-item, .hero-sticker, .graphic-item, .product-card').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('active'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
   });

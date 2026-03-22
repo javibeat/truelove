@@ -52,11 +52,18 @@ const translations = {
     'portfolio.sergio.cat': 'Web Design',
     'portfolio.sergio.desc': 'Professional trumpet player portfolio.',
 
-    // Home-Agent
-    'portfolio.homeagent.title': 'Realtor Portfolio',
-    'portfolio.homeagent.desc': 'Personal real estate platform ready for acquisition.',
-    'portfolio.homeagent.category': 'Web Platform',
-    'portfolio.homeagent.view': 'Acquire Project',
+    // Digital Products
+    'products.eyebrow': 'AVAILABLE FOR ACQUISITION',
+    'products.title': 'DIGITAL PRODUCTS',
+    'products.badge': '★ READY TO LAUNCH',
+    'products.homeagent.cat': 'Real Estate Platform',
+    'products.homeagent.title': 'Home Agent',
+    'products.homeagent.desc': 'A fully-designed personal real estate portfolio platform. Listings, proforma calculator, lead capture — built and ready. No development needed.',
+    'products.feat1': 'Responsive & mobile-first',
+    'products.feat2': 'Proforma calculator included',
+    'products.feat3': 'Lead capture forms',
+    'products.feat4': 'White-label ready',
+    'products.cta': 'Acquire this project',
 
     // Graphic Design
     'graphic.vinylCover': 'Vinyl Cover',
@@ -100,6 +107,7 @@ const translations = {
 
     // Nav (overlay)
     'nav.graphic': 'Graphic Design',
+    'nav.products': 'Digital Products',
     'nav.behind': 'Behind the Scenes',
 
     // Behind the Scenes
@@ -165,11 +173,18 @@ const translations = {
     'portfolio.sergio.cat': 'Diseño Web',
     'portfolio.sergio.desc': 'Portfolio profesional para trompetista.',
 
-    // Home-Agent
-    'portfolio.homeagent.title': 'Portfolio Inmobiliario',
-    'portfolio.homeagent.desc': 'Plataforma personal inmobiliaria lista para ser adquirida.',
-    'portfolio.homeagent.category': 'Web Platform',
-    'portfolio.homeagent.view': 'Adquirir Proyecto',
+    // Digital Products
+    'products.eyebrow': 'DISPONIBLE PARA ADQUISICIÓN',
+    'products.title': 'PRODUCTOS DIGITALES',
+    'products.badge': '★ LISTO PARA LANZAR',
+    'products.homeagent.cat': 'Plataforma Inmobiliaria',
+    'products.homeagent.title': 'Home Agent',
+    'products.homeagent.desc': 'Una plataforma inmobiliaria personal completamente diseñada. Listados, calculadora proforma, captación de leads — construida y lista. Sin necesidad de desarrollo.',
+    'products.feat1': 'Responsive y mobile-first',
+    'products.feat2': 'Calculadora proforma incluida',
+    'products.feat3': 'Formularios de captación',
+    'products.feat4': 'Lista para white-label',
+    'products.cta': 'Adquirir este proyecto',
 
     // Graphic Design
     'graphic.vinylCover': 'Portada de Vinilo',
@@ -213,6 +228,7 @@ const translations = {
 
     // Nav (overlay)
     'nav.graphic': 'Diseño Gráfico',
+    'nav.products': 'Productos Digitales',
     'nav.behind': 'Detrás de las Cámaras',
 
     // Behind the Scenes
