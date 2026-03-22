@@ -419,6 +419,7 @@ h6 {
 .overlay-menu.active .overlay-link:nth-child(4) { transition-delay: 0.25s; }
 .overlay-menu.active .overlay-link:nth-child(5) { transition-delay: 0.3s; }
 .overlay-menu.active .overlay-link:nth-child(6) { transition-delay: 0.35s; }
+.overlay-menu.active .overlay-link:nth-child(7) { transition-delay: 0.4s; }
 
 .overlay-link:hover {
   color: var(--accent-neon);
@@ -662,8 +663,25 @@ h6 {
     padding-top: 10rem;
   }
 
+  .overlay-menu {
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .overlay-nav {
+    width: 100%;
+  }
+
   .overlay-link {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    padding: 0.2em 0;
+  }
+
+  .overlay-footer {
+    position: relative;
+    bottom: auto;
+    margin-top: 2rem;
   }
 }
 
@@ -2011,9 +2029,12 @@ h6 {
 }
 
 .products-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   color: var(--text-primary);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.02em;
 }
 
 .product-card {
