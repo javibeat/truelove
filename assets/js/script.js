@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
       const isActive = overlayMenu.classList.toggle('active');
       menuToggle.classList.toggle('active');
-      document.body.style.overflow = isActive ? 'hidden' : '';
+      document.documentElement.classList.toggle('menu-open', isActive);
       menuToggle.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
     });
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         overlayMenu.classList.remove('active');
         menuToggle.classList.remove('active');
-        document.body.style.overflow = '';
+        document.documentElement.classList.remove('menu-open');
       });
     });
 
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape' && overlayMenu.classList.contains('active')) {
         overlayMenu.classList.remove('active');
         menuToggle.classList.remove('active');
-        document.body.style.overflow = '';
+        document.documentElement.classList.remove('menu-open');
       }
     });
   }
