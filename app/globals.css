@@ -154,4 +154,16 @@ body::before {
   .hide-mobile { display: none !important; }
   .grid-2 { grid-template-columns: 1fr !important; }
   .grid-3 { grid-template-columns: 1fr !important; }
+  /* Testimonials: stack vertically */
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+  .testimonials-grid > div[style*="background"] { display: none; }
+  /* Portrait gallery: 2 cols instead of 4 */
+  .portrait-grid { grid-template-columns: 1fr 1px 1fr !important; }
+  .portrait-grid > a:nth-child(n+6) { display: none; }
+  /* Home Agent image */
+  .homeagent-img { width: 100% !important; aspect-ratio: 16/9 !important; }
+  /* Remove border/padding from works left column */
+  .works-left { border-right: none !important; padding-right: 0 !important; }
+  /* Front page left/right cols: remove borders */
+  .grid-3 > div { border: none !important; padding-left: 0 !important; padding-right: 0 !important; }
 }

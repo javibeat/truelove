@@ -292,7 +292,7 @@ export default function Home() {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 180px', gap:'0', position:'relative', zIndex:1 }} className="grid-2">
 
             {/* Left — work list */}
-            <div style={{ borderRight:`1px solid ${RULE}`, paddingRight:'24px' }}>
+            <div className="works-left" style={{ borderRight:`1px solid ${RULE}`, paddingRight:'24px' }}>
               {projects.map((p, i) => (
                 <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer"
                   style={{ textDecoration:'none', display:'grid', gridTemplateColumns:'28px 52px 1fr auto', gap:'12px', alignItems:'center', padding:'12px 0', borderBottom:`1px solid ${RULE}`, cursor:'crosshair', transition:'background .15s' }}
@@ -342,7 +342,7 @@ export default function Home() {
             <div className="rule-h" style={{ marginBottom:'10px' }} />
             <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, marginBottom:'10px', textAlign:'center' }}>✦ &nbsp; Portrait Gallery &nbsp; ✦</div>
             <div className="rule-thin" />
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr 1px 1fr' }}>
+            <div className="portrait-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr 1px 1fr' }}>
               {projects.slice(0,4).map((p, i) => (
                 <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', color:'inherit', gridColumn: String(i*2+1) }}>
                   <div style={{ padding:'7px 10px 5px', borderBottom:`1px solid ${RULE}` }}>
@@ -373,7 +373,7 @@ export default function Home() {
               <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>On the Record</div>
             </div>
             <div className="rule-h" style={{ marginBottom:'0' }} />
-            <div style={{ display:'grid', gridTemplateColumns:'1px 1fr 1px 1fr 1px 1fr 1px', marginTop:'0' }}>
+            <div className="testimonials-grid" style={{ display:'grid', gridTemplateColumns:'1px 1fr 1px 1fr 1px 1fr 1px', marginTop:'0' }}>
               <div style={{ background:RULE }} />
               <div key="t1" style={{ padding:'28px 24px' }}>
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"True Love Creative understood my brand immediately — and built something I couldn't have imagined myself. My audience felt it straight away."</div>
@@ -510,7 +510,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              <div style={{ position:'relative', width:'min(100%,320px)', aspectRatio:'4/3', flexShrink:0 }}>
+              <div className="homeagent-img" style={{ position:'relative', width:'min(100%,320px)', aspectRatio:'4/3', flexShrink:0 }}>
                 <Image src="/img/portfolios/homeagent.jpg" alt="Home Agent" fill style={{ objectFit:'contain' }} />
               </div>
             </div>
