@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     siteName: "True Love Creative",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/img/meta/og-image.jpg", width: 1200, height: 630, alt: "True Love Creative" }],
+    images: [{ url: "/img/meta/og-image-heart.png", width: 600, height: 600, alt: "True Love Creative" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "True Love Creative — Design Studio · Dubai",
     description: "High-end digital experiences. Web, graphic & app design. Est. 2015 · Dubai.",
-    images: ["/img/meta/og-image.jpg"],
+    images: ["/img/meta/og-image-heart.png"],
   },
   alternates: {
     canonical: "https://truelovecreative.es",
