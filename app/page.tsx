@@ -321,7 +321,7 @@ export default function Home() {
             </div>
 
             {/* Right — classifieds column */}
-            <div style={{ paddingLeft:'16px' }}>
+            <div className="works-right" style={{ paddingLeft:'16px' }}>
               <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', paddingTop:'12px' }}>Index</div>
               <div style={{ height:'1px', background:RULE, marginBottom:'10px' }} />
               {projects.map(p=>(
