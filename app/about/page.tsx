@@ -32,27 +32,27 @@ export default function AboutPage() {
 
         {/* Left — main story */}
         <div style={{ paddingRight:'32px', borderRight:`1px solid ${RULE}` }}>
-          <p className="fell dropcap reveal" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'20px' }}>
+          <p className="fell dropcap" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'20px' }}>
             True Love Creative was born in 2015 from a simple conviction: that design is not decoration — it is decision. Based in Dubai, UAE, the studio has spent over a decade building digital experiences for those who refuse to settle for average.
           </p>
 
           <div className="rule-thin" style={{ margin:'24px 0' }} />
           <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:RED, marginBottom:'12px' }}>The Founder</div>
 
-          <p className="fell reveal" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
+          <p className="fell" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
             <strong>Javi Beat</strong> is a designer, creative director, and DJ who has called Dubai home for over ten years. His dual perspective — rooted in European design tradition and sharpened by the ambition of the Gulf — gives the studio its distinctive voice: clean, powerful, and unmistakably intentional.
           </p>
-          <p className="fell reveal" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
+          <p className="fell" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
             With a deep connection to the music and arts scene, Javi has built identities and platforms for internationally recognised DJs, musicians, photographers, and creative entrepreneurs. Every project is personal. Every pixel, considered.
           </p>
 
           <div className="rule-thin" style={{ margin:'24px 0' }} />
           <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:RED, marginBottom:'12px' }}>Philosophy</div>
 
-          <p className="fell reveal" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
+          <p className="fell" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
             We work with a simple philosophy: fewer clients, deeper work. We don't run an assembly line. Each project receives the full attention of the studio — from concept to launch — because that is the only way to produce work that truly matters.
           </p>
-          <p className="fell reveal" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
+          <p className="fell" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.9, color:INK, textAlign:'justify', marginBottom:'16px' }}>
             Our clients are artists, startups, and brands who understand that their digital presence is not a cost — it is their most powerful asset. We build things that last, that perform, and that make people stop scrolling.
           </p>
 
