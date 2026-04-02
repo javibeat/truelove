@@ -1,38 +1,45 @@
 # True Love Creative
 
-> Premium web, graphic and app design studio based in Dubai, UAE. Est. 2015.
+> Premium web, graphic and app design studio based in Dubai, UAE. High-end digital experiences since 2015. Serving clients worldwide.
 
 ## About
 
-True Love Creative is a boutique design studio founded in 2015, operating from Dubai, UAE. We specialise in web design, graphic design, app development, brand identity, and creative direction. We work with artists, startups, and brands across Europe and the Middle East.
+True Love Creative is a boutique design studio founded in 2015 and based in Dubai, United Arab Emirates. Founded by Javi Beat — a designer and creative director with over 10 years of experience in Dubai's creative industry — the studio specialises in crafting high-end digital experiences for artists, musicians, startups, and premium brands across the Middle East, Europe, and worldwide.
+
+We believe design is not decoration — it is decision. Every project is built with the same conviction: that good design is the difference between being remembered and being ignored.
 
 ## Services
 
-- Web Design
-- Graphic Design
-- App Development
-- Brand Identity
-- Creative Direction
+- **Web Design** — Custom websites with premium aesthetics, performance, and SEO. From artist portfolios to full-scale business platforms. Built with modern technologies (Next.js, React, Tailwind).
+- **Graphic Design** — Visual identities, vinyl/album covers, event flyers, social media assets, and print design. Clients include internationally recognised DJs and musicians.
+- **App Development** — Native and cross-platform mobile applications (iOS, Android) with thoughtful UX and clean architecture.
+- **Brand Identity** — Complete branding systems: logos, typography, colour palettes, brand guidelines, and creative direction.
+- **Creative Direction** — Art direction for campaigns, events, music releases, and digital products.
 
 ## Selected Clients & Projects
 
-- Kiko Navarro — DJ & Producer — Web Design (kikonavarro.es)
-- Jessica Morari — Wellness Coach — Branding & Web (jessicamorari.com)
-- Javi Beat — DJ — Identity (javibeat.com)
-- Estrela Photo — Photography Studio — Portfolio (estrela.photo)
-- Manuel KevSax — Saxophonist — Web Design (manuelkevsax.com)
-- Sergio Trumpet — Trumpet Player — Portfolio (sergiotrumpetdj.com)
-- Julio Cuba — Violinist — Identity (juliocuba.es)
+- Kiko Navarro — Legendary DJ & producer. Full web design. (kikonavarro.es)
+- Jessica Morari — Coaching & wellness platform. Branding & web design. (jessicamorari.com)
+- Javi Beat — DJ identity and web presence from Dubai. (javibeat.com)
+- Estrela Photo — Photography studio portfolio. (estrela.photo)
+- Manuel KevSax — Luxury saxophonist booking site. (manuelkevsax.com)
+- Sergio Trumpet — Professional trumpet player & DJ portfolio. (sergiotrumpetdj.com)
+- Julio Cuba — Violinist artistic portfolio. (juliocuba.es)
 
 ## Products
 
 - Nibango — Marketplace app (iOS, Android, Web). Zero commission. (nibango.com)
-- Home Agent — Real estate portfolio platform. Available for acquisition.
+- Home Agent — Real estate portfolio platform.
+
+## Location & Availability
+
+- Based in Dubai, United Arab Emirates
+- Serving clients worldwide — remote-first workflow
+- Response time: within 24 hours
 
 ## Contact
 
-- Email: info@truelovecreative.es
-- Phone: +971 58 532 4519
-- Location: Dubai, UAE
 - Website: https://truelovecreative.es
-- Languages: Spanish, English, Arabic
+- Email: info@truelovecreative.es
+- Phone / WhatsApp: +971 58 532 4519
+- Languages: English, Spanish, Arabic
