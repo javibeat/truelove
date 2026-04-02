@@ -554,55 +554,118 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ══ CONTACT ═══════════════════════════════════════════ */}
-        <section id="contact" style={{ borderTop:`4px double ${INK}`, padding:'32px 0 48px', textAlign:'center' }}>
+        {/* ══ CONTACT — CTA ══════════════════════════════════════ */}
+        <section id="contact" style={{ borderTop:`4px double ${INK}`, padding:'32px 0 0', textAlign:'center' }}>
           <div style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.4em', textTransform:'uppercase', color:FADE, marginBottom:'16px' }}>✦ &nbsp; Commissions Open &nbsp; ✦</div>
-          <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(3.5rem,13vw,13rem)', fontWeight:900, fontStyle:'italic', lineHeight:.82, color:INK, letterSpacing:'-.03em', marginBottom:'32px' }}>
+          <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(3.5rem,13vw,13rem)', fontWeight:900, fontStyle:'italic', lineHeight:.82, color:INK, letterSpacing:'-.03em', marginBottom:'24px' }}>
             Let's make<br />something<br /><span style={{ color:RED }}>great.</span>
           </h2>
-          <div className="rule-thin" style={{ maxWidth:'400px', margin:'0 auto 32px' }} />
+        </section>
 
-          {/* Contact form */}
-          <form action="https://formspree.io/f/mwvwnkow" method="POST" style={{ maxWidth:'500px', margin:'0 auto', display:'flex', flexDirection:'column', gap:'16px', textAlign:'left' }}>
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px' }} className="grid-2-form">
-              <div>
-                <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Name</label>
-                <input type="text" name="name" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
-              </div>
-              <div>
-                <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Email</label>
-                <input type="email" name="email" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
-              </div>
-            </div>
-            <div>
-              <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Type of project</label>
-              <select name="project_type" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }}>
-                <option value="">Select one...</option>
-                <option value="Web Design">Web Design</option>
-                <option value="Graphic Design">Graphic Design</option>
-                <option value="App Development">App Development</option>
-                <option value="Brand Identity">Brand Identity</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Tell us about your project</label>
-              <textarea name="message" rows={4} required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', resize:'vertical', boxSizing:'border-box' }} />
-            </div>
-            <button type="submit"
-              style={{ alignSelf:'center', fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', background:INK, color:PAPER, padding:'16px 40px', border:'none', cursor:'pointer', transition:'background .15s' }}
-              onMouseEnter={e=>(e.currentTarget.style.background=RED)} onMouseLeave={e=>(e.currentTarget.style.background=INK)}>
-              Send Enquiry →
-            </button>
-          </form>
+        {/* ══ ENQUIRY FORM — Gazette style ═════════════════════════ */}
+        <section style={{ padding:'32px 0 48px', position:'relative', overflow:'hidden' }}>
 
-          <div className="rule-thin" style={{ maxWidth:'400px', margin:'32px auto 0' }} />
-          <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'12px', marginTop:'24px' }}>
-            <a href="mailto:info@truelovecreative.es" style={{ fontFamily:P, fontSize:'clamp(1rem,2.5vw,1.6rem)', fontWeight:700, fontStyle:'italic', color:INK, textDecoration:'none', transition:'color .15s' }}
-              onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>
-              info@truelovecreative.es
-            </a>
-            <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:FADE }}>+971 58 532 4519 · Dubai, UAE</span>
+          {/* Watermark */}
+          <div style={{ position:'absolute', top:'-20px', right:'-10px', fontFamily:P, fontSize:'clamp(120px,18vw,240px)', fontWeight:900, color:'rgba(26,18,8,0.04)', lineHeight:1, pointerEvents:'none', userSelect:'none', zIndex:0 }}>✉</div>
+
+          {/* Section header */}
+          <div style={{ position:'relative', zIndex:1 }}>
+            <div style={{ display:'grid', gridTemplateColumns:'auto 1fr auto', gap:'16px', alignItems:'center', marginBottom:'10px' }}>
+              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, whiteSpace:'nowrap' }}>Section VII</div>
+              <div style={{ height:'1px', background:RULE }} />
+              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>ENQUIRIES</div>
+            </div>
+            <div className="rule-h" />
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'32px', padding:'16px 0 12px', alignItems:'end' }} className="grid-2">
+              <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(2rem,5vw,4.5rem)', fontWeight:900, letterSpacing:'-.02em', lineHeight:.88 }}>
+                Start Your<br /><em style={{ color:RED }}>Project</em>
+              </h2>
+              <p className="fell" style={{ fontFamily:F, fontSize:'13px', lineHeight:1.9, color:FADE, borderLeft:`2px solid ${RED}`, paddingLeft:'14px' }}>
+                Fill in the details below and we shall respond within 24 hours. Every great collaboration begins with a single message.
+              </p>
+            </div>
+            <div className="rule-h" />
+          </div>
+
+          {/* Two-column layout: form left, info right */}
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 280px', gap:'0', marginTop:'24px', position:'relative', zIndex:1 }} className="grid-2">
+
+            {/* Left — form */}
+            <div style={{ paddingRight:'32px', borderRight:`1px solid ${RULE}` }}>
+              <form action="https://formspree.io/f/mwvwnkow" method="POST" style={{ display:'flex', flexDirection:'column', gap:'20px' }}>
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'20px' }} className="grid-2-form">
+                  <div>
+                    <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Name</label>
+                    <input type="text" name="name" required placeholder="Your full name" style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
+                  </div>
+                  <div>
+                    <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Email</label>
+                    <input type="email" name="email" required placeholder="your@email.com" style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
+                  </div>
+                </div>
+                <div>
+                  <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Type of project</label>
+                  <select name="project_type" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }}>
+                    <option value="">Select one...</option>
+                    <option value="Web Design">Web Design</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                    <option value="App Development">App Development</option>
+                    <option value="Brand Identity">Brand Identity</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Tell us about your project</label>
+                  <textarea name="message" rows={5} required placeholder="Describe your vision, timeline, and any details you'd like to share..." style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', resize:'vertical', boxSizing:'border-box' }} />
+                </div>
+                <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'20px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+                  <span style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', color:FADE }}>ALL FIELDS REQUIRED</span>
+                  <button type="submit"
+                    style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', background:INK, color:PAPER, padding:'16px 40px', border:'none', cursor:'pointer', transition:'background .15s' }}
+                    onMouseEnter={e=>(e.currentTarget.style.background=RED)} onMouseLeave={e=>(e.currentTarget.style.background=INK)}>
+                    Send Enquiry →
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            {/* Right — contact info sidebar */}
+            <div style={{ paddingLeft:'24px' }}>
+              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Direct Contact</div>
+              <div className="rule-thin" style={{ marginBottom:'16px' }} />
+
+              <div style={{ marginBottom:'24px' }}>
+                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Email</div>
+                <a href="mailto:info@truelovecreative.es" style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK, textDecoration:'none', transition:'color .15s' }}
+                  onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>
+                  info@truelovecreative.es
+                </a>
+              </div>
+
+              <div style={{ marginBottom:'24px' }}>
+                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Telephone</div>
+                <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK }}>+971 58 532 4519</span>
+              </div>
+
+              <div style={{ marginBottom:'24px' }}>
+                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Location</div>
+                <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK }}>Dubai, United Arab Emirates</span>
+              </div>
+
+              <div className="rule-thin" style={{ margin:'16px 0' }} />
+
+              <div style={{ padding:'16px', border:`3px double ${INK}`, textAlign:'center' }}>
+                <div style={{ fontFamily:P, fontSize:'16px', fontWeight:900, fontStyle:'italic', color:RED, lineHeight:1.3, marginBottom:'6px' }}>"Every great project<br />starts with a conversation."</div>
+                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE }}>— The Studio</div>
+              </div>
+
+              <div className="rule-thin" style={{ margin:'16px 0' }} />
+              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', color:FADE, lineHeight:2 }}>
+                RESPONSE TIME: 24H<br />
+                LANGUAGES: EN · ES · AR<br />
+                SERVING CLIENTS WORLDWIDE
+              </div>
+            </div>
           </div>
         </section>
 
