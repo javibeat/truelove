@@ -292,7 +292,7 @@ export default function Home() {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 180px', gap:'0', position:'relative', zIndex:1 }} className="grid-2">
 
             {/* Left — work list */}
-            <div className="works-left" style={{ borderRight:`1px solid ${RULE}`, paddingRight:'24px' }}>
+            <div style={{ borderRight:`1px solid ${RULE}`, paddingRight:'24px' }}>
               {projects.map((p, i) => (
                 <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer"
                   style={{ textDecoration:'none', display:'grid', gridTemplateColumns:'28px 52px 1fr auto', gap:'12px', alignItems:'center', padding:'12px 0', borderBottom:`1px solid ${RULE}`, cursor:'crosshair', transition:'background .15s' }}
@@ -321,7 +321,7 @@ export default function Home() {
             </div>
 
             {/* Right — classifieds column */}
-            <div className="works-right" style={{ paddingLeft:'16px' }}>
+            <div style={{ paddingLeft:'16px' }}>
               <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', paddingTop:'12px' }}>Index</div>
               <div style={{ height:'1px', background:RULE, marginBottom:'10px' }} />
               {projects.map(p=>(
@@ -342,7 +342,7 @@ export default function Home() {
             <div className="rule-h" style={{ marginBottom:'10px' }} />
             <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, marginBottom:'10px', textAlign:'center' }}>✦ &nbsp; Portrait Gallery &nbsp; ✦</div>
             <div className="rule-thin" />
-            <div className="portrait-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr 1px 1fr' }}>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr 1px 1fr' }}>
               {projects.slice(0,4).map((p, i) => (
                 <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', color:'inherit', gridColumn: String(i*2+1) }}>
                   <div style={{ padding:'7px 10px 5px', borderBottom:`1px solid ${RULE}` }}>
@@ -373,7 +373,7 @@ export default function Home() {
               <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>On the Record</div>
             </div>
             <div className="rule-h" style={{ marginBottom:'0' }} />
-            <div className="testimonials-grid" style={{ display:'grid', gridTemplateColumns:'1px 1fr 1px 1fr 1px 1fr 1px', marginTop:'0' }}>
+            <div style={{ display:'grid', gridTemplateColumns:'1px 1fr 1px 1fr 1px 1fr 1px', marginTop:'0' }}>
               <div style={{ background:RULE }} />
               <div key="t1" style={{ padding:'28px 24px' }}>
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"True Love Creative understood my brand immediately — and built something I couldn't have imagined myself. My audience felt it straight away."</div>
@@ -510,7 +510,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              <div className="homeagent-img" style={{ position:'relative', width:'min(100%,320px)', aspectRatio:'4/3', flexShrink:0 }}>
+              <div style={{ position:'relative', width:'min(100%,320px)', aspectRatio:'4/3', flexShrink:0 }}>
                 <Image src="/img/portfolios/homeagent.jpg" alt="Home Agent" fill style={{ objectFit:'contain' }} />
               </div>
             </div>
@@ -561,17 +561,48 @@ export default function Home() {
             Let's make<br />something<br /><span style={{ color:RED }}>great.</span>
           </h2>
           <div className="rule-thin" style={{ maxWidth:'400px', margin:'0 auto 32px' }} />
-          <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'12px' }}>
+
+          {/* Contact form */}
+          <form action="https://formspree.io/f/mwvwnkow" method="POST" style={{ maxWidth:'500px', margin:'0 auto', display:'flex', flexDirection:'column', gap:'16px', textAlign:'left' }}>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px' }} className="grid-2-form">
+              <div>
+                <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Name</label>
+                <input type="text" name="name" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
+              </div>
+              <div>
+                <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Email</label>
+                <input type="email" name="email" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
+              </div>
+            </div>
+            <div>
+              <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Type of project</label>
+              <select name="project_type" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }}>
+                <option value="">Select one...</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="App Development">App Development</option>
+                <option value="Brand Identity">Brand Identity</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'6px' }}>Tell us about your project</label>
+              <textarea name="message" rows={4} required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'10px 12px', border:`1px solid ${RULE}`, background:'transparent', color:INK, outline:'none', resize:'vertical', boxSizing:'border-box' }} />
+            </div>
+            <button type="submit"
+              style={{ alignSelf:'center', fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', background:INK, color:PAPER, padding:'16px 40px', border:'none', cursor:'pointer', transition:'background .15s' }}
+              onMouseEnter={e=>(e.currentTarget.style.background=RED)} onMouseLeave={e=>(e.currentTarget.style.background=INK)}>
+              Send Enquiry →
+            </button>
+          </form>
+
+          <div className="rule-thin" style={{ maxWidth:'400px', margin:'32px auto 0' }} />
+          <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'12px', marginTop:'24px' }}>
             <a href="mailto:info@truelovecreative.es" style={{ fontFamily:P, fontSize:'clamp(1rem,2.5vw,1.6rem)', fontWeight:700, fontStyle:'italic', color:INK, textDecoration:'none', transition:'color .15s' }}
               onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>
               info@truelovecreative.es
             </a>
             <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:FADE }}>+971 58 532 4519 · Dubai, UAE</span>
-            <a href="mailto:info@truelovecreative.es"
-              style={{ marginTop:'16px', fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', background:INK, color:PAPER, padding:'16px 40px', textDecoration:'none', transition:'background .15s' }}
-              onMouseEnter={e=>(e.currentTarget.style.background=RED)} onMouseLeave={e=>(e.currentTarget.style.background=INK)}>
-              Send Enquiry →
-            </a>
           </div>
         </section>
 
@@ -583,6 +614,13 @@ export default function Home() {
         </footer>
 
       </div>
+
+      {/* ══ WHATSAPP FLOATING BUTTON ═══════════════════════ */}
+      <a href="https://wa.me/971585324519?text=Hi%20True%20Love%20Creative%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer"
+        style={{ position:'fixed', bottom:'24px', right:'24px', width:'56px', height:'56px', borderRadius:'50%', background:'#25D366', display:'flex', alignItems:'center', justifyContent:'center', boxShadow:'0 4px 12px rgba(0,0,0,0.25)', zIndex:9000, transition:'transform .2s' }}
+        onMouseEnter={e=>(e.currentTarget.style.transform='scale(1.1)')} onMouseLeave={e=>(e.currentTarget.style.transform='scale(1)')}>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
 
       {/* HP animations as global styles */}
       <style>{`
