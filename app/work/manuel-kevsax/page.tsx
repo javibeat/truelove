@@ -6,10 +6,10 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 
 export const metadata: Metadata = {
   title: 'Manuel KevSax — Web Design Case Study | True Love Creative',
-  description: 'How we designed manuelkevsax.com — a luxury web experience for Dubai's premier saxophonist, built for high-end bookings and brand partnerships.',
+  description: 'How we designed manuelkevsax.com — a luxury web experience for Dubai&apos;s premier saxophonist, built for high-end bookings and brand partnerships.',
   openGraph: {
     title: 'Manuel KevSax — Web Design Case Study',
-    description: 'A luxury web experience for Dubai's premier saxophonist.',
+    description: 'A luxury web experience for Dubai&apos;s premier saxophonist.',
     images: ['/img/portfolios/manusax.webp'],
   },
 }
