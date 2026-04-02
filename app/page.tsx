@@ -14,13 +14,13 @@ const PAPER = '#F4EFE0'
 const RULE = 'rgba(26,18,8,0.15)'
 
 const projects = [
-  { id:'I',   name:'Kiko Navarro',   type:'Web Design · 2024',     img:'/img/portfolios/kikonavarro.jpg', url:'https://kikonavarro.es/',       desc:'Legendary DJ & producer.' },
-  { id:'II',  name:'Jessica Morari', type:'Branding & Web · 2023', img:'/img/portfolios/jesslnk.webp',   url:'https://jessicamorari.com/',    desc:'Coaching & wellness platform.' },
-  { id:'III', name:'Javi Beat',      type:'Identity · 2024',       img:'/img/portfolios/javibeat.jpg',    url:'https://javibeat.com/',         desc:'DJ identity from Dubai.' },
-  { id:'IV',  name:'Estrela Photo',  type:'Portfolio · 2023',      img:'/img/portfolios/estrela.jpg',     url:'https://estrela.photo/',        desc:'Photography studio portfolio.' },
-  { id:'V',   name:'Manuel KevSax',  type:'Web Design · 2024',     img:'/img/portfolios/manusax.webp',   url:'https://manuelkevsax.com/',     desc:'Luxury saxophonist booking.' },
-  { id:'VI',  name:'Sergio Trumpet', type:'Portfolio · 2024',      img:'/img/portfolios/sergio.jpg',      url:'https://sergiotrumpetdj.com/', desc:'Professional trumpet player.' },
-  { id:'VII', name:'Julio Cuba',     type:'Identity · 2024',       img:'/img/portfolios/julio.webp',      url:'https://juliocuba.es/',         desc:'Violinist artistic portfolio.' },
+  { id:'I',   name:'Kiko Navarro',   type:'Web Design · 2024',     img:'/img/portfolios/kikonavarro.jpg', url:'https://kikonavarro.es/',       desc:'Legendary DJ & producer.',       slug:'kiko-navarro' },
+  { id:'II',  name:'Jessica Morari', type:'Branding & Web · 2023', img:'/img/portfolios/jesslnk.webp',   url:'https://jessicamorari.com/',    desc:'Coaching & wellness platform.', slug:'jessica-morari' },
+  { id:'III', name:'Javi Beat',      type:'Identity · 2024',       img:'/img/portfolios/javibeat.jpg',    url:'https://javibeat.com/',         desc:'DJ identity from Dubai.',       slug:'javi-beat' },
+  { id:'IV',  name:'Estrela Photo',  type:'Portfolio · 2023',      img:'/img/portfolios/estrela.jpg',     url:'https://estrela.photo/',        desc:'Photography studio portfolio.', slug:'estrela-photo' },
+  { id:'V',   name:'Manuel KevSax',  type:'Web Design · 2024',     img:'/img/portfolios/manusax.webp',   url:'https://manuelkevsax.com/',     desc:'Luxury saxophonist booking.',   slug:'manuel-kevsax' },
+  { id:'VI',  name:'Sergio Trumpet', type:'Portfolio · 2024',      img:'/img/portfolios/sergio.jpg',      url:'https://sergiotrumpetdj.com/', desc:'Professional trumpet player.',  slug:'sergio-trumpet' },
+  { id:'VII', name:'Julio Cuba',     type:'Identity · 2024',       img:'/img/portfolios/julio.webp',      url:'https://juliocuba.es/',         desc:'Violinist artistic portfolio.', slug:'julio-cuba' },
 ]
 
 const graphicSlides = [
@@ -61,12 +61,12 @@ function GraphicCarousel() {
         <div style={{ position:'absolute', top:'-20%', width:'18%', height:'140%', background:'linear-gradient(90deg,transparent,rgba(244,239,224,0.1),transparent)', transform:'skewX(-20deg)', animation:'hp-streak 6s ease-in-out infinite', zIndex:3, pointerEvents:'none' }} />
         {/* caption overlay */}
         <div style={{ position:'absolute', bottom:0, left:0, right:0, padding:'12px', background:'linear-gradient(transparent,rgba(26,18,8,0.7))', zIndex:4 }}>
-          <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.25em', textTransform:'uppercase', color:'rgba(244,239,224,0.6)', marginBottom:'2px' }}>{s.cat}</div>
+          <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', color:'rgba(244,239,224,0.6)', marginBottom:'2px' }}>{s.cat}</div>
           <div style={{ fontFamily:P, fontSize:'16px', fontWeight:700, color:PAPER }}>{s.title}</div>
-          <div style={{ fontFamily:F, fontSize:'11px', fontStyle:'italic', color:'rgba(244,239,224,0.6)' }}>{s.sub}</div>
+          <div style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:'rgba(244,239,224,0.6)' }}>{s.sub}</div>
         </div>
         {/* zoom hint */}
-        <div style={{ position:'absolute', top:'10px', right:'10px', fontFamily:E, fontSize:'7px', letterSpacing:'.15em', color:'rgba(244,239,224,0.4)', zIndex:4 }}>CLICK TO EXPAND</div>
+        <div style={{ position:'absolute', top:'10px', right:'10px', fontFamily:E, fontSize:'10px', letterSpacing:'.15em', color:'rgba(244,239,224,0.4)', zIndex:4 }}>CLICK TO EXPAND</div>
       </div>
 
       {/* Thumbnails */}
@@ -85,14 +85,14 @@ function GraphicCarousel() {
             <Image src={graphicSlides[lightbox].img} alt={graphicSlides[lightbox].title} width={1200} height={642} sizes="90vw" style={{ maxWidth:'90vw', maxHeight:'85vh', objectFit:'contain', display:'block', width:'auto', height:'auto' }} />
             <div style={{ textAlign:'center', marginTop:'12px' }}>
               <div style={{ fontFamily:P, fontSize:'18px', fontWeight:700, color:PAPER }}>{graphicSlides[lightbox].title}</div>
-              <div style={{ fontFamily:F, fontSize:'13px', fontStyle:'italic', color:'rgba(244,239,224,0.5)', marginTop:'4px' }}>{graphicSlides[lightbox].sub}</div>
+              <div style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:'rgba(244,239,224,0.5)', marginTop:'4px' }}>{graphicSlides[lightbox].sub}</div>
             </div>
             {/* Prev / Next */}
             {[[-1,'←'],[1,'→']].map(([dir, arrow]) => (
               <button key={String(dir)} onClick={() => setLightbox(lb => ((lb! + Number(dir) + graphicSlides.length) % graphicSlides.length))}
                 style={{ position:'absolute', top:'50%', transform:'translateY(-50%)', [dir === -1 ? 'left' : 'right']:'-60px', background:'none', border:`1px solid ${FADE}`, color:PAPER, fontFamily:E, fontSize:'18px', width:'44px', height:'44px', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center' }}>{arrow}</button>
             ))}
-            <button onClick={() => setLightbox(null)} style={{ position:'absolute', top:'-40px', right:0, background:'none', border:'none', color:PAPER, fontFamily:E, fontSize:'11px', letterSpacing:'.2em', cursor:'pointer' }}>CLOSE ✕</button>
+            <button onClick={() => setLightbox(null)} style={{ position:'absolute', top:'-40px', right:0, background:'none', border:'none', color:PAPER, fontFamily:E, fontSize:'14px', letterSpacing:'.2em', cursor:'pointer' }}>CLOSE ✕</button>
           </div>
         </div>
       )}
@@ -147,9 +147,9 @@ export default function Home() {
         {/* ══ MASTHEAD ══════════════════════════════════════════ */}
         <header style={{ padding:'32px 0 16px', textAlign:'center' }}>
           <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'12px', flexWrap:'wrap', gap:'6px' }}>
-            <span style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.2em', color:FADE }}>EST. MMXV · DUBAI, U.A.E.</span>
-            <span style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.15em', color:FADE }}>WEB · GRAPHIC · APP</span>
-            <span style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.2em', color:FADE }}>VOL. XI · FREE OF CHARGE</span>
+            <span style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE }}>EST. MMXV · DUBAI, U.A.E.</span>
+            <span style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', color:FADE }}>WEB · GRAPHIC · APP</span>
+            <span style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE }}>VOL. XI · FREE OF CHARGE</span>
           </div>
           <div className="rule-h2" />
           <div style={{ padding:'20px 0 16px' }}>
@@ -163,18 +163,18 @@ export default function Home() {
           </div>
           <div className="rule-h" />
           <nav style={{ display:'flex', justifyContent:'center', gap:'clamp(16px,4vw,48px)', padding:'10px 0', flexWrap:'wrap' }}>
-            {[['Selected Works','#selected'],['Graphic Design','#graphic'],['App Development','#app'],['About the Studio','#about'],['Contact Us','#contact']].map(([l,h]) => (
-              <a key={l} href={h} style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.25em', textTransform:'uppercase', color:INK, textDecoration:'none' }}
+            {[['Selected Works','#selected'],['Graphic Design','#graphic'],['App Development','#app'],['About the Studio','/about'],['Contact Us','#contact']].map(([l,h]) => (
+              <a key={l} href={h} style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', color:INK, textDecoration:'none' }}
                 onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>{l}</a>
             ))}
           </nav>
           <div className="rule-h" />
           <div style={{ display:'flex', justifyContent:'space-between', padding:'6px 0', alignItems:'center', flexWrap:'wrap', gap:'6px' }}>
-            <span style={{ fontFamily:E, fontSize:'8px', color:FADE, letterSpacing:'.15em' }}>
+            <span style={{ fontFamily:E, fontSize:'10px', color:FADE, letterSpacing:'.15em' }}>
               {new Date().toLocaleDateString('en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase()}
             </span>
-            <span style={{ fontFamily:E, fontSize:'8px', color:RED, letterSpacing:'.2em' }}>✦ TRUELOVECREATIVE.ES ✦</span>
-            <span style={{ fontFamily:E, fontSize:'8px', color:FADE, letterSpacing:'.15em' }}>PRICE: FREE</span>
+            <span style={{ fontFamily:E, fontSize:'10px', color:RED, letterSpacing:'.2em' }}>✦ TRUELOVECREATIVE.ES ✦</span>
+            <span style={{ fontFamily:E, fontSize:'10px', color:FADE, letterSpacing:'.15em' }}>PRICE: FREE</span>
           </div>
           <div className="rule-thin" />
         </header>
@@ -184,48 +184,49 @@ export default function Home() {
 
           {/* Left */}
           <div style={{ padding:'0 20px 0 0', borderRight:`1px solid ${RULE}` }}>
-            <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Studio</div>
+            <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Studio</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
-            <p className="fell reveal" style={{ fontFamily:F, fontSize:'13px', lineHeight:1.9, color:INK }}>
+            <p className="fell reveal" style={{ fontFamily:F, fontSize:'14px', lineHeight:1.9, color:INK }}>
               Founded in <strong>2015</strong>, True Love Creative has quietly become one of the most trusted design studios operating out of <strong>Dubai, UAE.</strong>
             </p>
             <div style={{ margin:'16px 0', textAlign:'center' }}>
               <span className="stamp">Est. 2015</span>
             </div>
-            <p className="fell reveal" style={{ fontFamily:F, fontSize:'13px', lineHeight:1.9, color:INK, marginTop:'12px' }}>
+            <p className="fell reveal" style={{ fontFamily:F, fontSize:'14px', lineHeight:1.9, color:INK, marginTop:'12px' }}>
               We work with artists, startups, and brands who believe that design is not decoration — it is decision.
             </p>
             <div style={{ marginTop:'20px', padding:'12px', border:`1px solid ${RULE}`, background:'rgba(139,26,26,0.04)' }}>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Services</div>
-              {['Web Design','Graphic Design','App Development','Brand Identity','Creative Direction'].map(s=>(
-                <div key={s} style={{ fontFamily:F, fontSize:'12px', color:INK, borderBottom:`1px solid ${RULE}`, padding:'5px 0', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Services</div>
+              {[['Web Design','/services/web-design'],['Graphic Design','/services/graphic-design'],['App Development','/services/app-development'],['Brand Identity','/services/branding'],['Creative Direction','/services/branding']].map(([s,href])=>(
+                <a key={s} href={href} style={{ fontFamily:F, fontSize:'14px', color:INK, borderBottom:`1px solid ${RULE}`, padding:'5px 0', display:'flex', justifyContent:'space-between', alignItems:'center', textDecoration:'none', transition:'color .15s' }}
+                  onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>
                   {s}<span style={{ color:RED }}>→</span>
-                </div>
+                </a>
               ))}
             </div>
           </div>
 
           {/* Centre — hero HP photo with link */}
           <div style={{ padding:'0 24px' }}>
-            <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>Featured — Kiko Navarro</div>
+            <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>Featured — Kiko Navarro</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
             <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', display:'block' }}>
               <div className="hp-photo" style={{ width:'100%', aspectRatio:'4/3', position:'relative', marginBottom:'16px' }}>
                 <Image src="/img/portfolios/kikonavarro.jpg" alt="Kiko Navarro" fill style={{ objectFit:'cover' }} />
               </div>
             </a>
-            <p className="fell dropcap reveal" style={{ fontFamily:F, fontSize:'15px', lineHeight:1.85, color:INK, textAlign:'justify' }}>
+            <p className="fell dropcap reveal" style={{ fontFamily:F, fontSize:'16px', lineHeight:1.85, color:INK, textAlign:'justify' }}>
               Kiko Navarro — legendary DJ, musician and producer. His new website, crafted entirely by True Love Creative, stands as testament to what digital presence ought to be: clean, powerful, and unmistakably him.
             </p>
             <div style={{ marginTop:'12px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-              <div style={{ fontFamily:E, fontSize:'9px', color:FADE, letterSpacing:'.1em', fontStyle:'italic' }}>— Web Design · Dubai, 2024</div>
-              <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer" style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, textDecoration:'none' }}>Visit Site →</a>
+              <div style={{ fontFamily:E, fontSize:'10px', color:FADE, letterSpacing:'.1em', fontStyle:'italic' }}>— Web Design · Dubai, 2024</div>
+              <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer" style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, textDecoration:'none' }}>Visit Site →</a>
             </div>
           </div>
 
           {/* Right */}
           <div style={{ padding:'0 0 0 20px', borderLeft:`1px solid ${RULE}` }}>
-            <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Latest</div>
+            <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Latest</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
             {[
               { img:'/img/portfolios/jesslnk.webp', name:'Jessica Morari', type:'Branding & Web', url:'https://jessicamorari.com/' },
@@ -240,16 +241,16 @@ export default function Home() {
                 <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline' }}>
                   <div>
                     <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:INK }}>{p.name}</div>
-                    <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE }}>{p.type}</div>
+                    <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE }}>{p.type}</div>
                   </div>
-                  <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily:E, fontSize:'8px', color:RED, textDecoration:'none', letterSpacing:'.1em' }}>→</a>
+                  <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily:E, fontSize:'10px', color:RED, textDecoration:'none', letterSpacing:'.1em' }}>→</a>
                 </div>
               </div>
             ))}
             <div className="rule-thin" style={{ margin:'16px 0' }} />
             <div style={{ padding:'12px', border:`3px double ${INK}`, textAlign:'center' }}>
               <div style={{ fontFamily:P, fontSize:'18px', fontWeight:900, fontStyle:'italic', color:RED, lineHeight:1.2, marginBottom:'8px' }}>"We don't do average."</div>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE }}>— The Studio Creed</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE }}>— The Studio Creed</div>
             </div>
           </div>
         </section>
@@ -258,7 +259,7 @@ export default function Home() {
         <div style={{ borderTop:`2px solid ${INK}`, borderBottom:`2px solid ${INK}`, padding:'8px 0', overflow:'hidden', background:INK }}>
           <div className="marquee">
             {Array(3).fill(['SELECTED WORKS','✦','KIKO NAVARRO','✦','JESSICA MORARI','✦','JAVI BEAT','✦','ESTRELA PHOTO','✦','MANUEL KEVSAX','✦','JULIO CUBA','✦','NIBANGO','✦']).flat().map((t,i)=>(
-              <span key={i} style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.3em', textTransform:'uppercase', padding:'0 20px', color: t==='✦' ? RED : 'rgba(244,239,224,0.5)' }}>{t}</span>
+              <span key={i} style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', padding:'0 20px', color: t==='✦' ? RED : 'rgba(244,239,224,0.5)' }}>{t}</span>
             ))}
           </div>
         </div>
@@ -272,16 +273,16 @@ export default function Home() {
           {/* Header — full width with thick rule top + bottom */}
           <div style={{ position:'relative', zIndex:1 }}>
             <div style={{ display:'grid', gridTemplateColumns:'auto 1fr auto', gap:'16px', alignItems:'center', marginBottom:'10px' }}>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, whiteSpace:'nowrap' }}>Section II</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, whiteSpace:'nowrap' }}>Section II</div>
               <div style={{ height:'1px', background:RULE }} />
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>MMXXIII — MMXXIV</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>MMXXIII — MMXXIV</div>
             </div>
             <div className="rule-h" />
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'32px', padding:'16px 0 12px', alignItems:'end' }} className="grid-2">
               <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(2rem,5vw,4.5rem)', fontWeight:900, letterSpacing:'-.02em', lineHeight:.88 }}>
                 Selected<br /><em style={{ color:RED }}>Works</em>
               </h2>
-              <p className="fell" style={{ fontFamily:F, fontSize:'13px', lineHeight:1.9, color:FADE, borderLeft:`2px solid ${RED}`, paddingLeft:'14px' }}>
+              <p className="fell" style={{ fontFamily:F, fontSize:'14px', lineHeight:1.9, color:FADE, borderLeft:`2px solid ${RED}`, paddingLeft:'14px' }}>
                 Seven projects. Seven stories. Each one built with the same conviction — that good design is the difference between being remembered and being ignored.
               </p>
             </div>
@@ -294,20 +295,20 @@ export default function Home() {
             {/* Left — work list */}
             <div style={{ borderRight:`1px solid ${RULE}`, paddingRight:'24px' }}>
               {projects.map((p, i) => (
-                <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer"
+                <a key={p.id} href={`/work/${p.slug}`}
                   style={{ textDecoration:'none', display:'grid', gridTemplateColumns:'28px 52px 1fr auto', gap:'12px', alignItems:'center', padding:'12px 0', borderBottom:`1px solid ${RULE}`, cursor:'crosshair', transition:'background .15s' }}
                   onMouseEnter={e=>(e.currentTarget.style.background='rgba(139,26,26,0.04)')}
                   onMouseLeave={e=>(e.currentTarget.style.background='transparent')}
                 >
-                  <span style={{ fontFamily:E, fontSize:'8px', color:FADE, letterSpacing:'.08em', fontStyle:'italic' }}>{p.id}</span>
+                  <span style={{ fontFamily:E, fontSize:'10px', color:FADE, letterSpacing:'.08em', fontStyle:'italic' }}>{p.id}</span>
                   <div style={{ width:'52px', height:'38px', position:'relative', overflow:'hidden', flexShrink:0 }}>
                     <Image src={p.img} alt={p.name} fill style={{ objectFit:'cover', filter:'grayscale(50%)' }} />
                   </div>
                   <div>
                     <div style={{ fontFamily:P, fontSize:'clamp(1rem,2vw,1.8rem)', fontWeight:700, color:INK, lineHeight:1.1 }}>{p.name}</div>
-                    <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, marginTop:'2px' }}>{p.type}</div>
+                    <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, marginTop:'2px' }}>{p.type}</div>
                   </div>
-                  <span style={{ fontSize:'13px', color:FADE, transition:'all .15s' }} className="wr-arr">↗</span>
+                  <span style={{ fontSize:'14px', color:FADE, transition:'all .15s' }} className="wr-arr">→</span>
                 </a>
               ))}
 
@@ -316,23 +317,23 @@ export default function Home() {
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,2.2vw,1.5rem)', fontWeight:900, fontStyle:'italic', color:RED, lineHeight:1.3 }}>
                   "Good design is the difference between being remembered and being ignored."
                 </div>
-                <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.25em', textTransform:'uppercase', color:FADE, marginTop:'8px' }}>— Studio Philosophy</div>
+                <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', color:FADE, marginTop:'8px' }}>— Studio Philosophy</div>
               </div>
             </div>
 
             {/* Right — classifieds column */}
             <div style={{ paddingLeft:'16px' }}>
-              <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', paddingTop:'12px' }}>Index</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', paddingTop:'12px' }}>Index</div>
               <div style={{ height:'1px', background:RULE, marginBottom:'10px' }} />
               {projects.map(p=>(
                 <div key={p.id} style={{ padding:'7px 0', borderBottom:`1px solid ${RULE}` }}>
-                  <div style={{ fontFamily:P, fontSize:'12px', fontWeight:700, color:INK, lineHeight:1.2 }}>{p.name}</div>
-                  <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.1em', textTransform:'uppercase', color:FADE, marginTop:'2px' }}>{p.type.split('·')[0].trim()}</div>
+                  <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:INK, lineHeight:1.2 }}>{p.name}</div>
+                  <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.1em', textTransform:'uppercase', color:FADE, marginTop:'2px' }}>{p.type.split('·')[0].trim()}</div>
                 </div>
               ))}
               <div style={{ marginTop:'14px', padding:'10px', border:`1px solid ${RULE}`, background:'rgba(139,26,26,0.04)' }}>
-                <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'4px' }}>Studio</div>
-                <div style={{ fontFamily:F, fontSize:'11px', fontStyle:'italic', color:INK, lineHeight:1.6 }}>Web · Graphic<br />App · Brand<br />Est. 2015</div>
+                <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'4px' }}>Studio</div>
+                <div style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK, lineHeight:1.6 }}>Web · Graphic<br />App · Brand<br />Est. 2015</div>
               </div>
             </div>
           </div>
@@ -340,19 +341,19 @@ export default function Home() {
           {/* Photo strip — broadsheet style */}
           <div style={{ marginTop:'24px', position:'relative', zIndex:1 }}>
             <div className="rule-h" style={{ marginBottom:'10px' }} />
-            <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, marginBottom:'10px', textAlign:'center' }}>✦ &nbsp; Portrait Gallery &nbsp; ✦</div>
+            <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, marginBottom:'10px', textAlign:'center' }}>✦ &nbsp; Portrait Gallery &nbsp; ✦</div>
             <div className="rule-thin" />
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr 1px 1fr' }}>
               {projects.slice(0,4).map((p, i) => (
                 <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', color:'inherit', gridColumn: String(i*2+1) }}>
                   <div style={{ padding:'7px 10px 5px', borderBottom:`1px solid ${RULE}` }}>
-                    <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE }}>{p.type.split('·')[0].trim()}</div>
+                    <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE }}>{p.type.split('·')[0].trim()}</div>
                   </div>
                   <div className="hp-photo" style={{ position:'relative', aspectRatio:'3/4' }}>
                     <Image src={p.img} alt={p.name} fill style={{ objectFit:'cover' }} />
                   </div>
                   <div style={{ padding:'7px 10px', borderTop:`1px solid ${RULE}` }}>
-                    <div style={{ fontFamily:P, fontSize:'13px', fontWeight:700, color:INK, lineHeight:1.2 }}>{p.name}</div>
+                    <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:INK, lineHeight:1.2 }}>{p.name}</div>
                     <div style={{ fontFamily:F, fontSize:'10px', fontStyle:'italic', color:FADE, marginTop:'2px', lineHeight:1.5 }}>{p.desc}</div>
                   </div>
                 </a>
@@ -368,9 +369,9 @@ export default function Home() {
           <div style={{ position:'absolute', top:'-10px', left:'-8px', fontFamily:P, fontSize:'clamp(100px,15vw,200px)', fontWeight:900, color:'rgba(26,18,8,0.04)', lineHeight:1, pointerEvents:'none', userSelect:'none' }}>"</div>
           <div style={{ position:'relative', zIndex:1 }}>
             <div style={{ display:'grid', gridTemplateColumns:'auto 1fr auto', gap:'16px', alignItems:'center', marginBottom:'10px' }}>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, whiteSpace:'nowrap' }}>Client Voices</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, whiteSpace:'nowrap' }}>Client Voices</div>
               <div style={{ height:'1px', background:RULE }} />
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>On the Record</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>On the Record</div>
             </div>
             <div className="rule-h" style={{ marginBottom:'0' }} />
             <div style={{ display:'grid', gridTemplateColumns:'1px 1fr 1px 1fr 1px 1fr 1px', marginTop:'0' }}>
@@ -379,7 +380,7 @@ export default function Home() {
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"True Love Creative understood my brand immediately — and built something I couldn't have imagined myself. My audience felt it straight away."</div>
                 <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'12px' }}>
                   <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:RED }}>Kiko Navarro</div>
-                  <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>DJ & Producer · kikonavarro.es</div>
+                  <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>DJ & Producer · kikonavarro.es</div>
                 </div>
               </div>
               <div key="r1" style={{ background:RULE }} />
@@ -387,7 +388,7 @@ export default function Home() {
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"Working with TLC was the first time I felt truly heard by a design studio. The result speaks for itself — my clients book faster and trust me more."</div>
                 <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'12px' }}>
                   <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:RED }}>Jessica Morari</div>
-                  <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>Wellness Coach · jessicamorari.com</div>
+                  <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>Wellness Coach · jessicamorari.com</div>
                 </div>
               </div>
               <div key="r2" style={{ background:RULE }} />
@@ -395,7 +396,7 @@ export default function Home() {
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"They didn't just build a portfolio — they built a statement. Clean, fast, and unmistakably mine. My photography finally has a home worthy of it."</div>
                 <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'12px' }}>
                   <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:RED }}>Estrela Photo</div>
-                  <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>Photography Studio · estrela.photo</div>
+                  <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>Photography Studio · estrela.photo</div>
                 </div>
               </div>
               <div style={{ background:RULE }} />
@@ -408,7 +409,7 @@ export default function Home() {
         <section id="graphic" style={{ padding:'32px 0', borderTop:`4px double ${INK}` }}>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'32px' }} className="grid-2">
             <div>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Section III</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Section III</div>
               <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(2rem,5vw,4rem)', fontWeight:900, fontStyle:'italic', lineHeight:1, marginBottom:'16px' }}>
                 Graphic<br /><span style={{ color:RED }}>Design</span>
               </h2>
@@ -421,9 +422,9 @@ export default function Home() {
                   <div key={g.title} style={{ padding:'10px 0', borderBottom:`1px solid ${RULE}`, display:'flex', justifyContent:'space-between', alignItems:'baseline' }}>
                     <div>
                       <div style={{ fontFamily:P, fontSize:'18px', fontWeight:700, color:INK }}>{g.title}</div>
-                      <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE }}>{g.cat}</div>
+                      <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE }}>{g.cat}</div>
                     </div>
-                    <div style={{ fontFamily:F, fontSize:'12px', fontStyle:'italic', color:FADE, textAlign:'right', maxWidth:'140px' }}>{g.sub}</div>
+                    <div style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:FADE, textAlign:'right', maxWidth:'140px' }}>{g.sub}</div>
                   </div>
                 ))}
               </div>
@@ -431,7 +432,7 @@ export default function Home() {
 
             {/* Graphic carousel with lightbox */}
             <div>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Graphic Works · Click to expand</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Graphic Works · Click to expand</div>
               <GraphicCarousel />
             </div>
           </div>
@@ -439,7 +440,7 @@ export default function Home() {
 
         {/* ══ APP — NIBANGO ══════════════════════════════════════ */}
         <section id="app" style={{ borderTop:`4px double ${INK}`, padding:'32px 0' }}>
-          <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>Section IV · App Development</div>
+          <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>Section IV · App Development</div>
           <div className="rule-thin" style={{ marginBottom:'24px' }} />
 
           <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr', gap:'32px' }} className="grid-2">
@@ -448,7 +449,7 @@ export default function Home() {
               <h2 style={{ fontFamily:IB, fontSize:'clamp(3.5rem,10vw,10rem)', fontWeight:400, lineHeight:.85, letterSpacing:'-.01em', marginBottom:'16px', color:INK }}>
                 nibango
               </h2>
-              <div style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'16px' }}>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'16px' }}>
                 Live · iOS · Android · Web · Zero Commission
               </div>
               <div className="cols-2">
@@ -461,7 +462,7 @@ export default function Home() {
                 {[['6','Categories'],['4','Pricing Models'],['3','Platforms'],['0%','Commission']].map(([n,l])=>(
                   <div key={l} style={{ textAlign:'center', borderRight:`1px solid ${RULE}`, paddingRight:'8px' }}>
                     <div style={{ fontFamily:P, fontSize:'2.5rem', fontWeight:900, color:RED, lineHeight:1 }}>{n}</div>
-                    <div style={{ fontFamily:E, fontSize:'7px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'4px' }}>{l}</div>
+                    <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'4px' }}>{l}</div>
                   </div>
                 ))}
               </div>
@@ -474,7 +475,7 @@ export default function Home() {
 
             {/* Nibango carousel */}
             <div>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>App Screens</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>App Screens</div>
               <NibangoCarousel />
             </div>
           </div>
@@ -521,7 +522,7 @@ export default function Home() {
         <section id="about" style={{ borderTop:`4px double ${INK}`, padding:'32px 0' }}>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 2px 1fr', gap:'32px', alignItems:'start' }} className="grid-2">
             <div>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>About the Studio</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>About the Studio</div>
               <div className="rule-thin" style={{ marginBottom:'16px' }} />
               <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(2rem,4vw,3.5rem)', fontWeight:900, lineHeight:.9, marginBottom:'24px' }}>
                 Design with<br /><em style={{ color:RED }}>conviction.</em>
@@ -536,19 +537,19 @@ export default function Home() {
             </div>
             <div style={{ background:RULE, alignSelf:'stretch' }} className="hide-mobile" />
             <div>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Studio Facts</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Studio Facts</div>
               <div className="rule-thin" style={{ marginBottom:'0' }} />
               {[['Founded','2015'],['Headquarters','Dubai, UAE'],['Clients','Musicians · Brands · Startups'],['Services','Web · Graphic · App'],['Languages','ES · EN · AR'],['Email','info@truelovecreative.es'],['Phone','+971 58 532 4519']].map(([l,v])=>(
                 <div key={l} style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', padding:'10px 0', borderBottom:`1px solid ${RULE}` }}>
-                  <span style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE }}>{l}</span>
-                  <span style={{ fontFamily:F, fontSize:'13px', fontStyle:'italic', color:INK, textAlign:'right', maxWidth:'200px' }}>{v}</span>
+                  <span style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE }}>{l}</span>
+                  <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK, textAlign:'right', maxWidth:'200px' }}>{v}</span>
                 </div>
               ))}
               <div style={{ marginTop:'24px', padding:'16px', border:`1px solid ${RULE}`, background:`rgba(139,26,26,0.03)` }}>
                 <div style={{ fontFamily:P, fontSize:'1.1rem', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.5 }}>
                   "We don't do average.<br />We do work we're proud to sign."
                 </div>
-                <div style={{ fontFamily:E, fontSize:'8px', color:FADE, marginTop:'8px', letterSpacing:'.15em' }}>— True Love Creative, Est. 2015</div>
+                <div style={{ fontFamily:E, fontSize:'10px', color:FADE, marginTop:'8px', letterSpacing:'.15em' }}>— True Love Creative, Est. 2015</div>
               </div>
             </div>
           </div>
@@ -556,7 +557,7 @@ export default function Home() {
 
         {/* ══ CONTACT — CTA ══════════════════════════════════════ */}
         <section id="contact" style={{ borderTop:`4px double ${INK}`, padding:'32px 0 0', textAlign:'center' }}>
-          <div style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.4em', textTransform:'uppercase', color:FADE, marginBottom:'16px' }}>✦ &nbsp; Commissions Open &nbsp; ✦</div>
+          <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.4em', textTransform:'uppercase', color:FADE, marginBottom:'16px' }}>✦ &nbsp; Commissions Open &nbsp; ✦</div>
           <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(3.5rem,13vw,13rem)', fontWeight:900, fontStyle:'italic', lineHeight:.82, color:INK, letterSpacing:'-.03em', marginBottom:'24px' }}>
             Let's make<br />something<br /><span style={{ color:RED }}>great.</span>
           </h2>
@@ -571,16 +572,16 @@ export default function Home() {
           {/* Section header */}
           <div style={{ position:'relative', zIndex:1 }}>
             <div style={{ display:'grid', gridTemplateColumns:'auto 1fr auto', gap:'16px', alignItems:'center', marginBottom:'10px' }}>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, whiteSpace:'nowrap' }}>Section VII</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, whiteSpace:'nowrap' }}>Section VII</div>
               <div style={{ height:'1px', background:RULE }} />
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>ENQUIRIES</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>ENQUIRIES</div>
             </div>
             <div className="rule-h" />
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'32px', padding:'16px 0 12px', alignItems:'end' }} className="grid-2">
               <h2 className="playfair" style={{ fontFamily:P, fontSize:'clamp(2rem,5vw,4.5rem)', fontWeight:900, letterSpacing:'-.02em', lineHeight:.88 }}>
                 Start Your<br /><em style={{ color:RED }}>Project</em>
               </h2>
-              <p className="fell" style={{ fontFamily:F, fontSize:'13px', lineHeight:1.9, color:FADE, borderLeft:`2px solid ${RED}`, paddingLeft:'14px' }}>
+              <p className="fell" style={{ fontFamily:F, fontSize:'14px', lineHeight:1.9, color:FADE, borderLeft:`2px solid ${RED}`, paddingLeft:'14px' }}>
                 Fill in the details below and we shall respond within 24 hours. Every great collaboration begins with a single message.
               </p>
             </div>
@@ -595,16 +596,16 @@ export default function Home() {
               <form action="https://formspree.io/f/mwvwnkow" method="POST" style={{ display:'flex', flexDirection:'column', gap:'20px' }}>
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'20px' }} className="grid-2-form">
                   <div>
-                    <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Name</label>
+                    <label style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Name</label>
                     <input type="text" name="name" required placeholder="Your full name" style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
                   </div>
                   <div>
-                    <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Email</label>
+                    <label style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Email</label>
                     <input type="email" name="email" required placeholder="your@email.com" style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }} />
                   </div>
                 </div>
                 <div>
-                  <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Type of project</label>
+                  <label style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Type of project</label>
                   <select name="project_type" required style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', boxSizing:'border-box' }}>
                     <option value="">Select one...</option>
                     <option value="Web Design">Web Design</option>
@@ -615,11 +616,11 @@ export default function Home() {
                   </select>
                 </div>
                 <div>
-                  <label style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Tell us about your project</label>
+                  <label style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Tell us about your project</label>
                   <textarea name="message" rows={5} required placeholder="Describe your vision, timeline, and any details you'd like to share..." style={{ width:'100%', fontFamily:F, fontSize:'14px', padding:'12px 14px', border:`1px solid ${RULE}`, borderBottom:`2px solid ${INK}`, background:'transparent', color:INK, outline:'none', resize:'vertical', boxSizing:'border-box' }} />
                 </div>
                 <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'20px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                  <span style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', color:FADE }}>ALL FIELDS REQUIRED</span>
+                  <span style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', color:FADE }}>ALL FIELDS REQUIRED</span>
                   <button type="submit"
                     style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', background:INK, color:PAPER, padding:'16px 40px', border:'none', cursor:'pointer', transition:'background .15s' }}
                     onMouseEnter={e=>(e.currentTarget.style.background=RED)} onMouseLeave={e=>(e.currentTarget.style.background=INK)}>
@@ -631,11 +632,11 @@ export default function Home() {
 
             {/* Right — contact info sidebar */}
             <div style={{ paddingLeft:'24px' }}>
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Direct Contact</div>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Direct Contact</div>
               <div className="rule-thin" style={{ marginBottom:'16px' }} />
 
               <div style={{ marginBottom:'24px' }}>
-                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Email</div>
+                <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Email</div>
                 <a href="mailto:info@truelovecreative.es" style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK, textDecoration:'none', transition:'color .15s' }}
                   onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>
                   info@truelovecreative.es
@@ -643,17 +644,17 @@ export default function Home() {
               </div>
 
               <div style={{ marginBottom:'24px' }}>
-                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Telephone</div>
+                <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Telephone</div>
                 <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK }}>+971 58 532 4519</span>
               </div>
 
               <div style={{ marginBottom:'24px' }}>
-                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Location</div>
+                <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Location</div>
                 <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK }}>Dubai, United Arab Emirates</span>
               </div>
 
               <div style={{ marginBottom:'24px' }}>
-                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Instagram</div>
+                <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Instagram</div>
                 <a href="https://www.instagram.com/truelove.creative" target="_blank" rel="noopener noreferrer" style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK, textDecoration:'none', transition:'color .15s' }}
                   onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>
                   @truelove.creative
@@ -664,11 +665,11 @@ export default function Home() {
 
               <div style={{ padding:'16px', border:`3px double ${INK}`, textAlign:'center' }}>
                 <div style={{ fontFamily:P, fontSize:'16px', fontWeight:900, fontStyle:'italic', color:RED, lineHeight:1.3, marginBottom:'6px' }}>"Every great project<br />starts with a conversation."</div>
-                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', color:FADE }}>— The Studio</div>
+                <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE }}>— The Studio</div>
               </div>
 
               <div className="rule-thin" style={{ margin:'16px 0' }} />
-              <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', color:FADE, lineHeight:2 }}>
+              <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', color:FADE, lineHeight:2 }}>
                 RESPONSE TIME: 24H<br />
                 LANGUAGES: EN · ES · AR<br />
                 SERVING CLIENTS WORLDWIDE
@@ -680,8 +681,8 @@ export default function Home() {
         {/* ══ FOOTER ════════════════════════════════════════════ */}
         <footer style={{ borderTop:`2px solid ${INK}`, padding:'16px 0', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:'8px' }}>
           <span style={{ fontFamily:P, fontSize:'14px', fontWeight:900, fontStyle:'italic', color:INK }}>True Love Creative</span>
-          <span style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE }}>© 2015–2026 · All Rights Reserved · Dubai, UAE</span>
-          <span style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.15em', color:FADE }}>TRUELOVECREATIVE.ES</span>
+          <span style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE }}>© 2015–2026 · All Rights Reserved · Dubai, UAE</span>
+          <span style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', color:FADE }}>TRUELOVECREATIVE.ES</span>
         </footer>
 
       </div>
