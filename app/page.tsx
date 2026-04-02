@@ -210,7 +210,7 @@ export default function Home() {
           <div style={{ padding:'0 24px' }}>
             <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>Featured — Kiko Navarro</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
-            <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', display:'block' }}>
+            <a href="/work/kiko-navarro" style={{ textDecoration:'none', display:'block' }}>
               <div className="hp-photo" style={{ width:'100%', aspectRatio:'4/3', position:'relative', marginBottom:'16px' }}>
                 <Image src="/img/portfolios/kikonavarro.jpg" alt="Kiko Navarro" fill style={{ objectFit:'cover' }} />
               </div>
@@ -220,7 +220,7 @@ export default function Home() {
             </p>
             <div style={{ marginTop:'12px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
               <div style={{ fontFamily:E, fontSize:'10px', color:FADE, letterSpacing:'.1em', fontStyle:'italic' }}>— Web Design · Dubai, 2024</div>
-              <a href="https://kikonavarro.es/" target="_blank" rel="noopener noreferrer" style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, textDecoration:'none' }}>Visit Site →</a>
+              <a href="/work/kiko-navarro" style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, textDecoration:'none' }}>Read Case Study →</a>
             </div>
           </div>
 
@@ -229,11 +229,11 @@ export default function Home() {
             <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Latest</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
             {[
-              { img:'/img/portfolios/jesslnk.webp', name:'Jessica Morari', type:'Branding & Web', url:'https://jessicamorari.com/' },
-              { img:'/img/portfolios/javibeat.jpg',  name:'Javi Beat',      type:'Identity',      url:'https://javibeat.com/' },
+              { img:'/img/portfolios/jesslnk.webp', name:'Jessica Morari', type:'Branding & Web', slug:'jessica-morari' },
+              { img:'/img/portfolios/javibeat.jpg',  name:'Javi Beat',      type:'Identity',      slug:'javi-beat' },
             ].map(p=>(
               <div key={p.name} style={{ marginBottom:'20px' }}>
-                <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ display:'block', textDecoration:'none' }}>
+                <a href={`/work/${p.slug}`} style={{ display:'block', textDecoration:'none' }}>
                   <div className="hp-photo" style={{ width:'100%', aspectRatio:'3/2', position:'relative', marginBottom:'8px' }}>
                     <Image src={p.img} alt={p.name} fill style={{ objectFit:'cover', filter:'grayscale(20%)' }} />
                   </div>
@@ -243,7 +243,7 @@ export default function Home() {
                     <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:INK }}>{p.name}</div>
                     <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE }}>{p.type}</div>
                   </div>
-                  <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily:E, fontSize:'10px', color:RED, textDecoration:'none', letterSpacing:'.1em' }}>→</a>
+                  <a href={`/work/${p.slug}`} style={{ fontFamily:E, fontSize:'10px', color:RED, textDecoration:'none', letterSpacing:'.1em' }}>→</a>
                 </div>
               </div>
             ))}
