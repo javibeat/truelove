@@ -78,6 +78,7 @@ const jsonLd = {
   },
   knowsLanguage: ["Spanish", "English", "Arabic"],
   serviceType: ["Web Design", "Graphic Design", "App Development", "Brand Identity", "Creative Direction"],
+  sameAs: ["https://www.instagram.com/truelove.creative"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

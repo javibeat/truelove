@@ -652,6 +652,14 @@ export default function Home() {
                 <span style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK }}>Dubai, United Arab Emirates</span>
               </div>
 
+              <div style={{ marginBottom:'24px' }}>
+                <div style={{ fontFamily:E, fontSize:'8px', letterSpacing:'.2em', textTransform:'uppercase', color:RED, marginBottom:'8px' }}>Instagram</div>
+                <a href="https://www.instagram.com/truelove.creative" target="_blank" rel="noopener noreferrer" style={{ fontFamily:F, fontSize:'14px', fontStyle:'italic', color:INK, textDecoration:'none', transition:'color .15s' }}
+                  onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>
+                  @truelove.creative
+                </a>
+              </div>
+
               <div className="rule-thin" style={{ margin:'16px 0' }} />
 
               <div style={{ padding:'16px', border:`3px double ${INK}`, textAlign:'center' }}>
