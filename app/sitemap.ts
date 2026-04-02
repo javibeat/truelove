@@ -18,5 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/work/manuel-kevsax`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
     { url: `${base}/work/sergio-trumpet`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
     { url: `${base}/work/julio-cuba`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/blog/how-much-does-a-website-cost-in-dubai`, lastModified: now, changeFrequency: 'yearly', priority: 0.8 },
+    { url: `${base}/blog/why-every-dj-needs-a-website`, lastModified: now, changeFrequency: 'yearly', priority: 0.8 },
   ]
 }

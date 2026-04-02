@@ -163,7 +163,7 @@ export default function Home() {
           </div>
           <div className="rule-h" />
           <nav style={{ display:'flex', justifyContent:'center', gap:'clamp(16px,4vw,48px)', padding:'10px 0', flexWrap:'wrap' }}>
-            {[['Selected Works','#selected'],['Graphic Design','#graphic'],['App Development','#app'],['About the Studio','/about'],['Contact Us','#contact']].map(([l,h]) => (
+            {[['Selected Works','#selected'],['Graphic Design','#graphic'],['App Development','#app'],['About the Studio','/about'],['Journal','/blog'],['Contact Us','#contact']].map(([l,h]) => (
               <a key={l} href={h} style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.25em', textTransform:'uppercase', color:INK, textDecoration:'none' }}
                 onMouseEnter={e=>(e.currentTarget.style.color=RED)} onMouseLeave={e=>(e.currentTarget.style.color=INK)}>{l}</a>
             ))}

@@ -34,7 +34,7 @@ export default function GazettePage({
         </div>
         <div className="rule-h2" style={{ marginTop:'12px' }} />
         <nav style={{ display:'flex', justifyContent:'center', gap:'clamp(16px,4vw,48px)', padding:'10px 0', flexWrap:'wrap' }}>
-          {[['Home','/'],[`Services`,'/services/web-design'],['Portfolio','/work/kiko-navarro'],['About','/about'],['Contact','/#contact']].map(([l,h]) => (
+          {[['Home','/'],[`Services`,'/services/web-design'],['Portfolio','/work/kiko-navarro'],['About','/about'],['Journal','/blog'],['Contact','/#contact']].map(([l,h]) => (
             <Link key={l} href={h} style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.25em', textTransform:'uppercase', color:INK, textDecoration:'none' }}>{l}</Link>
           ))}
         </nav>
