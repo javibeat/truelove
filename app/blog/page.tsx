@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import GazettePage from '../components/GazettePage'
-import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../lib/constants'
+import { P, E, F, INK, RED, FADE, RULE } from '../lib/constants'
+import { posts } from './posts'
 
 export const metadata: Metadata = {
   title: 'Blog — True Love Creative · Design Insights from Dubai',
@@ -10,38 +10,6 @@ export const metadata: Metadata = {
   keywords: ['web design blog', 'design insights Dubai', 'branding tips UAE', 'creative direction blog'],
   alternates: { canonical: 'https://truelovecreative.es/blog' },
 }
-
-export interface BlogPost {
-  slug: string
-  title: string
-  subtitle: string
-  date: string
-  readTime: string
-  category: string
-  excerpt: string
-  image?: string
-}
-
-export const posts: BlogPost[] = [
-  {
-    slug: 'how-much-does-a-website-cost-in-dubai',
-    title: 'How Much Does a Website Cost in Dubai?',
-    subtitle: 'The honest answer from someone who\'s been quoting them for 10 years.',
-    date: '2 April 2026',
-    readTime: '6 min read',
-    category: 'Web Design',
-    excerpt: 'Everyone asks this question. Most agencies dodge it. Here\'s what a website actually costs in Dubai — and why the price range is so wild.',
-  },
-  {
-    slug: 'why-every-dj-needs-a-website',
-    title: 'Why Every DJ and Musician Needs a Professional Website',
-    subtitle: 'Instagram is not your website. Here\'s why that matters.',
-    date: '2 April 2026',
-    readTime: '5 min read',
-    category: 'Branding',
-    excerpt: 'You\'ve got 50k followers and zero control over your brand. I\'ve built sites for DJs across Dubai and Europe — here\'s what I keep telling them.',
-  },
-]
 
 export default function BlogPage() {
   return (

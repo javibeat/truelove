@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import GazettePage from '../../components/GazettePage'
 import { P, E, F, INK, RED, FADE, RULE } from '../../lib/constants'
+import { getAdjacentPosts } from '../posts'
 
 export const metadata: Metadata = {
   title: 'Why Every DJ and Musician Needs a Professional Website — True Love Creative',
@@ -170,6 +171,25 @@ export default function ArticlePage() {
           </div>
         </div>
       </div>
+
+      {/* Prev / Next navigation */}
+      {(() => {
+        const { prev, next } = getAdjacentPosts('why-every-dj-needs-a-website')
+        return (
+          <div style={{ borderTop:`4px double ${INK}`, marginTop:'32px', padding:'24px 0', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'24px' }} className="grid-2">
+            <Link href={`/blog/${prev.slug}`} style={{ textDecoration:'none' }}>
+              <div style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>← Previous Article</div>
+              <div style={{ fontFamily:P, fontSize:'18px', fontWeight:700, color:INK, lineHeight:1.3 }}>{prev.title}</div>
+              <div style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.15em', color:FADE, marginTop:'6px' }}>{prev.category.toUpperCase()} · {prev.readTime.toUpperCase()}</div>
+            </Link>
+            <Link href={`/blog/${next.slug}`} style={{ textDecoration:'none', textAlign:'right' }}>
+              <div style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Next Article →</div>
+              <div style={{ fontFamily:P, fontSize:'18px', fontWeight:700, color:INK, lineHeight:1.3 }}>{next.title}</div>
+              <div style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.15em', color:FADE, marginTop:'6px' }}>{next.category.toUpperCase()} · {next.readTime.toUpperCase()}</div>
+            </Link>
+          </div>
+        )
+      })()}
 
     </GazettePage>
   )
