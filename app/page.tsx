@@ -89,8 +89,8 @@ function GraphicCarousel() {
             </div>
             {/* Prev / Next */}
             {[[-1,'←'],[1,'→']].map(([dir, arrow]) => (
-              <button key={String(dir)} onClick={() => setLightbox(lb => ((lb! + Number(dir) + graphicSlides.length) % graphicSlides.length))}
-                style={{ position:'absolute', top:'50%', transform:'translateY(-50%)', [dir === -1 ? 'left' : 'right']:'-60px', background:'none', border:`1px solid ${FADE}`, color:PAPER, fontFamily:E, fontSize:'18px', width:'44px', height:'44px', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center' }}>{arrow}</button>
+              <button key={String(dir)} className={dir === -1 ? 'lightbox-nav-prev' : 'lightbox-nav-next'} onClick={() => setLightbox(lb => ((lb! + Number(dir) + graphicSlides.length) % graphicSlides.length))}
+                style={{ position:'absolute', top:'50%', transform:'translateY(-50%)', [dir === -1 ? 'left' : 'right']:'-60px', background:'rgba(26,18,8,0.6)', border:`1px solid ${FADE}`, color:PAPER, fontFamily:E, fontSize:'18px', width:'44px', height:'44px', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center' }}>{arrow}</button>
             ))}
             <button onClick={() => setLightbox(null)} style={{ position:'absolute', top:'-40px', right:0, background:'none', border:'none', color:PAPER, fontFamily:E, fontSize:'14px', letterSpacing:'.2em', cursor:'pointer' }}>CLOSE ✕</button>
           </div>
@@ -183,7 +183,7 @@ export default function Home() {
         <section style={{ display:'grid', gridTemplateColumns:'1fr 2fr 1fr', gap:'0', borderBottom:`1px solid ${RULE}`, padding:'24px 0' }} className="grid-3">
 
           {/* Left */}
-          <div style={{ padding:'0 20px 0 0', borderRight:`1px solid ${RULE}` }}>
+          <div className="front-col" style={{ padding:'0 20px 0 0', borderRight:`1px solid ${RULE}` }}>
             <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Studio</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
             <p className="fell reveal" style={{ fontFamily:F, fontSize:'14px', lineHeight:1.9, color:INK }}>
@@ -207,7 +207,7 @@ export default function Home() {
           </div>
 
           {/* Centre — hero HP photo with link */}
-          <div style={{ padding:'0 24px' }}>
+          <div className="front-col-center" style={{ padding:'0 24px' }}>
             <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', textAlign:'center' }}>Featured — Kiko Navarro</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
             <a href="/work/kiko-navarro" style={{ textDecoration:'none', display:'block' }}>
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
 
           {/* Right */}
-          <div style={{ padding:'0 0 0 20px', borderLeft:`1px solid ${RULE}` }}>
+          <div className="front-col" style={{ padding:'0 0 0 20px', borderLeft:`1px solid ${RULE}` }}>
             <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Latest</div>
             <div className="rule-thin" style={{ marginBottom:'12px' }} />
             {[
@@ -293,7 +293,7 @@ export default function Home() {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 180px', gap:'0', position:'relative', zIndex:1 }} className="grid-2">
 
             {/* Left — work list */}
-            <div style={{ borderRight:`1px solid ${RULE}`, paddingRight:'24px' }}>
+            <div className="works-list-col" style={{ borderRight:`1px solid ${RULE}`, paddingRight:'24px' }}>
               {projects.map((p, i) => (
                 <a key={p.id} href={`/work/${p.slug}`}
                   style={{ textDecoration:'none', display:'grid', gridTemplateColumns:'28px 52px 1fr auto', gap:'12px', alignItems:'center', padding:'12px 0', borderBottom:`1px solid ${RULE}`, cursor:'crosshair', transition:'background .15s' }}
@@ -322,7 +322,7 @@ export default function Home() {
             </div>
 
             {/* Right — classifieds column */}
-            <div style={{ paddingLeft:'16px' }}>
+            <div className="works-index-col" style={{ paddingLeft:'16px' }}>
               <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px', paddingTop:'12px' }}>Index</div>
               <div style={{ height:'1px', background:RULE, marginBottom:'10px' }} />
               {projects.map(p=>(
@@ -343,9 +343,9 @@ export default function Home() {
             <div className="rule-h" style={{ marginBottom:'10px' }} />
             <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.35em', textTransform:'uppercase', color:FADE, marginBottom:'10px', textAlign:'center' }}>✦ &nbsp; Portrait Gallery &nbsp; ✦</div>
             <div className="rule-thin" />
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1px 1fr 1px 1fr 1px 1fr' }}>
+            <div className="portrait-grid" style={{ display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:'0' }}>
               {projects.slice(0,4).map((p, i) => (
-                <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', color:'inherit', gridColumn: String(i*2+1) }}>
+                <a key={p.id} href={`/work/${p.slug}`} style={{ textDecoration:'none', color:'inherit', borderLeft: i > 0 ? `1px solid ${RULE}` : 'none' }}>
                   <div style={{ padding:'7px 10px 5px', borderBottom:`1px solid ${RULE}` }}>
                     <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE }}>{p.type.split('·')[0].trim()}</div>
                   </div>
@@ -374,24 +374,24 @@ export default function Home() {
               <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', color:FADE, whiteSpace:'nowrap' }}>On the Record</div>
             </div>
             <div className="rule-h" style={{ marginBottom:'0' }} />
-            <div style={{ display:'grid', gridTemplateColumns:'1px 1fr 1px 1fr 1px 1fr 1px', marginTop:'0' }}>
-              <div style={{ background:RULE }} />
-              <div key="t1" style={{ padding:'28px 24px' }}>
+            <div className="testimonials-grid" style={{ display:'grid', gridTemplateColumns:'1px 1fr 1px 1fr 1px 1fr 1px', marginTop:'0' }}>
+              <div className="testimonials-divider" style={{ background:RULE }} />
+              <div key="t1" style={{ padding:'28px 24px', borderBottom:`1px solid ${RULE}` }}>
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"True Love Creative understood my brand immediately — and built something I couldn't have imagined myself. My audience felt it straight away."</div>
                 <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'12px' }}>
                   <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:RED }}>Kiko Navarro</div>
                   <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>DJ & Producer · kikonavarro.es</div>
                 </div>
               </div>
-              <div key="r1" style={{ background:RULE }} />
-              <div key="t2" style={{ padding:'28px 24px' }}>
+              <div key="r1" className="testimonials-divider" style={{ background:RULE }} />
+              <div key="t2" style={{ padding:'28px 24px', borderBottom:`1px solid ${RULE}` }}>
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"Working with TLC was the first time I felt truly heard by a design studio. The result speaks for itself — my clients book faster and trust me more."</div>
                 <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'12px' }}>
                   <div style={{ fontFamily:P, fontSize:'14px', fontWeight:700, color:RED }}>Jessica Morari</div>
                   <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>Wellness Coach · jessicamorari.com</div>
                 </div>
               </div>
-              <div key="r2" style={{ background:RULE }} />
+              <div key="r2" className="testimonials-divider" style={{ background:RULE }} />
               <div key="t3" style={{ padding:'28px 24px' }}>
                 <div style={{ fontFamily:P, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:700, fontStyle:'italic', color:INK, lineHeight:1.6, marginBottom:'20px' }}>"They didn't just build a portfolio — they built a statement. Clean, fast, and unmistakably mine. My photography finally has a home worthy of it."</div>
                 <div style={{ borderTop:`1px solid ${RULE}`, paddingTop:'12px' }}>
@@ -399,7 +399,7 @@ export default function Home() {
                   <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.15em', textTransform:'uppercase', color:FADE, marginTop:'3px' }}>Photography Studio · estrela.photo</div>
                 </div>
               </div>
-              <div style={{ background:RULE }} />
+              <div className="testimonials-divider" style={{ background:RULE }} />
             </div>
             <div className="rule-h" />
           </div>
@@ -567,7 +567,7 @@ export default function Home() {
         <section style={{ padding:'32px 0 48px', position:'relative', overflow:'hidden' }}>
 
           {/* Watermark */}
-          <div style={{ position:'absolute', top:'-20px', right:'-10px', fontFamily:P, fontSize:'clamp(120px,18vw,240px)', fontWeight:900, color:'rgba(26,18,8,0.04)', lineHeight:1, pointerEvents:'none', userSelect:'none', zIndex:0 }}>✉</div>
+          <div className="watermark-envelope" style={{ position:'absolute', top:'-20px', right:'-10px', fontFamily:P, fontSize:'clamp(120px,18vw,240px)', fontWeight:900, color:'rgba(26,18,8,0.04)', lineHeight:1, pointerEvents:'none', userSelect:'none', zIndex:0 }}>✉</div>
 
           {/* Section header */}
           <div style={{ position:'relative', zIndex:1 }}>
@@ -592,7 +592,7 @@ export default function Home() {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 280px', gap:'0', marginTop:'24px', position:'relative', zIndex:1 }} className="grid-2">
 
             {/* Left — form */}
-            <div style={{ paddingRight:'32px', borderRight:`1px solid ${RULE}` }}>
+            <div className="contact-form-col" style={{ paddingRight:'32px', borderRight:`1px solid ${RULE}` }}>
               <form action="https://formspree.io/f/mwvwnkow" method="POST" style={{ display:'flex', flexDirection:'column', gap:'20px' }}>
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'20px' }} className="grid-2-form">
                   <div>
@@ -631,7 +631,7 @@ export default function Home() {
             </div>
 
             {/* Right — contact info sidebar */}
-            <div style={{ paddingLeft:'24px' }}>
+            <div className="contact-info-col" style={{ paddingLeft:'24px' }}>
               <div style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.3em', textTransform:'uppercase', color:FADE, marginBottom:'8px' }}>Direct Contact</div>
               <div className="rule-thin" style={{ marginBottom:'16px' }} />
 

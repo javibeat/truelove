@@ -155,4 +155,32 @@ body::before {
   .grid-2 { grid-template-columns: 1fr !important; }
   .grid-2-form { grid-template-columns: 1fr !important; }
   .grid-3 { grid-template-columns: 1fr !important; }
+
+  /* Portrait Gallery: 2x2 on mobile */
+  .portrait-grid { grid-template-columns: 1fr 1fr !important; }
+  .portrait-grid > a { border-left: none !important; }
+  .portrait-grid > a:nth-child(2n) { border-left: 1px solid var(--rule) !important; }
+
+  /* Client Voices: stack on mobile */
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+  .testimonials-divider { display: none; }
+
+  /* Lightbox prev/next inside on mobile */
+  .lightbox-nav-prev { left: 8px !important; }
+  .lightbox-nav-next { right: 8px !important; }
+
+  /* Contact form: remove border/padding when stacked */
+  .contact-form-col { padding-right: 0 !important; border-right: none !important; }
+  .contact-info-col { padding-left: 0 !important; margin-top: 24px; }
+
+  /* Enquiries watermark: hide on mobile */
+  .watermark-envelope { display: none !important; }
+
+  /* Front page columns: remove borders/padding when stacked */
+  .front-col { border-right: none !important; border-left: none !important; padding: 0 0 24px 0 !important; }
+  .front-col-center { padding: 0 0 24px 0 !important; }
+
+  /* Selected Works: remove border/padding on left col */
+  .works-list-col { border-right: none !important; padding-right: 0 !important; }
+  .works-index-col { padding-left: 0 !important; margin-top: 16px; }
 }
