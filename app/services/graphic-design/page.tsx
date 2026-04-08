@@ -31,54 +31,56 @@ export const metadata: Metadata = {
   },
 }
 
-const serviceJsonLd = {
+const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Graphic Design Dubai',
-  description:
-    'Premium graphic design services in Dubai including vinyl cover art, event flyers, social media visuals, and brand collateral.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'True Love Creative',
-    url: 'https://truelovecreative.es',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Dubai',
-      addressCountry: 'AE',
-    },
-  },
-  areaServed: { '@type': 'City', name: 'Dubai' },
-  serviceType: 'Graphic Design',
-  url: 'https://truelovecreative.es/services/graphic-design',
-}
-
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'What types of graphic design do you offer?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We specialise in vinyl and album cover art, event flyers and posters, social media content systems, brand collateral, editorial layouts, and merchandise design. If it is visual and it matters, we design it.',
+      '@type': 'Service',
+      name: 'Graphic Design Dubai',
+      description:
+        'Premium graphic design services in Dubai including vinyl cover art, event flyers, social media visuals, and brand collateral.',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'True Love Creative',
+        url: 'https://truelovecreative.es',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Dubai',
+          addressCountry: 'AE',
+        },
       },
+      areaServed: { '@type': 'City', name: 'Dubai' },
+      serviceType: 'Graphic Design',
+      url: 'https://truelovecreative.es/services/graphic-design',
     },
     {
-      '@type': 'Question',
-      name: 'Can you design vinyl/album covers?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Absolutely. We have designed covers for internationally released records including collaborations with Grammy-nominated artists. We understand print specifications, Pantone requirements, and the creative expectations of the music industry.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you work with event promoters?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. We work with promoters, venues, and artists across Dubai and internationally. From weekly residency flyers to full festival campaigns, we deliver on tight timelines without cutting corners on quality.',
-      },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What types of graphic design do you offer?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We specialise in vinyl and album cover art, event flyers and posters, social media content systems, brand collateral, editorial layouts, and merchandise design. If it is visual and it matters, we design it.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you design vinyl/album covers?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Absolutely. We have designed covers for internationally released records including collaborations with Grammy-nominated artists. We understand print specifications, Pantone requirements, and the creative expectations of the music industry.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you work with event promoters?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. We work with promoters, venues, and artists across Dubai and internationally. From weekly residency flyers to full festival campaigns, we deliver on tight timelines without cutting corners on quality.',
+          },
+        },
+      ],
     },
   ],
 }
@@ -88,11 +90,7 @@ export default function GraphicDesignPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <GazettePage

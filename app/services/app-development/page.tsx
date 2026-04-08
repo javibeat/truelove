@@ -31,54 +31,56 @@ export const metadata: Metadata = {
   },
 }
 
-const serviceJsonLd = {
+const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'App Development Dubai',
-  description:
-    'Custom iOS and Android mobile app development in Dubai. From concept and UX design to App Store deployment.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'True Love Creative',
-    url: 'https://truelovecreative.es',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Dubai',
-      addressCountry: 'AE',
-    },
-  },
-  areaServed: { '@type': 'City', name: 'Dubai' },
-  serviceType: 'App Development',
-  url: 'https://truelovecreative.es/services/app-development',
-}
-
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'Do you build iOS and Android apps?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. We build for both platforms. For most projects we use React Native, which allows us to ship a single codebase to both the App Store and Google Play without sacrificing performance or native feel.',
+      '@type': 'Service',
+      name: 'App Development Dubai',
+      description:
+        'Custom iOS and Android mobile app development in Dubai. From concept and UX design to App Store deployment.',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'True Love Creative',
+        url: 'https://truelovecreative.es',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Dubai',
+          addressCountry: 'AE',
+        },
       },
+      areaServed: { '@type': 'City', name: 'Dubai' },
+      serviceType: 'App Development',
+      url: 'https://truelovecreative.es/services/app-development',
     },
     {
-      '@type': 'Question',
-      name: 'What is your development process?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We follow a four-phase process: Discovery and strategy, UX and UI design, development with iterative testing, and deployment with App Store optimisation. You are involved at every milestone.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long does an app take to develop?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'An MVP typically takes 8 to 14 weeks. A full-featured app with backend infrastructure, user authentication, and third-party integrations can take 4 to 6 months. We provide a detailed roadmap after the discovery phase.',
-      },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Do you build iOS and Android apps?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. We build for both platforms. For most projects we use React Native, which allows us to ship a single codebase to both the App Store and Google Play without sacrificing performance or native feel.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is your development process?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We follow a four-phase process: Discovery and strategy, UX and UI design, development with iterative testing, and deployment with App Store optimisation. You are involved at every milestone.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does an app take to develop?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'An MVP typically takes 8 to 14 weeks. A full-featured app with backend infrastructure, user authentication, and third-party integrations can take 4 to 6 months. We provide a detailed roadmap after the discovery phase.',
+          },
+        },
+      ],
     },
   ],
 }
@@ -88,11 +90,7 @@ export default function AppDevelopmentPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <GazettePage

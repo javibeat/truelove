@@ -31,62 +31,64 @@ export const metadata: Metadata = {
   },
 }
 
-const serviceJsonLd = {
+const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Web Design Dubai',
-  description:
-    'Premium custom web design and development services in Dubai. High-performance websites built with Next.js, React, and Tailwind CSS.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'True Love Creative',
-    url: 'https://truelovecreative.es',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Dubai',
-      addressCountry: 'AE',
-    },
-  },
-  areaServed: { '@type': 'City', name: 'Dubai' },
-  serviceType: 'Web Design',
-  url: 'https://truelovecreative.es/services/web-design',
-}
-
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'How long does a website take?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Most projects are delivered in 4 to 8 weeks depending on complexity. A single-page portfolio may take 2 to 3 weeks, while a full e-commerce platform can take 8 to 12 weeks. We provide a detailed timeline before starting.',
+      '@type': 'Service',
+      name: 'Web Design Dubai',
+      description:
+        'Premium custom web design and development services in Dubai. High-performance websites built with Next.js, React, and Tailwind CSS.',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'True Love Creative',
+        url: 'https://truelovecreative.es',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Dubai',
+          addressCountry: 'AE',
+        },
       },
+      areaServed: { '@type': 'City', name: 'Dubai' },
+      serviceType: 'Web Design',
+      url: 'https://truelovecreative.es/services/web-design',
     },
     {
-      '@type': 'Question',
-      name: 'What technologies do you use?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We build with Next.js, React, TypeScript, and Tailwind CSS. Our sites are deployed on Vercel for global edge performance. For CMS needs we integrate Sanity, Contentful, or headless WordPress.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you offer SEO?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Every website we build includes technical SEO foundations: structured data, semantic HTML, Core Web Vitals optimization, meta tags, and XML sitemaps. We also offer ongoing SEO strategy as an add-on service.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How much does a website cost?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Projects start from AED 8,000 for a single-page site. Multi-page custom builds typically range from AED 15,000 to AED 50,000 depending on scope. We provide a fixed quote after a discovery call so there are no surprises.',
-      },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How long does a website take?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Most projects are delivered in 4 to 8 weeks depending on complexity. A single-page portfolio may take 2 to 3 weeks, while a full e-commerce platform can take 8 to 12 weeks. We provide a detailed timeline before starting.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What technologies do you use?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We build with Next.js, React, TypeScript, and Tailwind CSS. Our sites are deployed on Vercel for global edge performance. For CMS needs we integrate Sanity, Contentful, or headless WordPress.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you offer SEO?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Every website we build includes technical SEO foundations: structured data, semantic HTML, Core Web Vitals optimization, meta tags, and XML sitemaps. We also offer ongoing SEO strategy as an add-on service.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does a website cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Projects start from AED 8,000 for a single-page site. Multi-page custom builds typically range from AED 15,000 to AED 50,000 depending on scope. We provide a fixed quote after a discovery call so there are no surprises.',
+          },
+        },
+      ],
     },
   ],
 }
@@ -96,11 +98,7 @@ export default function WebDesignPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <GazettePage

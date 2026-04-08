@@ -31,54 +31,56 @@ export const metadata: Metadata = {
   },
 }
 
-const serviceJsonLd = {
+const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Brand Identity Dubai',
-  description:
-    'Premium brand identity design services in Dubai including logo design, brand strategy, visual systems, and comprehensive brand guidelines.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'True Love Creative',
-    url: 'https://truelovecreative.es',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Dubai',
-      addressCountry: 'AE',
-    },
-  },
-  areaServed: { '@type': 'City', name: 'Dubai' },
-  serviceType: 'Brand Identity Design',
-  url: 'https://truelovecreative.es/services/branding',
-}
-
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'What does a brand identity package include?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Our standard package includes brand strategy and positioning, primary and secondary logo designs, colour palette, typography system, brand guidelines document, and a starter kit of templates. We tailor each package to the client.',
+      '@type': 'Service',
+      name: 'Brand Identity Dubai',
+      description:
+        'Premium brand identity design services in Dubai including logo design, brand strategy, visual systems, and comprehensive brand guidelines.',
+      provider: {
+        '@type': 'ProfessionalService',
+        name: 'True Love Creative',
+        url: 'https://truelovecreative.es',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Dubai',
+          addressCountry: 'AE',
+        },
       },
+      areaServed: { '@type': 'City', name: 'Dubai' },
+      serviceType: 'Brand Identity Design',
+      url: 'https://truelovecreative.es/services/branding',
     },
     {
-      '@type': 'Question',
-      name: 'How long does branding take?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A full brand identity typically takes 4 to 6 weeks from kick-off to final delivery. The strategy phase takes one week, design exploration takes two weeks, and refinement plus guidelines takes one to two weeks.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you offer brand strategy?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Every branding project starts with strategy. We define your audience, positioning, tone of voice, and competitive differentiation before touching a single pixel. Strategy without design is a document. Design without strategy is decoration.',
-      },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does a brand identity package include?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Our standard package includes brand strategy and positioning, primary and secondary logo designs, colour palette, typography system, brand guidelines document, and a starter kit of templates. We tailor each package to the client.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does branding take?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'A full brand identity typically takes 4 to 6 weeks from kick-off to final delivery. The strategy phase takes one week, design exploration takes two weeks, and refinement plus guidelines takes one to two weeks.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you offer brand strategy?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Every branding project starts with strategy. We define your audience, positioning, tone of voice, and competitive differentiation before touching a single pixel. Strategy without design is a document. Design without strategy is decoration.',
+          },
+        },
+      ],
     },
   ],
 }
@@ -88,11 +90,7 @@ export default function BrandingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <GazettePage
