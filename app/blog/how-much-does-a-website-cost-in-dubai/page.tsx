@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import GazettePage from '../../components/GazettePage'
 import { P, E, F, INK, RED, FADE, RULE } from '../../lib/constants'
@@ -53,6 +54,11 @@ export default function ArticlePage() {
         <span style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.15em', color:FADE }}>2 APRIL 2026</span>
         <span style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.15em', color:FADE }}>6 MIN READ</span>
         <span style={{ fontFamily:E, fontSize:'9px', letterSpacing:'.15em', color:FADE }}>BY JAVI BEAT</span>
+      </div>
+
+      {/* Hero image */}
+      <div style={{ margin:'0 0 32px', border:`1px solid ${RULE}` }}>
+        <Image src="/img/blog/website-cost-dubai.png" alt="Website pricing breakdown in Dubai — landing page, full site, e-commerce and app costs" width={1200} height={630} style={{ width:'100%', height:'auto', display:'block' }} priority />
       </div>
 
       {/* Article body */}

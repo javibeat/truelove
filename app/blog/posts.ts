@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'what-to-look-for-when-hiring-a-web-designer-in-dubai',
+    title: 'What to Look for When Hiring a Web Designer in Dubai',
+    subtitle: 'Red flags, smart questions, and how to tell the difference between good and great.',
+    date: '9 April 2026',
+    readTime: '7 min read',
+    category: 'Web Design',
+    excerpt: 'You\'ve googled "web designer Dubai" and now you\'re drowning in options. Here\'s how to tell who actually delivers — from someone who\'s been doing this for 10 years.',
+  },
+  {
     slug: 'how-much-does-a-website-cost-in-dubai',
     title: 'How Much Does a Website Cost in Dubai?',
     subtitle: 'The honest answer from someone who\'s been quoting them for 10 years.',
