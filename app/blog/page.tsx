@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import GazettePage from '../components/GazettePage'
+import NewsletterForm from '../components/NewsletterForm'
 import { P, E, F, INK, RED, FADE, RULE } from '../lib/constants'
 import { posts } from './posts'
 
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <GazettePage section="The Journal" sectionNum="VIII" title="The" titleAccent="Journal" subtitle="Thoughts on design, branding, and building things that matter. Written from Dubai.">
+
+      {/* Newsletter signup */}
+      <NewsletterForm />
+
+      <div className="rule-thin" style={{ margin:'16px 0' }} />
 
       {/* Posts list */}
       <div style={{ padding:'24px 0' }}>

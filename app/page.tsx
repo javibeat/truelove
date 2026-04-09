@@ -594,6 +594,7 @@ export default function Home() {
             {/* Left — form */}
             <div className="contact-form-col" style={{ paddingRight:'32px', borderRight:`1px solid ${RULE}` }}>
               <form action="https://formspree.io/f/mwvwnkow" method="POST" style={{ display:'flex', flexDirection:'column', gap:'20px' }}>
+                <input type="text" name="_gotcha" style={{ display:'none' }} tabIndex={-1} autoComplete="off" />
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'20px' }} className="grid-2-form">
                   <div>
                     <label style={{ fontFamily:E, fontSize:'10px', letterSpacing:'.2em', textTransform:'uppercase', color:FADE, display:'block', marginBottom:'8px' }}>Name</label>

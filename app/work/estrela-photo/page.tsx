@@ -7,15 +7,40 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 export const metadata: Metadata = {
   title: 'Estrela Photo — Portfolio Case Study | True Love Creative',
   description: 'How we designed estrela.photo — a refined portfolio website for a photography studio capturing life across the UAE. Case study by True Love Creative, Dubai.',
+  alternates: { canonical: 'https://truelovecreative.es/work/estrela-photo' },
   openGraph: {
+    title: 'Estrela Photo — Portfolio Case Study',
+    description: 'A refined portfolio for a photography studio in the UAE.',
+    url: 'https://truelovecreative.es/work/estrela-photo',
+    siteName: 'True Love Creative',
+    locale: 'en_US',
+    type: 'article',
+    images: ['/img/portfolios/estrela.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Estrela Photo — Portfolio Case Study',
     description: 'A refined portfolio for a photography studio in the UAE.',
     images: ['/img/portfolios/estrela.jpg'],
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Estrela Photo — Portfolio Case Study',
+  description: 'How we designed estrela.photo — a refined portfolio website for a photography studio capturing life across the UAE.',
+  url: 'https://truelovecreative.es/work/estrela-photo',
+  image: 'https://truelovecreative.es/img/portfolios/estrela.jpg',
+  datePublished: '2023-01-01',
+  author: { '@type': 'Organization', name: 'True Love Creative', url: 'https://truelovecreative.es' },
+  about: { '@type': 'Organization', name: 'Estrela Photo' },
+}
+
 export default function EstrelaPhotoPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <GazettePage
       section="Case Study"
       sectionNum="IV"
@@ -121,5 +146,6 @@ export default function EstrelaPhotoPage() {
         </Link>
       </div>
     </GazettePage>
+    </>
   )
 }

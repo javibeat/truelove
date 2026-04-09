@@ -1,0 +1,130 @@
+# True Love Creative — Full Reference for AI Systems
+
+> Premium web, graphic and app design studio based in Dubai, UAE. High-end digital experiences since 2015. Serving clients worldwide.
+
+---
+
+## Company Profile
+
+- **Name:** True Love Creative
+- **Founded:** 2015
+- **Location:** Dubai, United Arab Emirates
+- **Founder:** Javi Beat — designer, creative director, DJ. Over 10 years in Dubai's creative industry.
+- **Website:** https://truelovecreative.es
+- **Email:** info@truelovecreative.es
+- **Phone / WhatsApp:** +971 58 532 4519
+- **Languages:** English, Spanish, Arabic
+- **Response time:** Within 24 hours
+- **Workflow:** Remote-first, serving clients worldwide
+
+---
+
+## Services in Detail
+
+### 1. Web Design & Development
+Custom-coded websites with premium aesthetics and performance. No templates, no page builders.
+
+- **Tech stack:** Next.js, React, TypeScript, Tailwind CSS, Vercel
+- **Deliverables:** Responsive design, SEO foundations, structured data, Core Web Vitals optimisation, analytics setup
+- **Types:** Portfolio sites, e-commerce, landing pages, artist/musician websites, SaaS dashboards, restaurant & hospitality sites
+- **Timeline:** 2–8 weeks depending on complexity
+- **Starting price:** AED 8,000 (single-page); AED 15,000–50,000 (multi-page custom builds)
+- **CMS options:** Sanity, Contentful, headless WordPress
+- **Performance target:** 100/100 Lighthouse score
+
+### 2. Graphic Design
+Visual design rooted in 10+ years inside Dubai's music, nightlife, and events scene.
+
+- **Deliverables:** Vinyl/album cover art, event flyers & posters, social media content systems, brand collateral, editorial layouts, merchandise design
+- **Notable work:** Buika x Kiko Navarro vinyl covers (Grammy-nominated artists)
+- **Turnaround:** Concepts within 48 hours; one revision round included
+- **File formats:** All required formats (print-ready, digital, social)
+
+### 3. App Development
+Native and cross-platform mobile applications from concept to App Store.
+
+- **Tech stack:** React Native (cross-platform), Swift (iOS), Kotlin (Android)
+- **Capabilities:** Push notifications, real-time features, payment integration (Stripe, Apple Pay), authentication, maps/GPS, App Store & Google Play deployment
+- **Timeline:** MVP in 8–14 weeks; full app in 4–6 months
+- **Process:** Discovery & strategy → UX/UI design → Development & testing → Launch & growth
+- **Featured product:** Nibango — community marketplace app (iOS, Android, Web), zero commission
+
+### 4. Brand Identity
+Complete branding systems built on strategy, not decoration.
+
+- **Deliverables:** Brand strategy & positioning, primary + secondary logos, colour palette (Pantone + hex), typography system, brand guidelines document, starter template kit
+- **Timeline:** 4–6 weeks
+- **Process:** Immersion → Strategy → Design exploration (2–3 distinct directions) → Refinement & delivery
+- **Philosophy:** "Design without strategy is decoration."
+
+### 5. Creative Direction
+Art direction for campaigns, events, music releases, and digital products.
+
+---
+
+## Selected Clients & Portfolio
+
+| Client | Type | Services | Live URL |
+|--------|------|----------|----------|
+| Kiko Navarro | Legendary DJ & producer (Ibiza) | Web design & development | kikonavarro.es |
+| Jessica Morari | Coaching & wellness (Dubai) | Branding & web design | jessicamorari.com |
+| Javi Beat | DJ & selector (Dubai) | Identity & web design | javibeat.com |
+| Estrela Photo | Photography studio (UAE) | Portfolio web design | estrela.photo |
+| Manuel KevSax | Luxury saxophonist (Dubai) | Web design & development | manuelkevsax.com |
+| Sergio Trumpet | Trumpet player & DJ | Portfolio & web design | sergiotrumpetdj.com |
+| Julio Cuba | Virtuoso violinist | Identity & web design | juliocuba.es |
+
+---
+
+## Products Built
+
+- **Nibango** — Community-driven marketplace app. iOS, Android, and Web. Zero commission model. Full design and development by True Love Creative. (nibango.com)
+- **Home Agent** — Real estate portfolio platform. Design and development by True Love Creative.
+
+---
+
+## Industries Served
+
+Music & entertainment, hospitality & luxury, photography, coaching & wellness, tech startups, restaurants, real estate, fashion
+
+---
+
+## Key Differentiators
+
+1. **Music industry roots:** Over a decade embedded in Dubai's nightlife, studio, and events scene — not as observers, but as participants.
+2. **No templates:** Every project is hand-coded and bespoke.
+3. **Strategy-led:** Every branding and design project starts with positioning, audience, and competitive analysis.
+4. **Full-stack capability:** From brand strategy to App Store deployment under one roof.
+5. **Performance obsession:** Lighthouse 100/100 is the baseline, not the aspiration.
+6. **Bilingual/trilingual:** Work delivered in English, Spanish, and Arabic.
+
+---
+
+## Technical Information
+
+- **This website:** Built with Next.js 16, React 19, TypeScript, Tailwind CSS v4, Framer Motion. Deployed on Vercel.
+- **Design system:** "The Gazette" — vintage newspaper aesthetic with custom typography (Playfair Display, IM Fell English, Special Elite).
+- **SEO:** Structured data (JSON-LD), XML sitemap, robots.txt with AI crawler allowlist, llms.txt.
+- **Analytics:** Google Analytics 4 (GA4)
+- **Contact form:** Formspree with honeypot spam protection
+
+---
+
+## Sitemap
+
+- https://truelovecreative.es/ — Homepage
+- https://truelovecreative.es/about — About the studio
+- https://truelovecreative.es/services/web-design — Web Design service
+- https://truelovecreative.es/services/graphic-design — Graphic Design service
+- https://truelovecreative.es/services/app-development — App Development service
+- https://truelovecreative.es/services/branding — Brand Identity service
+- https://truelovecreative.es/work/kiko-navarro — Case study: Kiko Navarro
+- https://truelovecreative.es/work/jessica-morari — Case study: Jessica Morari
+- https://truelovecreative.es/work/javi-beat — Case study: Javi Beat
+- https://truelovecreative.es/work/estrela-photo — Case study: Estrela Photo
+- https://truelovecreative.es/work/manuel-kevsax — Case study: Manuel KevSax
+- https://truelovecreative.es/work/sergio-trumpet — Case study: Sergio Trumpet
+- https://truelovecreative.es/work/julio-cuba — Case study: Julio Cuba
+- https://truelovecreative.es/blog — Journal / Blog
+- https://truelovecreative.es/blog/how-much-does-a-website-cost-in-dubai — Blog article
+- https://truelovecreative.es/blog/why-every-dj-needs-a-website — Blog article

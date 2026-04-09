@@ -7,15 +7,40 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 export const metadata: Metadata = {
   title: 'Manuel KevSax — Web Design Case Study | True Love Creative',
   description: 'How we designed manuelkevsax.com — a luxury web experience for Dubai&apos;s premier saxophonist, built for high-end bookings and brand partnerships.',
+  alternates: { canonical: 'https://truelovecreative.es/work/manuel-kevsax' },
   openGraph: {
     title: 'Manuel KevSax — Web Design Case Study',
     description: 'A luxury web experience for Dubai&apos;s premier saxophonist.',
+    url: 'https://truelovecreative.es/work/manuel-kevsax',
+    siteName: 'True Love Creative',
+    locale: 'en_US',
+    type: 'article',
+    images: ['/img/portfolios/manusax.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Manuel KevSax — Web Design Case Study',
+    description: 'A luxury web experience for Dubai\'s premier saxophonist.',
     images: ['/img/portfolios/manusax.webp'],
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Manuel KevSax — Web Design Case Study',
+  description: 'How we designed manuelkevsax.com — a luxury web experience for Dubai\'s premier saxophonist.',
+  url: 'https://truelovecreative.es/work/manuel-kevsax',
+  image: 'https://truelovecreative.es/img/portfolios/manusax.webp',
+  datePublished: '2024-01-01',
+  author: { '@type': 'Organization', name: 'True Love Creative', url: 'https://truelovecreative.es' },
+  about: { '@type': 'Person', name: 'Manuel KevSax' },
+}
+
 export default function ManuelKevSaxPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <GazettePage
       section="Case Study"
       sectionNum="V"
@@ -121,5 +146,6 @@ export default function ManuelKevSaxPage() {
         </Link>
       </div>
     </GazettePage>
+    </>
   )
 }

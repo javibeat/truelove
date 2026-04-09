@@ -7,15 +7,40 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 export const metadata: Metadata = {
   title: 'Kiko Navarro — Web Design Case Study | True Love Creative',
   description: 'How we designed and built kikonavarro.es — a premium web presence for legendary Ibiza DJ and producer Kiko Navarro. Web design case study by True Love Creative, Dubai.',
+  alternates: { canonical: 'https://truelovecreative.es/work/kiko-navarro' },
   openGraph: {
+    title: 'Kiko Navarro — Web Design Case Study',
+    description: 'A premium web presence for the legendary DJ & producer.',
+    url: 'https://truelovecreative.es/work/kiko-navarro',
+    siteName: 'True Love Creative',
+    locale: 'en_US',
+    type: 'article',
+    images: ['/img/portfolios/kikonavarro.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Kiko Navarro — Web Design Case Study',
     description: 'A premium web presence for the legendary DJ & producer.',
     images: ['/img/portfolios/kikonavarro.jpg'],
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Kiko Navarro — Web Design Case Study',
+  description: 'How we designed and built kikonavarro.es — a premium web presence for legendary Ibiza DJ and producer Kiko Navarro.',
+  url: 'https://truelovecreative.es/work/kiko-navarro',
+  image: 'https://truelovecreative.es/img/portfolios/kikonavarro.jpg',
+  datePublished: '2024-01-01',
+  author: { '@type': 'Organization', name: 'True Love Creative', url: 'https://truelovecreative.es' },
+  about: { '@type': 'Person', name: 'Kiko Navarro' },
+}
+
 export default function KikoNavarroPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <GazettePage
       section="Case Study"
       sectionNum="I"
@@ -121,5 +146,6 @@ export default function KikoNavarroPage() {
         </Link>
       </div>
     </GazettePage>
+    </>
   )
 }

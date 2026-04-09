@@ -7,15 +7,40 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 export const metadata: Metadata = {
   title: 'Javi Beat — Identity Case Study | True Love Creative',
   description: 'How we crafted the brand identity and web presence for Javi Beat, a Dubai-based DJ building a distinctive visual language for the international circuit.',
+  alternates: { canonical: 'https://truelovecreative.es/work/javi-beat' },
   openGraph: {
+    title: 'Javi Beat — Identity Case Study',
+    description: 'DJ identity and digital presence built for the international stage.',
+    url: 'https://truelovecreative.es/work/javi-beat',
+    siteName: 'True Love Creative',
+    locale: 'en_US',
+    type: 'article',
+    images: ['/img/portfolios/javibeat.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Javi Beat — Identity Case Study',
     description: 'DJ identity and digital presence built for the international stage.',
     images: ['/img/portfolios/javibeat.jpg'],
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Javi Beat — Identity Case Study',
+  description: 'How we crafted the brand identity and web presence for Javi Beat, a Dubai-based DJ.',
+  url: 'https://truelovecreative.es/work/javi-beat',
+  image: 'https://truelovecreative.es/img/portfolios/javibeat.jpg',
+  datePublished: '2024-01-01',
+  author: { '@type': 'Organization', name: 'True Love Creative', url: 'https://truelovecreative.es' },
+  about: { '@type': 'Person', name: 'Javi Beat' },
+}
+
 export default function JaviBeatPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <GazettePage
       section="Case Study"
       sectionNum="III"
@@ -121,5 +146,6 @@ export default function JaviBeatPage() {
         </Link>
       </div>
     </GazettePage>
+    </>
   )
 }

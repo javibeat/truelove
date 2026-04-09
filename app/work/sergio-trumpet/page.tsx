@@ -7,15 +7,40 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 export const metadata: Metadata = {
   title: 'Sergio Trumpet — Portfolio Case Study | True Love Creative',
   description: 'How we designed sergiotrumpetdj.com — a dynamic portfolio for a professional trumpet player and DJ performing across the Middle East and Europe.',
+  alternates: { canonical: 'https://truelovecreative.es/work/sergio-trumpet' },
   openGraph: {
+    title: 'Sergio Trumpet — Portfolio Case Study',
+    description: 'A dynamic portfolio for a trumpet player and DJ.',
+    url: 'https://truelovecreative.es/work/sergio-trumpet',
+    siteName: 'True Love Creative',
+    locale: 'en_US',
+    type: 'article',
+    images: ['/img/portfolios/sergio.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Sergio Trumpet — Portfolio Case Study',
     description: 'A dynamic portfolio for a trumpet player and DJ.',
     images: ['/img/portfolios/sergio.jpg'],
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Sergio Trumpet — Portfolio Case Study',
+  description: 'How we designed sergiotrumpetdj.com — a dynamic portfolio for a professional trumpet player and DJ.',
+  url: 'https://truelovecreative.es/work/sergio-trumpet',
+  image: 'https://truelovecreative.es/img/portfolios/sergio.jpg',
+  datePublished: '2024-01-01',
+  author: { '@type': 'Organization', name: 'True Love Creative', url: 'https://truelovecreative.es' },
+  about: { '@type': 'Person', name: 'Sergio Trumpet' },
+}
+
 export default function SergioTrumpetPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <GazettePage
       section="Case Study"
       sectionNum="VI"
@@ -121,5 +146,6 @@ export default function SergioTrumpetPage() {
         </Link>
       </div>
     </GazettePage>
+    </>
   )
 }

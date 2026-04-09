@@ -7,15 +7,40 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 export const metadata: Metadata = {
   title: 'Jessica Morari — Branding & Web Case Study | True Love Creative',
   description: 'How we built the brand identity and website for Jessica Morari, a Dubai-based coaching and wellness professional. Branding case study by True Love Creative.',
+  alternates: { canonical: 'https://truelovecreative.es/work/jessica-morari' },
   openGraph: {
+    title: 'Jessica Morari — Branding & Web Case Study',
+    description: 'Brand identity and web platform for a coaching & wellness professional.',
+    url: 'https://truelovecreative.es/work/jessica-morari',
+    siteName: 'True Love Creative',
+    locale: 'en_US',
+    type: 'article',
+    images: ['/img/portfolios/jesslnk.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Jessica Morari — Branding & Web Case Study',
     description: 'Brand identity and web platform for a coaching & wellness professional.',
     images: ['/img/portfolios/jesslnk.webp'],
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Jessica Morari — Branding & Web Case Study',
+  description: 'How we built the brand identity and website for Jessica Morari, a Dubai-based coaching and wellness professional.',
+  url: 'https://truelovecreative.es/work/jessica-morari',
+  image: 'https://truelovecreative.es/img/portfolios/jesslnk.webp',
+  datePublished: '2023-01-01',
+  author: { '@type': 'Organization', name: 'True Love Creative', url: 'https://truelovecreative.es' },
+  about: { '@type': 'Person', name: 'Jessica Morari' },
+}
+
 export default function JessicaMorariPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <GazettePage
       section="Case Study"
       sectionNum="II"
@@ -121,5 +146,6 @@ export default function JessicaMorariPage() {
         </Link>
       </div>
     </GazettePage>
+    </>
   )
 }

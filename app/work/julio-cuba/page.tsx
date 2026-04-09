@@ -7,15 +7,40 @@ import { P, E, F, INK, RED, FADE, PAPER, RULE } from '../../lib/constants'
 export const metadata: Metadata = {
   title: 'Julio Cuba — Identity Case Study | True Love Creative',
   description: 'How we designed the artistic identity and portfolio for Julio Cuba, a virtuoso violinist performing at luxury events across Europe and the Middle East.',
+  alternates: { canonical: 'https://truelovecreative.es/work/julio-cuba' },
   openGraph: {
+    title: 'Julio Cuba — Identity Case Study',
+    description: 'Artistic identity for a virtuoso violinist on the international stage.',
+    url: 'https://truelovecreative.es/work/julio-cuba',
+    siteName: 'True Love Creative',
+    locale: 'en_US',
+    type: 'article',
+    images: ['/img/portfolios/julio.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'Julio Cuba — Identity Case Study',
     description: 'Artistic identity for a virtuoso violinist on the international stage.',
     images: ['/img/portfolios/julio.webp'],
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: 'Julio Cuba — Identity Case Study',
+  description: 'How we designed the artistic identity and portfolio for Julio Cuba, a virtuoso violinist.',
+  url: 'https://truelovecreative.es/work/julio-cuba',
+  image: 'https://truelovecreative.es/img/portfolios/julio.webp',
+  datePublished: '2024-01-01',
+  author: { '@type': 'Organization', name: 'True Love Creative', url: 'https://truelovecreative.es' },
+  about: { '@type': 'Person', name: 'Julio Cuba' },
+}
+
 export default function JulioCubaPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <GazettePage
       section="Case Study"
       sectionNum="VII"
@@ -121,5 +146,6 @@ export default function JulioCubaPage() {
         </Link>
       </div>
     </GazettePage>
+    </>
   )
 }
