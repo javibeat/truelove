@@ -286,6 +286,8 @@ export default function BriefPage() {
       parts.push(appFeats.length ? `Mobile App (${appFeats.join(', ')})` : 'Mobile App')
     }
     field('Project', parts.join(' | '))
+    field('About', form.querySelector<HTMLInputElement>('[name="project_about"]')?.value || '')
+    field('App About', form.querySelector<HTMLInputElement>('[name="app_about"]')?.value || '')
     if (isRedesign) field('Redesign', vals('feat_redesign') || 'Yes')
     field('Project Notes', form.querySelector<HTMLTextAreaElement>('[name="site_notes"]')?.value || '')
 
@@ -335,6 +337,8 @@ export default function BriefPage() {
     const currentSite = form?.querySelector<HTMLInputElement>('[name="current_site"]')?.value || ''
     const audience = form?.querySelector<HTMLTextAreaElement>('[name="audience"]')?.value || ''
     const notes = form?.querySelector<HTMLTextAreaElement>('[name="notes"]')?.value || ''
+    const projectAbout = form?.querySelector<HTMLInputElement>('[name="project_about"]')?.value || ''
+    const appAbout = form?.querySelector<HTMLInputElement>('[name="app_about"]')?.value || ''
 
     const webFeats = websiteType
       ? [...(sel['feat_web'] || [])].filter(fname =>
@@ -343,7 +347,7 @@ export default function BriefPage() {
       : []
     const appFeats = [...(sel['feat_app'] || [])]
 
-    return { name, email, phone, company, currentSite, audience, notes, webFeats, appFeats }
+    return { name, email, phone, company, currentSite, audience, notes, projectAbout, appAbout, webFeats, appFeats }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reviewing, sel, websiteType])
 
@@ -508,6 +512,13 @@ export default function BriefPage() {
                 })}
               </div>
 
+              {/* What's the project about */}
+              {websiteType && (
+                <div style={{ marginTop: '20px' }}>
+                  <InputField label="What is it about?" name="project_about" placeholder="e.g. Real estate agency, hair salon, restaurant, personal portfolio, online clothing store..." />
+                </div>
+              )}
+
               {/* Redesign toggle */}
               {websiteType && (
                 <div style={{ marginTop: '24px', borderTop: `1px solid ${T.borderLight}`, paddingTop: '20px' }}>
@@ -649,6 +660,9 @@ export default function BriefPage() {
           {/* 03c — Mobile App features */}
           {wantsApp && (
             <Card title="App features" num={0} subtitle="What do you need for your mobile app?">
+              <div style={{ marginBottom: '20px' }}>
+                <InputField label="What is the app about?" name="app_about" placeholder="e.g. Food delivery, fitness tracker, booking system, social network, marketplace..." />
+              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {APP_FEATURES.map(feat => {
                   const fActive = has('feat_app', feat.name)
@@ -856,6 +870,7 @@ export default function BriefPage() {
                 {wantsWebsite && websiteType && (
                   <>
                     <ReviewRow label="Website type" value={websiteType} />
+                    {reviewData.projectAbout && <ReviewRow label="About" value={reviewData.projectAbout} />}
                     {reviewData.webFeats.length > 0 && <ReviewRow label="Features" value={reviewData.webFeats.join(', ')} />}
                     {isRedesign && <ReviewRow label="Redesign" value={vals('feat_redesign') || 'Yes'} />}
                   </>
@@ -863,6 +878,7 @@ export default function BriefPage() {
                 {wantsApp && (
                   <>
                     <ReviewRow label="Mobile App" value="Yes" />
+                    {reviewData.appAbout && <ReviewRow label="About" value={reviewData.appAbout} />}
                     {reviewData.appFeats.length > 0 && <ReviewRow label="App features" value={reviewData.appFeats.join(', ')} />}
                   </>
                 )}
