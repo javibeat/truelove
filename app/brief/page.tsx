@@ -727,8 +727,8 @@ export default function BriefPage() {
           </Card>
 
           {/* 08 — Timeline */}
-          <Card title="How soon do you need this?" num={7} subtitle="Rush projects (level 4-5) may include a priority surcharge.">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px' }}>
+          <Card title="How soon do you need this?" num={7} subtitle="Timeframes start once all content is delivered. Rush projects (level 4-5) may include a priority surcharge.">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px' }}>
               {([
                 [1, 'No rush', '6+ wks'],
                 [2, 'Flexible', '4-6 wks'],
