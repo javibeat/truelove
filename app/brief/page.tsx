@@ -179,8 +179,7 @@ const REDESIGN_FEATURES: Feature[] = [
 const ADDON_PRICES: Record<string, number> = {
   'Logo Design': 2500, 'Full Brand Identity': 5500,
   'Flyer / Poster Design': 600, 'Business Card Design': 400,
-  'Social Media Kit': 1500, 'SEO & AI Setup': 2000,
-  'Copywriting (up to 7 pages)': 1500,
+  'SEO & AI Setup': 2000,
 }
 
 const URGENCY_MULT: Record<number, number> = { 4: 1.15, 5: 1.25 }
