@@ -315,6 +315,11 @@ export default function BriefPage() {
     field('Additional Notes', form.querySelector<HTMLTextAreaElement>('[name="notes"]')?.value || '')
     field('Estimated Budget', hasPrice ? `${sym}${fmt(estimate)}` : 'N/A')
 
+    // Email subject line
+    const clientName = form.querySelector<HTMLInputElement>('[name="name"]')?.value || 'Someone'
+    const projectLabel = parts.length ? parts.join(' + ') : 'New enquiry'
+    d.set('_subject', `New Brief: ${clientName} — ${projectLabel}`)
+
     fetch('https://formspree.io/f/mwvwnkow', {
       method: 'POST', body: d, headers: { Accept: 'application/json' },
     }).then(() => { setSubmitted(true); window.scrollTo({ top: 0, behavior: 'smooth' }) })
