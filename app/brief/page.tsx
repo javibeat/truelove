@@ -179,7 +179,7 @@ const REDESIGN_FEATURES: Feature[] = [
 const ADDON_PRICES: Record<string, number> = {
   'Logo Design': 2500, 'Full Brand Identity': 5500,
   'Flyer / Poster Design': 600, 'Business Card Design': 400,
-  'SEO & AI Setup': 2000,
+  'SEO & AI Setup': 1500,
 }
 
 const URGENCY_MULT: Record<number, number> = { 4: 1.15, 5: 1.25 }
@@ -262,7 +262,18 @@ export default function BriefPage() {
   const handleSubmit = () => {
     const form = formRef.current
     if (!form) return
-    const d = new FormData(form)
+
+    // Build clean FormData with readable labels, skip empty fields
+    const d = new FormData()
+    const field = (label: string, value: string) => { if (value.trim()) d.set(label, value.trim()) }
+
+    field('Name', form.querySelector<HTMLInputElement>('[name="name"]')?.value || '')
+    field('Email', form.querySelector<HTMLInputElement>('[name="email"]')?.value || '')
+    field('Phone / WhatsApp', form.querySelector<HTMLInputElement>('[name="phone"]')?.value || '')
+    field('Company', form.querySelector<HTMLInputElement>('[name="company"]')?.value || '')
+    field('Current Website', form.querySelector<HTMLInputElement>('[name="current_site"]')?.value || '')
+
+    // Project
     const parts: string[] = []
     if (wantsWebsite && websiteType) {
       const webFeats = [...(sel['feat_web'] || [])].filter(fname =>
@@ -274,15 +285,36 @@ export default function BriefPage() {
       const appFeats = [...(sel['feat_app'] || [])]
       parts.push(appFeats.length ? `Mobile App (${appFeats.join(', ')})` : 'Mobile App')
     }
-    d.set('services', parts.join(' | '))
-    d.set('is_redesign', isRedesign ? `Yes (${vals('feat_redesign')})` : 'No')
-    d.set('addons', vals('addons'))
-    d.set('ongoing_support', vals('support'))
-    d.set('goals', vals('goals'))
-    d.set('vibe', vals('vibe'))
-    d.set('content_have', vals('have'))
-    d.set('urgency', urgency ? `${urgency}/5` : '')
-    d.set('estimated_budget', hasPrice ? `${sym}${fmt(estimate)}` : 'N/A')
+    field('Project', parts.join(' | '))
+    if (isRedesign) field('Redesign', vals('feat_redesign') || 'Yes')
+    field('Project Notes', form.querySelector<HTMLTextAreaElement>('[name="site_notes"]')?.value || '')
+
+    // Extras
+    field('Extra Services', vals('addons'))
+    field('Extra Services Notes', form.querySelector<HTMLTextAreaElement>('[name="addon_notes"]')?.value || '')
+    field('Ongoing Support', vals('support'))
+
+    // Goals & audience
+    field('Goals', vals('goals'))
+    field('Goals Notes', form.querySelector<HTMLTextAreaElement>('[name="goals_notes"]')?.value || '')
+    field('Target Audience', form.querySelector<HTMLTextAreaElement>('[name="audience"]')?.value || '')
+
+    // Style
+    field('Vibe / Style', vals('vibe'))
+    field('Reference 1', form.querySelector<HTMLInputElement>('[name="ref1"]')?.value || '')
+    field('Reference 2', form.querySelector<HTMLInputElement>('[name="ref2"]')?.value || '')
+    field('Style Notes', form.querySelector<HTMLTextAreaElement>('[name="vibe_notes"]')?.value || '')
+
+    // Content & timeline
+    field('Content Available', vals('have'))
+    field('Content Notes', form.querySelector<HTMLTextAreaElement>('[name="content_notes"]')?.value || '')
+    field('Urgency', urgency ? `${urgency}/5${urgency >= 4 ? (urgency === 4 ? ' (Rush +15%)' : ' (Rush +25%)') : ''}` : '')
+    field('Timeline Notes', form.querySelector<HTMLTextAreaElement>('[name="timeline_notes"]')?.value || '')
+
+    // Notes & estimate
+    field('Additional Notes', form.querySelector<HTMLTextAreaElement>('[name="notes"]')?.value || '')
+    field('Estimated Budget', hasPrice ? `${sym}${fmt(estimate)}` : 'N/A')
+
     fetch('https://formspree.io/f/mwvwnkow', {
       method: 'POST', body: d, headers: { Accept: 'application/json' },
     }).then(() => { setSubmitted(true); window.scrollTo({ top: 0, behavior: 'smooth' }) })
