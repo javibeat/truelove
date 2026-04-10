@@ -360,7 +360,7 @@ export default function BriefPage() {
         <p style={{ fontSize: '18px', color: T.textSec, lineHeight: 1.6, marginBottom: '32px' }}>
           Thank you for your time. We&apos;ll review everything and get back to you within 24 hours.
         </p>
-        <Link href="/" style={{ display: 'inline-block', padding: '14px 32px', background: T.text, color: '#fff', borderRadius: T.radiusPill, fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>&larr; Back to Home</Link>
+        <a href="https://truelovecreative.es" style={{ display: 'inline-block', padding: '14px 32px', background: T.text, color: '#fff', borderRadius: T.radiusPill, fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>&larr; Back to Home</a>
       </div>
     </div>
   )
