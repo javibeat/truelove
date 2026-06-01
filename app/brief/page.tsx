@@ -8,6 +8,13 @@ function fmt(n: number) {
   return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
+/* ── URL normalizer ─ prepend https:// if the user omits it ── */
+function normalizeUrl(v: string) {
+  const t = v.trim()
+  if (!t) return ''
+  return /^https?:\/\//i.test(t) ? t : `https://${t}`
+}
+
 /* ── Design tokens ────────────────────────────────── */
 const T = {
   bg: '#f5f5f7',
@@ -188,6 +195,14 @@ const GOALS = ['Generate Leads', 'Sell Products', 'Build Credibility', 'Showcase
 const VIBES = ['Luxury / Premium', 'Minimal / Clean', 'Bold / Edgy', 'Warm / Friendly', 'Corporate / Trust', 'Creative / Artistic', 'Modern / Tech', 'Vintage / Classic']
 const CONTENT_HAVE = ['Logo', 'Brand Colors', 'Professional Photos', 'Written Copy', 'Domain Name', 'Nothing yet']
 
+/* ── Friendly labels for required-field error messages ── */
+const FIELD_LABELS: Record<string, string> = {
+  name: 'Name',
+  email: 'Email',
+  phone: 'Phone / WhatsApp',
+  audience: 'Who is it for?',
+}
+
 /* ═══════════════════════════════════════════════════ */
 export default function BriefPage() {
   const [sel, setSel] = useState<Record<string, Set<string>>>({})
@@ -199,7 +214,15 @@ export default function BriefPage() {
   const [isRedesign, setIsRedesign] = useState(false)
   const [reviewing, setReviewing] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
   const formRef = useRef<HTMLFormElement>(null)
+
+  const clearError = (name: string) => setErrors(prev => {
+    if (!prev[name]) return prev
+    const next = { ...prev }
+    delete next[name]
+    return next
+  })
 
   const toggle = (g: string, v: string) => {
     setSel(prev => {
@@ -254,7 +277,27 @@ export default function BriefPage() {
   const handleReview = (e: React.FormEvent) => {
     e.preventDefault()
     const form = formRef.current
-    if (!form || !form.reportValidity()) return
+    if (!form) return
+
+    const errs: Record<string, string> = {}
+    const invalidEls: (HTMLInputElement | HTMLTextAreaElement)[] = []
+    form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]').forEach(el => {
+      if (!el.checkValidity()) {
+        errs[el.name] = el.value.trim()
+          ? (el.validity.typeMismatch ? 'Please enter a valid format' : 'Please check this field')
+          : 'This field is required'
+        invalidEls.push(el)
+      }
+    })
+    setErrors(errs)
+
+    if (invalidEls.length > 0) {
+      const el = invalidEls[0]
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      el.focus({ preventScroll: true })
+      return
+    }
+
     setReviewing(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -271,7 +314,7 @@ export default function BriefPage() {
     field('Email', form.querySelector<HTMLInputElement>('[name="email"]')?.value || '')
     field('Phone / WhatsApp', form.querySelector<HTMLInputElement>('[name="phone"]')?.value || '')
     field('Company', form.querySelector<HTMLInputElement>('[name="company"]')?.value || '')
-    field('Current Website', form.querySelector<HTMLInputElement>('[name="current_site"]')?.value || '')
+    field('Current Website', normalizeUrl(form.querySelector<HTMLInputElement>('[name="current_site"]')?.value || ''))
 
     // Project
     const parts: string[] = []
@@ -303,8 +346,8 @@ export default function BriefPage() {
 
     // Style
     field('Vibe / Style', vals('vibe'))
-    field('Reference 1', form.querySelector<HTMLInputElement>('[name="ref1"]')?.value || '')
-    field('Reference 2', form.querySelector<HTMLInputElement>('[name="ref2"]')?.value || '')
+    field('Reference 1', normalizeUrl(form.querySelector<HTMLInputElement>('[name="ref1"]')?.value || ''))
+    field('Reference 2', normalizeUrl(form.querySelector<HTMLInputElement>('[name="ref2"]')?.value || ''))
     field('Style Notes', form.querySelector<HTMLTextAreaElement>('[name="vibe_notes"]')?.value || '')
 
     // Content & timeline
@@ -430,15 +473,15 @@ export default function BriefPage() {
           {/* 01 — About You */}
           <Card title="About you" num={1}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="grid-2-form">
-              <InputField label="Name" name="name" required placeholder="Your full name" />
-              <InputField label="Email" name="email" type="email" required placeholder="your@email.com" />
+              <InputField label="Name" name="name" required placeholder="Your full name" error={errors.name} onClear={clearError} />
+              <InputField label="Email" name="email" type="email" required placeholder="your@email.com" error={errors.email} onClear={clearError} />
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '16px' }} className="grid-2-form">
-              <InputField label="Phone / WhatsApp" name="phone" type="tel" required placeholder="+971 5X XXX XXXX" />
+              <InputField label="Phone / WhatsApp" name="phone" type="tel" required placeholder="+971 5X XXX XXXX" error={errors.phone} onClear={clearError} />
               <InputField label="Company / Brand" name="company" placeholder="Company or brand name" />
             </div>
             <div style={{ marginTop: '16px' }}>
-              <InputField label="Current website" name="current_site" type="url" placeholder="https://your-site.com" />
+              <InputField label="Current website" name="current_site" type="text" inputMode="url" placeholder="your-site.com" />
             </div>
           </Card>
 
@@ -755,18 +798,20 @@ export default function BriefPage() {
           {/* 05 — Audience */}
           <Card title="Who is it for?" num={4} subtitle="Describe your ideal customer or visitor.">
             <textarea name="audience" required placeholder="e.g. High-income professionals in Dubai aged 30-50, interested in luxury real estate investments..."
-              style={{ ...textareaStyle, minHeight: '100px' }}
+              style={{ ...textareaStyle, minHeight: '100px', borderColor: errors.audience ? T.red : T.border }}
               onFocus={e => { e.currentTarget.style.borderColor = T.accent; e.currentTarget.style.boxShadow = `0 0 0 3px ${T.accentLight}` }}
-              onBlur={e => { e.currentTarget.style.borderColor = T.border; e.currentTarget.style.boxShadow = 'none' }}
+              onBlur={e => { e.currentTarget.style.borderColor = errors.audience ? T.red : T.border; e.currentTarget.style.boxShadow = 'none' }}
+              onInput={() => clearError('audience')}
             />
+            {errors.audience && <div style={{ fontSize: '13px', fontWeight: 500, color: T.red, marginTop: '8px' }}>{errors.audience}</div>}
           </Card>
 
           {/* 06 — Aesthetic */}
           <Card title="What vibe are you going for?" num={5} subtitle="Pick the words that feel closest to your brand.">
             <PillGroup group="vibe" items={VIBES} has={has} toggle={toggle} />
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '20px' }} className="grid-2-form">
-              <InputField label="Reference website" name="ref1" type="url" placeholder="https://example.com" />
-              <InputField label="Another reference" name="ref2" type="url" placeholder="https://... (optional)" />
+              <InputField label="Reference website" name="ref1" type="text" inputMode="url" placeholder="example.com" />
+              <InputField label="Another reference" name="ref2" type="text" inputMode="url" placeholder="another-site.com (optional)" />
             </div>
             <TextArea name="vibe_notes" placeholder="Colors, styles, or visual references you love..." />
           </Card>
@@ -821,6 +866,18 @@ export default function BriefPage() {
           <p style={{ fontSize: '13px', color: T.textTer, lineHeight: 1.6, marginTop: '24px' }}>
             *All prices are starting points. Final quote confirmed after consultation.
           </p>
+
+          {/* ── Error summary ── */}
+          {Object.keys(errors).length > 0 && (
+            <div style={{
+              marginTop: '24px', padding: '16px 20px',
+              background: T.redLight, border: `1.5px solid ${T.red}`, borderRadius: T.radiusSm,
+              fontSize: '15px', color: T.red, lineHeight: 1.5,
+            }}>
+              <strong style={{ fontWeight: 700 }}>Please complete the required fields:</strong>{' '}
+              {Object.keys(errors).map(n => FIELD_LABELS[n] || n).join(', ')}
+            </div>
+          )}
 
           {/* ── Review button ── */}
           <div style={{ marginTop: '16px', display: 'flex', justifyContent: 'flex-end' }}>
@@ -1026,24 +1083,28 @@ function Card({ title, num, subtitle, children }: { title: string; num: number; 
   )
 }
 
-function InputField({ label, name, type = 'text', required, placeholder }: {
+function InputField({ label, name, type = 'text', required, placeholder, inputMode, error, onClear }: {
   label: string; name: string; type?: string; required?: boolean; placeholder: string
+  inputMode?: React.HTMLAttributes<HTMLInputElement>['inputMode']
+  error?: string; onClear?: (name: string) => void
 }) {
   return (
     <div>
       <label style={{ fontSize: '15px', fontWeight: 600, color: T.textSec, display: 'block', marginBottom: '8px' }}>
         {label}{required && <span style={{ color: T.red }}> *</span>}
       </label>
-      <input type={type} name={name} required={required} placeholder={placeholder}
+      <input type={type} name={name} required={required} placeholder={placeholder} inputMode={inputMode}
         style={{
           width: '100%', fontFamily: T.font, fontSize: '18px', padding: '14px 18px',
-          border: `1.5px solid ${T.border}`, borderRadius: T.radiusSm,
+          border: `1.5px solid ${error ? T.red : T.border}`, borderRadius: T.radiusSm,
           background: '#fff', color: T.text, outline: 'none',
           transition: 'border-color .2s, box-shadow .2s',
         }}
         onFocus={e => { e.currentTarget.style.borderColor = T.accent; e.currentTarget.style.boxShadow = `0 0 0 3px ${T.accentLight}` }}
-        onBlur={e => { e.currentTarget.style.borderColor = T.border; e.currentTarget.style.boxShadow = 'none' }}
+        onBlur={e => { e.currentTarget.style.borderColor = error ? T.red : T.border; e.currentTarget.style.boxShadow = 'none' }}
+        onInput={() => onClear?.(name)}
       />
+      {error && <div style={{ fontSize: '13px', fontWeight: 500, color: T.red, marginTop: '6px' }}>{error}</div>}
     </div>
   )
 }
