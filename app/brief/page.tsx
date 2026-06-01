@@ -201,6 +201,8 @@ const FIELD_LABELS: Record<string, string> = {
   email: 'Email',
   phone: 'Phone / WhatsApp',
   audience: 'Who is it for?',
+  _service: 'What are you building',
+  _websiteType: 'Website type',
 }
 
 /* ═══════════════════════════════════════════════════ */
@@ -227,6 +229,13 @@ export default function BriefPage() {
   const toggle = (g: string, v: string) => {
     setSel(prev => {
       const s = new Set(prev[g] || [])
+      // "Nothing yet" is mutually exclusive with the other content options
+      if (g === 'have') {
+        if (v === 'Nothing yet') {
+          return { ...prev, have: s.has('Nothing yet') ? new Set<string>() : new Set(['Nothing yet']) }
+        }
+        s.delete('Nothing yet')
+      }
       s.has(v) ? s.delete(v) : s.add(v)
       return { ...prev, [g]: s }
     })
@@ -289,12 +298,24 @@ export default function BriefPage() {
         invalidEls.push(el)
       }
     })
+
+    // Service selection is required (not a native form field)
+    if (!wantsWebsite && !wantsApp) {
+      errs._service = 'Please select what you’re building — a website, an app, or both.'
+    } else if (wantsWebsite && !websiteType) {
+      errs._websiteType = 'Please choose a website type to continue.'
+    }
     setErrors(errs)
 
-    if (invalidEls.length > 0) {
-      const el = invalidEls[0]
+    // Scroll to the topmost error on the page (inputs or the service/type cards)
+    const anchors: HTMLElement[] = [...invalidEls]
+    if (errs._service) { const e = document.getElementById('card-service'); if (e) anchors.push(e) }
+    if (errs._websiteType) { const e = document.getElementById('card-webtype'); if (e) anchors.push(e) }
+    if (anchors.length > 0) {
+      anchors.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)
+      const el = anchors[0]
       el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      el.focus({ preventScroll: true })
+      if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) el.focus({ preventScroll: true })
       return
     }
 
@@ -486,10 +507,10 @@ export default function BriefPage() {
           </Card>
 
           {/* 02 — What are you building? */}
-          <Card title="What are you building?" num={2} subtitle="Select one or both.">
+          <Card title="What are you building?" num={2} subtitle="Select one or both." required id="card-service" error={errors._service}>
             {/* Category selector */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }} className="grid-2-form">
-              <button type="button" onClick={() => { setWantsWebsite(!wantsWebsite); if (wantsWebsite) { setWebsiteType(null); setIsRedesign(false) } }}
+              <button type="button" onClick={() => { clearError('_service'); setWantsWebsite(!wantsWebsite); if (wantsWebsite) { setWebsiteType(null); setIsRedesign(false) } }}
                 style={{
                   padding: '28px 24px', textAlign: 'center', cursor: 'pointer',
                   border: `2px solid ${wantsWebsite ? T.accent : T.borderLight}`,
@@ -502,7 +523,7 @@ export default function BriefPage() {
                 <div style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 700, color: wantsWebsite ? T.accent : T.text }}>Website</div>
                 <div style={{ fontSize: '15px', color: T.textSec, marginTop: '6px' }}>from* {sym}{fmt(convert(2000))}</div>
               </button>
-              <button type="button" onClick={() => setWantsApp(!wantsApp)}
+              <button type="button" onClick={() => { clearError('_service'); setWantsApp(!wantsApp) }}
                 style={{
                   padding: '28px 24px', textAlign: 'center', cursor: 'pointer',
                   border: `2px solid ${wantsApp ? T.accent : T.borderLight}`,
@@ -520,12 +541,12 @@ export default function BriefPage() {
 
           {/* 03 — Website type (only if website selected) */}
           {wantsWebsite && (
-            <Card title="What type of website?" num={0} subtitle="This sets your starting price. Features appear below.">
+            <Card title="What type of website?" num={0} subtitle="This sets your starting price. Features appear below." required id="card-webtype" error={errors._websiteType}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {Object.entries(WEBSITE_TYPES).map(([name, wt]) => {
                   const active = websiteType === name
                   return (
-                    <button key={name} type="button" onClick={() => setWebsiteType(active ? null : name)}
+                    <button key={name} type="button" onClick={() => { clearError('_websiteType'); setWebsiteType(active ? null : name) }}
                       style={{
                         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                         width: '100%', padding: '20px 22px', textAlign: 'left',
@@ -796,7 +817,7 @@ export default function BriefPage() {
           </Card>
 
           {/* 05 — Audience */}
-          <Card title="Who is it for?" num={4} subtitle="Describe your ideal customer or visitor.">
+          <Card title="Who is it for?" num={4} subtitle="Describe your ideal customer or visitor." required>
             <textarea name="audience" required placeholder="e.g. High-income professionals in Dubai aged 30-50, interested in luxury real estate investments..."
               style={{ ...textareaStyle, minHeight: '100px', borderColor: errors.audience ? T.red : T.border }}
               onFocus={e => { e.currentTarget.style.borderColor = T.accent; e.currentTarget.style.boxShadow = `0 0 0 3px ${T.accentLight}` }}
@@ -1067,18 +1088,22 @@ const textareaStyle: React.CSSProperties = {
   transition: 'border-color .2s, box-shadow .2s', lineHeight: 1.5,
 }
 
-function Card({ title, num, subtitle, children }: { title: string; num: number; subtitle?: string; children: React.ReactNode }) {
+function Card({ title, num, subtitle, children, required, id, error }: { title: string; num: number; subtitle?: string; children: React.ReactNode; required?: boolean; id?: string; error?: string }) {
   return (
-    <div style={{
-      background: T.card, borderRadius: T.radius, border: `1px solid ${T.borderLight}`,
+    <div id={id} style={{
+      background: T.card, borderRadius: T.radius,
+      border: `1px solid ${error ? T.red : T.borderLight}`,
       boxShadow: T.shadow, padding: 'clamp(24px, 4vw, 32px)', marginBottom: '16px',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: subtitle ? '10px' : '24px' }}>
         {num > 0 && <span style={{ fontSize: '16px', fontWeight: 700, color: T.textTer }}>{String(num).padStart(2, '0')}</span>}
-        <h2 style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 700, color: T.text, letterSpacing: '-0.02em' }}>{title}</h2>
+        <h2 style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 700, color: T.text, letterSpacing: '-0.02em' }}>
+          {title}{required && <span style={{ color: T.red }}> *</span>}
+        </h2>
       </div>
       {subtitle && <p style={{ fontSize: 'clamp(16px, 2vw, 18px)', color: T.textSec, lineHeight: 1.6, marginBottom: '24px' }}>{subtitle}</p>}
       {children}
+      {error && <div style={{ fontSize: '15px', fontWeight: 500, color: T.red, marginTop: '16px' }}>{error}</div>}
     </div>
   )
 }
