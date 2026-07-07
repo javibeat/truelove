@@ -1,9 +1,14 @@
-export const P = 'var(--playfair),Georgia,serif'
-export const E = 'var(--elite),"Courier New",monospace'
-export const F = 'var(--fell),Georgia,serif'
-export const IB = '"Ibrand","Playfair Display",Georgia,serif'
-export const INK = '#1A1208'
-export const RED = '#8B1A1A'
-export const FADE = '#7A6A4A'
-export const PAPER = '#F4EFE0'
-export const RULE = 'rgba(26,18,8,0.15)'
+// "Poster" design system — paper frame, condensed display type, one loud accent.
+export const SANS = 'var(--sans),-apple-system,"Helvetica Neue",Arial,sans-serif'
+
+export const INK = '#0A0A0B'
+export const PAPER = '#E8E8E8'
+export const MUTED = '#6E6E73'
+export const LOVE = '#FF2B4A'
+export const BG = '#FFFFFF'
+export const SURFACE = '#F4F4F2'
+export const HAIRLINE = 'rgba(0,0,0,0.12)'
+export const DARK = '#0A0A0B'
+
+export const R_LG = '4px'
+export const R_MD = '2px'

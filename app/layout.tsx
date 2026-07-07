@@ -1,28 +1,15 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Playfair_Display, IM_Fell_English, Special_Elite } from "next/font/google";
+import { Archivo } from "next/font/google";
+import ScrollFx from "./components/ScrollFx";
+import SmoothScroll from "./components/SmoothScroll";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const sans = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
-  variable: "--playfair",
-  display: "swap",
-});
-
-const fell = IM_Fell_English({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--fell",
-  display: "swap",
-});
-
-const elite = Special_Elite({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--elite",
+  axes: ["wdth"],
+  variable: "--sans",
   display: "swap",
 });
 
@@ -83,7 +70,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${fell.variable} ${elite.variable}`}>
+    <html lang="en" className={sans.variable} data-scroll-behavior="smooth">
       <body>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-34EPY62YXR"
@@ -105,7 +92,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ScrollFx />
+        <SmoothScroll />
         {children}
+        <div className="page-frame" aria-hidden="true" />
       </body>
     </html>
   );

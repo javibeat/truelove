@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { P, E, F, INK, RED, FADE, RULE } from '../lib/constants'
+import { LOVE } from '../lib/constants'
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState('')
@@ -35,43 +35,36 @@ export default function NewsletterForm() {
   }
 
   return (
-    <div style={{ border: `4px double ${INK}`, padding: '32px', textAlign: 'center' }}>
-      <p style={{ fontFamily: E, fontSize: '9px', letterSpacing: '.3em', textTransform: 'uppercase', color: RED, marginBottom: '8px' }}>
-        THE GAZETTE DISPATCH
-      </p>
-      <h2 style={{ fontFamily: P, fontSize: 'clamp(1.3rem,3vw,2rem)', fontWeight: 900, color: INK, lineHeight: 1.1, marginBottom: '8px' }}>
-        Design insights, straight to your inbox.
+    <div style={{ borderTop: '1px solid var(--hairline)', borderBottom: '1px solid var(--hairline)', padding: 'clamp(28px,4vw,40px) 0' }}>
+      <h2 className="display" style={{ fontSize: 'clamp(1.3rem,2.4vw,1.8rem)', marginBottom: '10px' }}>
+        Design insights, straight to your inbox<span style={{ color: LOVE }}>.</span>
       </h2>
-      <p style={{ fontFamily: F, fontSize: '0.95rem', fontStyle: 'italic', color: FADE, maxWidth: '480px', margin: '0 auto 20px' }}>
+      <p style={{ fontSize: '15px', color: 'var(--muted)', maxWidth: '480px', marginBottom: '24px', lineHeight: 1.7 }}>
         No spam. No fluff. Just honest thoughts on design, branding, and building things that last. Unsubscribe anytime.
       </p>
 
       {status === 'success' ? (
-        <div style={{ padding: '16px', border: `1px solid ${RULE}`, background: 'rgba(26,18,8,0.02)' }}>
-          <p style={{ fontFamily: P, fontSize: '1.1rem', fontWeight: 700, color: INK }}>{message}</p>
-        </div>
+        <p style={{ fontSize: '16px', fontWeight: 600 }}>{message}</p>
       ) : (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '0', justifyContent: 'center', maxWidth: '460px', margin: '0 auto', flexWrap: 'wrap' }}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px', maxWidth: '480px', flexWrap: 'wrap' }}>
           <input
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             required
+            aria-label="Email address"
             placeholder="your@email.com"
-            style={{ flex: '1', minWidth: '200px', fontFamily: F, fontSize: '14px', padding: '12px 14px', border: `1px solid ${INK}`, borderRight: 'none', background: 'transparent', color: INK, outline: 'none', boxSizing: 'border-box' }}
+            className="field field-on-white"
+            style={{ flex: 1, minWidth: '200px' }}
           />
-          <button
-            type="submit"
-            disabled={status === 'loading'}
-            style={{ fontFamily: E, fontSize: '10px', letterSpacing: '.2em', textTransform: 'uppercase', background: INK, color: '#F4EFE0', padding: '12px 24px', border: `1px solid ${INK}`, cursor: status === 'loading' ? 'wait' : 'pointer', whiteSpace: 'nowrap', opacity: status === 'loading' ? 0.7 : 1 }}
-          >
-            {status === 'loading' ? 'Sending...' : 'Subscribe'}
+          <button type="submit" disabled={status === 'loading'} className="btn btn-dark" style={{ opacity: status === 'loading' ? 0.7 : 1 }}>
+            {status === 'loading' ? 'Sending…' : 'Subscribe'}
           </button>
         </form>
       )}
 
       {status === 'error' && (
-        <p style={{ fontFamily: F, fontSize: '0.85rem', color: RED, marginTop: '12px' }}>{message}</p>
+        <p style={{ fontSize: '14px', color: LOVE, marginTop: '12px' }}>{message}</p>
       )}
     </div>
   )

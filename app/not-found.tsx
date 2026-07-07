@@ -1,29 +1,23 @@
 import Link from 'next/link'
-import GazettePage from './components/GazettePage'
-import { F, E, INK, RED, FADE, PAPER } from './lib/constants'
+import PageShell from './components/PageShell'
 
 export default function NotFound() {
   return (
-    <GazettePage
-      section="Lost & Found"
-      sectionNum="404"
-      title="Page Not"
-      titleAccent="Found"
+    <PageShell
+      label="404"
+      title="Page not"
+      accent="found"
       subtitle="The page you are looking for does not exist, has been moved, or was never published."
     >
-      <div style={{ textAlign: 'center', padding: '48px 0' }}>
-        <p style={{ fontFamily: F, fontSize: '1.1rem', fontStyle: 'italic', color: FADE, marginBottom: '24px' }}>
+      <div style={{ textAlign: 'center', paddingBottom: 'clamp(64px,9vw,110px)' }}>
+        <p className="lede" style={{ marginBottom: '28px' }}>
           Perhaps the archives can help you find what you seek.
         </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/" style={{ fontFamily: E, fontSize: '10px', letterSpacing: '.25em', textTransform: 'uppercase', color: PAPER, background: INK, padding: '14px 32px', textDecoration: 'none', display: 'inline-block' }}>
-            Return Home
-          </Link>
-          <Link href="/#contact" style={{ fontFamily: E, fontSize: '10px', letterSpacing: '.25em', textTransform: 'uppercase', color: RED, border: `2px solid ${RED}`, padding: '12px 30px', textDecoration: 'none', display: 'inline-block' }}>
-            Contact Us
-          </Link>
+        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link href="/" className="btn btn-dark">Return home</Link>
+          <Link href="/#contact" className="btn btn-ghost">Contact us</Link>
         </div>
       </div>
-    </GazettePage>
+    </PageShell>
   )
 }

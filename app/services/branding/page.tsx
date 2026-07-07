@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import GazettePage from '../../components/GazettePage'
-import { P, E, F, INK, RED, FADE, RULE } from '../../lib/constants'
-import Link from 'next/link'
+import PageShell from '../../components/PageShell'
+import { ServiceIntro, StepRows, FaqAccordion } from '../../components/ServiceSections'
+import { LOVE } from '../../lib/constants'
 
 export const metadata: Metadata = {
   title: 'Brand Identity Dubai — Logo & Branding · True Love Creative',
@@ -85,397 +85,105 @@ const jsonLd = {
   ],
 }
 
+const included = [
+  {
+    title: 'Brand Strategy',
+    text: 'Audience definition, competitive positioning, brand personality, tone of voice, and core messaging. The foundation everything else is built on.',
+  },
+  {
+    title: 'Logo System',
+    text: 'Primary logo, secondary mark, favicon, and responsive variations. Designed to work at every size, from a billboard to an app icon.',
+  },
+  {
+    title: 'Visual Identity',
+    text: 'Colour palette with Pantone and hex codes, typography system with primary and secondary typefaces, photography direction, and pattern/texture library.',
+  },
+  {
+    title: 'Brand Guidelines',
+    text: 'A comprehensive document that ensures consistency long after we are done. Logo usage rules, spacing, colour applications, do and do-not examples, and templates.',
+  },
+]
+
+const process = [
+  {
+    num: '01',
+    title: 'Immersion',
+    text: 'We study your industry, your competitors, and your audience. We interview you. We absorb everything before forming an opinion.',
+  },
+  {
+    num: '02',
+    title: 'Strategy',
+    text: 'We define your positioning, personality, and messaging framework. This becomes the brief that guides all creative work.',
+  },
+  {
+    num: '03',
+    title: 'Design Exploration',
+    text: 'We present 2 to 3 distinct creative directions. Not variations of the same idea, but genuinely different approaches to your identity.',
+  },
+  {
+    num: '04',
+    title: 'Refinement & Delivery',
+    text: 'The chosen direction is refined, systematised, and documented in a brand guidelines package you can hand to any designer or printer.',
+  },
+]
+
+const faqs = [
+  {
+    q: 'What does a brand identity package include?',
+    a: 'Our standard package includes brand strategy and positioning, primary and secondary logo designs, colour palette, typography system, brand guidelines document, and a starter kit of templates. We tailor each package to the client.',
+  },
+  {
+    q: 'How long does branding take?',
+    a: 'A full brand identity typically takes 4 to 6 weeks from kick-off to final delivery. The strategy phase takes one week, design exploration takes two weeks, and refinement plus guidelines takes one to two weeks.',
+  },
+  {
+    q: 'Do you offer brand strategy?',
+    a: 'Yes. Every branding project starts with strategy. We define your audience, positioning, tone of voice, and competitive differentiation before touching a single pixel. Strategy without design is a document. Design without strategy is decoration.',
+  },
+]
+
 export default function BrandingPage() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    <PageShell
+      title="Brand Identity"
+      subtitle="Logos are the tip of the iceberg. We build the whole iceberg."
+      wide
+    >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      <ServiceIntro
+        lede="A brand is not a logo. A brand is a promise: the sum of every interaction your audience has when they encounter you."
+        body="We have built identities for DJs, restaurants, tech startups, photographers, and luxury service providers across Dubai and beyond. The common thread is substance. Every brand we create has a reason to exist."
+        aside={
+          <div style={{ borderTop: '1px solid var(--hairline)', paddingTop: '24px' }}>
+            <p className="display" style={{ fontSize: 'clamp(1.4rem,2.4vw,1.9rem)', marginBottom: '14px' }}>
+              Design without strategy is decoration<span style={{ color: LOVE }}>.</span>
+            </p>
+            <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: 1.7 }}>
+              Before we design anything, we ask the uncomfortable questions. Who are you for? Who are you not for? What do you believe that your competitors do not?
+            </p>
+          </div>
+        }
       />
 
-      <GazettePage
-        section="Services"
-        sectionNum="IV"
-        title="Brand"
-        titleAccent="Identity"
-        subtitle="Logos are the tip of the iceberg. We build the whole iceberg."
-      >
-        {/* ── Intro ── */}
-        <div
-          className="grid-2"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '32px',
-            padding: '24px 0',
-          }}
-        >
-          <div>
-            <p
-              className="fell dropcap"
-              style={{
-                fontFamily: F,
-                fontSize: 'clamp(0.95rem, 1.6vw, 1.15rem)',
-                lineHeight: 1.7,
-                color: INK,
-              }}
-            >
-              A brand is not a logo. A brand is a promise — the sum of every
-              interaction, every touchpoint, every feeling your audience has
-              when they encounter you. We design the system that makes that
-              promise consistent, recognisable, and impossible to ignore.
-            </p>
-            <p
-              className="fell"
-              style={{
-                fontFamily: F,
-                fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
-                lineHeight: 1.7,
-                color: INK,
-                marginTop: '16px',
-              }}
-            >
-              We have built identities for DJs, restaurants, tech startups,
-              photographers, and luxury service providers across Dubai and
-              beyond. The common thread is substance — every brand we create
-              has a reason to exist.
-            </p>
-          </div>
-          <div>
-            <h2
-              style={{
-                fontFamily: P,
-                fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
-                fontWeight: 900,
-                color: INK,
-                marginBottom: '12px',
-              }}
-            >
-              Strategy <em style={{ color: RED }}>First</em>
-            </h2>
-            <p
-              className="fell"
-              style={{
-                fontFamily: F,
-                fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
-                lineHeight: 1.7,
-                color: INK,
-              }}
-            >
-              Before we design anything, we ask the uncomfortable questions.
-              Who are you for? Who are you not for? What do you believe that
-              your competitors do not? The answers shape every visual decision
-              that follows.
-            </p>
-            <div
-              style={{
-                marginTop: '16px',
-                padding: '12px 16px',
-                border: `1px solid ${RULE}`,
-                background: 'rgba(26,18,8,0.02)',
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: E,
-                  fontSize: '8px',
-                  letterSpacing: '.25em',
-                  textTransform: 'uppercase',
-                  color: FADE,
-                }}
-              >
-                Philosophy
-              </span>
-              <p
-                style={{
-                  fontFamily: P,
-                  fontSize: '1.1rem',
-                  fontWeight: 700,
-                  color: RED,
-                  marginTop: '4px',
-                }}
-              >
-                Design without strategy is decoration.
-              </p>
-              <p
-                className="fell"
-                style={{
-                  fontFamily: F,
-                  fontSize: '0.85rem',
-                  color: FADE,
-                  fontStyle: 'italic',
-                  marginTop: '4px',
-                }}
-              >
-                We do not decorate. We build systems that scale.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="rule-thin" style={{ margin: '16px 0' }} />
-
-        {/* ── What's Included ── */}
-        <div style={{ padding: '24px 0' }}>
-          <h2
-            style={{
-              fontFamily: P,
-              fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
-              fontWeight: 900,
-              color: INK,
-              textAlign: 'center',
-              marginBottom: '24px',
-            }}
-          >
-            What&apos;s <em style={{ color: RED }}>Included</em>
-          </h2>
-          <div
-            className="grid-2"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '24px',
-            }}
-          >
-            {[
-              {
-                title: 'Brand Strategy',
-                text: 'Audience definition, competitive positioning, brand personality, tone of voice, and core messaging. The foundation everything else is built on.',
-              },
-              {
-                title: 'Logo System',
-                text: 'Primary logo, secondary mark, favicon, and responsive variations. Designed to work at every size — from a billboard to an app icon.',
-              },
-              {
-                title: 'Visual Identity',
-                text: 'Colour palette with Pantone and hex codes, typography system with primary and secondary typefaces, photography direction, and pattern/texture library.',
-              },
-              {
-                title: 'Brand Guidelines',
-                text: 'A comprehensive document that ensures consistency long after we are done. Logo usage rules, spacing, colour applications, do and do-not examples, and templates.',
-              },
-            ].map((item) => (
-              <div key={item.title} style={{ padding: '16px 0' }}>
-                <h3
-                  style={{
-                    fontFamily: P,
-                    fontSize: '1.3rem',
-                    fontWeight: 700,
-                    color: INK,
-                    marginBottom: '8px',
-                  }}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  className="fell"
-                  style={{
-                    fontFamily: F,
-                    fontSize: '0.95rem',
-                    lineHeight: 1.7,
-                    color: INK,
-                  }}
-                >
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rule-thin" style={{ margin: '16px 0' }} />
-
-        {/* ── Process ── */}
-        <div style={{ padding: '24px 0' }}>
-          <h2
-            style={{
-              fontFamily: P,
-              fontSize: 'clamp(1.3rem, 2.5vw, 2rem)',
-              fontWeight: 900,
-              color: INK,
-              marginBottom: '16px',
-            }}
-          >
-            The <em style={{ color: RED }}>Process</em>
-          </h2>
-          <div
-            className="grid-2"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '16px',
-            }}
-          >
-            {[
-              {
-                num: '01',
-                title: 'Immersion',
-                text: 'We study your industry, your competitors, and your audience. We interview you. We absorb everything before forming an opinion.',
-              },
-              {
-                num: '02',
-                title: 'Strategy',
-                text: 'We define your positioning, personality, and messaging framework. This becomes the brief that guides all creative work.',
-              },
-              {
-                num: '03',
-                title: 'Design Exploration',
-                text: 'We present 2 to 3 distinct creative directions — not variations of the same idea, but genuinely different approaches to your identity.',
-              },
-              {
-                num: '04',
-                title: 'Refinement & Delivery',
-                text: 'The chosen direction is refined, systematised, and documented in a brand guidelines package you can hand to any designer or printer.',
-              },
-            ].map((step) => (
-              <div key={step.num} style={{ padding: '16px 0' }}>
-                <span
-                  style={{
-                    fontFamily: E,
-                    fontSize: '9px',
-                    letterSpacing: '.3em',
-                    color: RED,
-                  }}
-                >
-                  WEEK {step.num}
-                </span>
-                <h3
-                  style={{
-                    fontFamily: P,
-                    fontSize: '1.15rem',
-                    fontWeight: 700,
-                    color: INK,
-                    marginTop: '4px',
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  className="fell"
-                  style={{
-                    fontFamily: F,
-                    fontSize: '0.95rem',
-                    lineHeight: 1.7,
-                    color: INK,
-                    marginTop: '8px',
-                  }}
-                >
-                  {step.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rule-h" style={{ margin: '24px 0' }} />
-
-        {/* ── FAQ ── */}
-        <div style={{ padding: '24px 0' }}>
-          <h2
-            style={{
-              fontFamily: P,
-              fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
-              fontWeight: 900,
-              color: INK,
-              textAlign: 'center',
-              marginBottom: '24px',
-            }}
-          >
-            Frequently Asked <em style={{ color: RED }}>Questions</em>
-          </h2>
-          {[
-            {
-              q: 'What does a brand identity package include?',
-              a: 'Our standard package includes brand strategy and positioning, primary and secondary logo designs, colour palette, typography system, brand guidelines document, and a starter kit of templates. We tailor each package to the client.',
-            },
-            {
-              q: 'How long does branding take?',
-              a: 'A full brand identity typically takes 4 to 6 weeks from kick-off to final delivery. The strategy phase takes one week, design exploration takes two weeks, and refinement plus guidelines takes one to two weeks.',
-            },
-            {
-              q: 'Do you offer brand strategy?',
-              a: 'Yes. Every branding project starts with strategy. We define your audience, positioning, tone of voice, and competitive differentiation before touching a single pixel. Strategy without design is a document. Design without strategy is decoration.',
-            },
-          ].map((faq, i) => (
-            <div
-              key={i}
-              style={{
-                padding: '16px 0',
-                borderBottom: `1px solid ${RULE}`,
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: P,
-                  fontSize: '1.15rem',
-                  fontWeight: 700,
-                  color: INK,
-                }}
-              >
-                {faq.q}
-              </h3>
-              <p
-                className="fell"
-                style={{
-                  fontFamily: F,
-                  fontSize: '0.95rem',
-                  lineHeight: 1.7,
-                  color: INK,
-                  marginTop: '8px',
-                }}
-              >
-                {faq.a}
-              </p>
+      {/* Deliverables — 2-col hairline grid */}
+      <div style={{ paddingBottom: 'clamp(56px,8vw,110px)' }}>
+        <h2 className="display reveal" style={{ fontSize: 'clamp(1.5rem,2.6vw,2.2rem)', marginBottom: 'clamp(28px,4vw,48px)' }}>
+          What&rsquo;s included<span style={{ color: LOVE }}>.</span>
+        </h2>
+        <div className="grid-2" style={{ gap: '0 clamp(24px,4vw,64px)' }}>
+          {included.map(item => (
+            <div key={item.title} className="reveal" style={{ padding: '24px 0', borderTop: '1px solid var(--hairline)' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 640, letterSpacing: '-0.01em', marginBottom: '10px' }}>{item.title}</h3>
+              <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: 1.7 }}>{item.text}</p>
             </div>
           ))}
         </div>
+      </div>
 
-        <div className="rule-h" style={{ margin: '24px 0' }} />
+      <StepRows heading="The process, week by week." steps={process} />
 
-        {/* ── CTA ── */}
-        <div style={{ textAlign: 'center', padding: '32px 0' }}>
-          <p
-            style={{
-              fontFamily: P,
-              fontSize: 'clamp(1.3rem, 3vw, 2rem)',
-              fontWeight: 900,
-              color: INK,
-            }}
-          >
-            Your brand deserves more than a <em style={{ color: RED }}>logo</em>.
-          </p>
-          <p
-            className="fell"
-            style={{
-              fontFamily: F,
-              fontSize: '1rem',
-              fontStyle: 'italic',
-              color: FADE,
-              marginTop: '8px',
-            }}
-          >
-            Let us build an identity that works as hard as you do.
-          </p>
-          <Link
-            href="/#contact"
-            style={{
-              display: 'inline-block',
-              marginTop: '20px',
-              fontFamily: E,
-              fontSize: '10px',
-              letterSpacing: '.3em',
-              textTransform: 'uppercase',
-              color: RED,
-              border: `2px solid ${RED}`,
-              padding: '12px 32px',
-              textDecoration: 'none',
-              transition: 'all .2s',
-            }}
-          >
-            Start Your Brand
-          </Link>
-        </div>
-      </GazettePage>
-    </>
+      <FaqAccordion heading="Frequently asked questions." faqs={faqs} />
+    </PageShell>
   )
 }
