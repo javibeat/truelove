@@ -76,6 +76,9 @@ export default function SiteFooter() {
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.14)', marginTop: '48px', paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
           <span style={{ fontSize: '13px', color: FG }}>© 2015-2026 True Love Creative. All rights reserved.</span>
+          <span style={{ fontSize: '13px', color: FG }}>
+            TrueLoveCreative — part of <a href="https://beatlabs.ae" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ fontSize: '13px' }}>beatLabs</a>
+          </span>
           <span style={{ fontSize: '13px', color: FG }}>Made with <span style={{ color: LOVE }}>♥</span> in Dubai</span>
         </div>
       </div>
