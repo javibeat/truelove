@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'will-ai-replace-graphic-designers',
+    title: 'Will AI Replace Graphic Designers? An Honest Answer',
+    subtitle: 'The tools got scary good this year. Here\'s what they still can\'t do — and why it matters for your business.',
+    date: '27 July 2026',
+    readTime: '7 min read',
+    category: 'Graphic Design',
+    excerpt: 'I use AI in my studio every single day, so this isn\'t a defensive rant. It\'s an honest map of what AI actually changed in graphic design, what it can\'t touch, and why a conversation with a designer before you spend a dirham is the cheapest insurance there is.',
+  },
+  {
+    slug: 'the-real-cost-of-an-ai-generated-logo',
+    title: 'The Real Cost of an AI-Generated Logo',
+    subtitle: 'It takes thirty seconds and costs nothing. Sometimes that\'s exactly what it\'s worth.',
+    date: '24 July 2026',
+    readTime: '6 min read',
+    category: 'Branding',
+    excerpt: 'AI logo generators are everywhere, and for some situations they\'re genuinely fine. But there are costs the demo never shows you — legal, practical, and strategic. Read this before you put a generated logo on anything you can\'t easily change.',
+  },
+  {
+    slug: 'signs-your-website-is-costing-you-clients',
+    title: '7 Signs Your Website Is Costing You Clients',
+    subtitle: 'Your site might be quietly turning people away. Here\'s how to know — and what to do about it.',
+    date: '21 July 2026',
+    readTime: '6 min read',
+    category: 'Web Design',
+    excerpt: 'Most business owners only look at their own website twice a year. Meanwhile every potential client looks at it before they call you. Seven honest checks to run on your site today, from someone who\'s rebuilt dozens of them.',
+  },
+  {
     slug: 'web-design-in-the-age-of-ai',
     title: 'Web Design in the Age of AI: Why Handmade Still Wins',
     subtitle: 'Everyone can generate a website in 2026. That\'s exactly the problem.',
