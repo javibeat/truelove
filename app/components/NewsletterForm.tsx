@@ -2,9 +2,11 @@
 
 import { useState } from 'react'
 import { LOVE } from '../lib/constants'
+import { HONEYPOT_FIELD } from '../lib/subscribe'
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState('')
+  const [honeypot, setHoneypot] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
 
@@ -16,7 +18,7 @@ export default function NewsletterForm() {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, [HONEYPOT_FIELD]: honeypot }),
       })
 
       if (res.ok) {
@@ -46,7 +48,17 @@ export default function NewsletterForm() {
       {status === 'success' ? (
         <p style={{ fontSize: '16px', fontWeight: 600 }}>{message}</p>
       ) : (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px', maxWidth: '480px', flexWrap: 'wrap' }}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px', maxWidth: '480px', flexWrap: 'wrap', position: 'relative' }}>
+          <input
+            type="text"
+            name={HONEYPOT_FIELD}
+            value={honeypot}
+            onChange={e => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+          />
           <input
             type="email"
             value={email}

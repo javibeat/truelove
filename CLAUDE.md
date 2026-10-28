@@ -10,11 +10,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 pnpm dev         # Start dev server (Next.js 16)
 pnpm build       # Production build
 pnpm lint        # ESLint (next/core-web-vitals + typescript)
+pnpm test        # Vitest unit tests (app/**/*.test.ts)
 ```
 
 Package manager: **pnpm v11+** (migrated from npm after the Mini Shai-Hulud supply-chain attack in May 2026; `minimum-release-age=1440` and ignored install scripts are enabled by default).
 
-No test framework is configured.
+Unit tests use **Vitest** (`*.test.ts` next to the code, e.g. `app/lib/subscribe.test.ts`).
 
 ## Architecture
 
