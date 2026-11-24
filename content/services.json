@@ -1,0 +1,319 @@
+{
+ "web-design": {
+  "title": "Web Design",
+  "subtitle": "Custom websites that perform as good as they look. Built in Dubai since 2015.",
+  "lede": "Your website is not a brochure. It is your hardest-working employee: selling, explaining and representing you 24 hours a day.",
+  "body": "We do not use templates. We do not drag and drop. Every site we deliver is a bespoke piece of engineering, hand-coded, rigorously tested, and built for speed.",
+  "aside": [
+   "Lighthouse score. We treat anything below perfect as a bug."
+  ],
+  "heads": [
+   "Our process",
+   "What we build.",
+   "Frequently asked questions."
+  ],
+  "h2s": [],
+  "steps": [
+   {
+    "num": "01",
+    "title": "Discovery",
+    "text": "We start by understanding your business, your audience, and your goals. No assumptions, just questions until we see the full picture."
+   },
+   {
+    "num": "02",
+    "title": "Design",
+    "text": "Wireframes become high-fidelity mockups. You see exactly what you are getting before a single line of code is written."
+   },
+   {
+    "num": "03",
+    "title": "Development",
+    "text": "Clean, semantic, performant code. We build component by component, testing on every device and browser as we go."
+   },
+   {
+    "num": "04",
+    "title": "Launch & Support",
+    "text": "DNS, SSL, analytics, structured data: we handle the details. Post-launch, we stay on call for edits and enhancements."
+   }
+  ],
+  "buildItems": [
+   "Portfolio & personal sites",
+   "E-commerce & booking platforms",
+   "Landing pages & microsites",
+   "Artist & musician websites",
+   "SaaS dashboards & web apps",
+   "Restaurant & hospitality sites"
+  ],
+  "faqs": [
+   {
+    "q": "What technologies do you use?",
+    "a": "We build with Next.js, React, TypeScript, and Tailwind CSS. Our sites are deployed on Vercel for global edge performance. For CMS needs we integrate Sanity, Contentful, or headless WordPress."
+   },
+   {
+    "q": "Do you offer SEO?",
+    "a": "Every website we build includes technical SEO foundations: structured data, semantic HTML, Core Web Vitals optimization, meta tags, and XML sitemaps. We also offer ongoing SEO strategy as an add-on service."
+   },
+   {
+    "q": "How much does a website cost?",
+    "a": "Projects start from AED 8,000 for a single-page site. Multi-page custom builds typically range from AED 15,000 to AED 50,000 depending on scope. We provide a fixed quote after a discovery call so there are no surprises."
+   }
+  ],
+  "stack": [
+   [
+    "Framework",
+    "Next.js + React"
+   ],
+   [
+    "Language",
+    "TypeScript"
+   ],
+   [
+    "Styling",
+    "Tailwind CSS"
+   ],
+   [
+    "Hosting",
+    "Vercel edge network"
+   ]
+  ],
+  "meta": {
+   "title": "Web Design Dubai — Custom Websites · True Love Creative",
+   "description": "Premium custom web design in Dubai. We build high-performance websites with Next.js, React & Tailwind CSS. Bespoke digital experiences since 2015."
+  }
+ },
+ "branding": {
+  "title": "Brand Identity",
+  "subtitle": "Logos are the tip of the iceberg. We build the whole iceberg.",
+  "lede": "A brand is not a logo. A brand is a promise: the sum of every interaction your audience has when they encounter you.",
+  "body": "We have built identities for DJs, restaurants, tech startups, photographers, and luxury service providers across Dubai and beyond. The common thread is substance. Every brand we create has a reason to exist.",
+  "aside": [
+   "Design without strategy is decoration.",
+   "Before we design anything, we ask the uncomfortable questions. Who are you for? Who are you not for? What do you believe that your competitors do not?"
+  ],
+  "heads": [
+   "The process, step by step.",
+   "Frequently asked questions."
+  ],
+  "h2s": [
+   "What’s included."
+  ],
+  "process": [
+   {
+    "num": "01",
+    "title": "Immersion",
+    "text": "We study your industry, your competitors, and your audience. We interview you. We absorb everything before forming an opinion."
+   },
+   {
+    "num": "02",
+    "title": "Strategy",
+    "text": "We define your positioning, personality, and messaging framework. This becomes the brief that guides all creative work."
+   },
+   {
+    "num": "03",
+    "title": "Design Exploration",
+    "text": "We present 2 to 3 distinct creative directions. Not variations of the same idea, but genuinely different approaches to your identity."
+   },
+   {
+    "num": "04",
+    "title": "Refinement & Delivery",
+    "text": "The chosen direction is refined, systematised, and documented in a brand guidelines package you can hand to any designer or printer."
+   }
+  ],
+  "included": [
+   {
+    "title": "Brand Strategy",
+    "text": "Audience definition, competitive positioning, brand personality, tone of voice, and core messaging. The foundation everything else is built on."
+   },
+   {
+    "title": "Logo System",
+    "text": "Primary logo, secondary mark, favicon, and responsive variations. Designed to work at every size, from a billboard to an app icon."
+   },
+   {
+    "title": "Visual Identity",
+    "text": "Colour palette with Pantone and hex codes, typography system with primary and secondary typefaces, photography direction, and pattern/texture library."
+   },
+   {
+    "title": "Brand Guidelines",
+    "text": "A comprehensive document that ensures consistency long after we are done. Logo usage rules, spacing, colour applications, do and do-not examples, and templates."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "What does a brand identity package include?",
+    "a": "Our standard package includes brand strategy and positioning, primary and secondary logo designs, colour palette, typography system, brand guidelines document, and a starter kit of templates. We tailor each package to the client."
+   },
+   {
+    "q": "Do you offer brand strategy?",
+    "a": "Yes. Every branding project starts with strategy. We define your audience, positioning, tone of voice, and competitive differentiation before touching a single pixel. Strategy without design is a document. Design without strategy is decoration."
+   }
+  ],
+  "meta": {
+   "title": "Brand Identity Dubai — Logo & Branding · True Love Creative",
+   "description": "Premium brand identity design in Dubai. Logo design, brand strategy, visual systems, and brand guidelines from a studio that builds identities with substance."
+  }
+ },
+ "graphic-design": {
+  "title": "Graphic Design",
+  "subtitle": "Vinyl covers, event flyers, and visual systems for artists who refuse to blend in.",
+  "lede": "We come from the music industry. A decade inside Dubai's nightlife, studio and events scene, as participants, not observers.",
+  "body": "From the texture of a vinyl sleeve to the urgency of a last-minute flyer, we know what works because we have lived it. Every project gets the same attention, whether it is a global release or a Tuesday night event.",
+  "aside": [
+   "Buika × Kiko Navarro.",
+   "Cover artwork for internationally released records with Grammy-nominated artists."
+  ],
+  "heads": [
+   "How it works.",
+   "Frequently asked questions."
+  ],
+  "h2s": [
+   "Ink, sleeves & artwork.",
+   "What we create."
+  ],
+  "steps": [
+   {
+    "num": "01",
+    "title": "Brief",
+    "text": "You tell us what you need and when you need it, and we agree the timing together."
+   },
+   {
+    "num": "02",
+    "title": "Concepts",
+    "text": "We present 2 to 3 different directions to choose from."
+   },
+   {
+    "num": "03",
+    "title": "Refinement",
+    "text": "One round of revisions is included; most clients need zero."
+   },
+   {
+    "num": "04",
+    "title": "Delivery",
+    "text": "Final files in every format you will ever need."
+   }
+  ],
+  "services": [
+   {
+    "title": "Vinyl & Album Covers",
+    "text": "Artwork that holds its own next to the music. We handle concept, illustration, typography, and print-ready production for physical and digital releases."
+   },
+   {
+    "title": "Event Flyers & Posters",
+    "text": "Bold, scroll-stopping visuals for club nights, festivals, residencies, and pop-ups. Designed for Instagram grids, stories, print, and LED screens."
+   },
+   {
+    "title": "Social Media Systems",
+    "text": "Not one-off posts but entire visual systems. Templates, grids, story frameworks, and content calendars that keep your brand consistent across platforms."
+   },
+   {
+    "title": "Brand Collateral",
+    "text": "Business cards, letterheads, presentation decks, menus, signage, and packaging. Every touchpoint reinforces your identity."
+   }
+  ],
+  "gallery": [
+   {
+    "src": "/img/graphic/el-silencio.jpg",
+    "caption": "El Silencio · vinyl cover · Buika × Kiko Navarro",
+    "span": "b3"
+   },
+   {
+    "src": "/img/graphic/mama-calling.jpg",
+    "caption": "Mama Calling · vinyl cover artwork",
+    "span": "b3"
+   },
+   {
+    "src": "/img/graphic/varadero.jpg",
+    "caption": "Varadero · release artwork",
+    "span": "b2"
+   },
+   {
+    "src": "/img/graphic/varadero1.jpg",
+    "caption": "Varadero · artwork variation I",
+    "span": "b2"
+   },
+   {
+    "src": "/img/graphic/varadero2.jpg",
+    "caption": "Varadero · artwork variation II",
+    "span": "b2"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "What types of graphic design do you offer?",
+    "a": "We specialise in vinyl and album cover art, event flyers and posters, social media content systems, brand collateral, editorial layouts, and merchandise design. If it is visual and it matters, we design it."
+   },
+   {
+    "q": "Can you design vinyl/album covers?",
+    "a": "Absolutely. We have designed covers for internationally released records including collaborations with Grammy-nominated artists. We understand print specifications, Pantone requirements, and the creative expectations of the music industry."
+   },
+   {
+    "q": "Do you work with event promoters?",
+    "a": "Yes. We work with promoters, venues, and artists across Dubai and internationally. From weekly residency flyers to full festival campaigns, we deliver on tight timelines without cutting corners on quality."
+   }
+  ],
+  "meta": {
+   "title": "Graphic Design Dubai — Visual Identity · True Love Creative",
+   "description": "Premium graphic design in Dubai. Vinyl covers, event flyers, social media visuals, and brand collateral from a studio that lives inside the music and nightlife scene."
+  }
+ },
+ "app-development": {
+  "title": "App Development",
+  "subtitle": "From concept to App Store. Mobile experiences that people actually want to use.",
+  "lede": "The app graveyard is full of technically sound products that nobody wanted. We start with the problem, not the technology.",
+  "body": "We design for humans first and write code second, because a beautiful interface on a broken idea is still a broken idea. We have taken apps from napkin sketches to the App Store. We know what it takes, and more importantly, we know what to cut.",
+  "aside": [
+   "One team, first sketch to release build.",
+   "UX research, interface design, front-end and back-end architecture, and store deployment, all under one roof. Most projects ship from a single React Native codebase to both platforms."
+  ],
+  "heads": [
+   "Development process",
+   "Technical capabilities.",
+   "Frequently asked questions."
+  ],
+  "h2s": [],
+  "phases": [
+   {
+    "num": "01",
+    "title": "Discovery & Strategy",
+    "text": "We map your users, your competitors, and your business model. We define the MVP scope ruthlessly: ship what matters, learn from real users, iterate."
+   },
+   {
+    "num": "02",
+    "title": "UX & UI Design",
+    "text": "Wireframes, user flows, and high-fidelity prototypes. You interact with the app before it is built. We validate assumptions early so we do not waste your budget."
+   },
+   {
+    "num": "03",
+    "title": "Development & Testing",
+    "text": "Agile sprints with bi-weekly demos. React Native for cross-platform efficiency, native modules where performance demands it. Continuous integration, automated testing."
+   },
+   {
+    "num": "04",
+    "title": "Launch & Growth",
+    "text": "App Store and Google Play submission, ASO optimisation, analytics setup, crash monitoring. Post-launch, we iterate based on real user data."
+   }
+  ],
+  "capabilities": [
+   "React Native cross-platform apps",
+   "Native iOS (Swift) & Android (Kotlin)",
+   "Backend APIs & database architecture",
+   "Push notifications & real-time features",
+   "Payment integration (Stripe, Apple Pay)",
+   "Authentication & user management",
+   "Maps, geolocation & GPS features",
+   "App Store & Google Play deployment"
+  ],
+  "faqs": [
+   {
+    "q": "Do you build iOS and Android apps?",
+    "a": "Yes. We build for both platforms. For most projects we use React Native, which allows us to ship a single codebase to both the App Store and Google Play without sacrificing performance or native feel."
+   },
+   {
+    "q": "What is your development process?",
+    "a": "We follow a four-phase process: Discovery and strategy, UX and UI design, development with iterative testing, and deployment with App Store optimisation. You are involved at every milestone."
+   }
+  ],
+  "meta": {
+   "title": "App Development Dubai — iOS & Android · True Love Creative",
+   "description": "Custom iOS and Android app development in Dubai. From concept to App Store, we build performant mobile experiences with React Native and native technologies."
+  }
+ }
+}

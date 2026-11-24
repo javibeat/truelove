@@ -1,0 +1,12 @@
+# Only the site and its api/ functions are deployed: no tools, sources, tests, labs or notes.
+tools/
+content/
+tests/
+vendor/
+.impeccable/
+.devserver.py
+options.html
+sliders.html
+js/sliders.js
+*.md
+README.md

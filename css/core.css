@@ -1,0 +1,137 @@
+/* True Love Creative — shared tokens, glass, tab bar and switches. */
+:root {
+  --heart: #E80707;
+  --night: 0;
+  @media (prefers-color-scheme: dark) { --night: 1; }
+  &:has(> head > meta[name="color-scheme"][content="dark"]) { --night: 1; }
+  &:has(> head > meta[name="color-scheme"][content="light"]) { --night: 0; }
+  --mix: calc(var(--night) * 100%);
+  --bg: color-mix(in oklab, #F4F4F4, #000000 var(--mix));
+  --fg: color-mix(in oklab, #0A0A0A, #F4F4F4 var(--mix));
+  --muted: color-mix(in oklab, #3C3C43, #C7C7CC var(--mix));
+  --soft: color-mix(in oklab, #5E5E63, #A1A1A6 var(--mix));
+  --heart-ink: color-mix(in oklab, #C40000, #FF5C5C var(--mix));   /* heart red for small text: passes 4.5:1 on cards and page */
+  --line: color-mix(in oklab, rgba(0,0,0,.1), rgba(255,255,255,.12) var(--mix));
+  --card: color-mix(in oklab, #FFFFFF, #1C1C1E var(--mix));   /* OLED: black page, cards lifted like in Curb */
+  --card-2: color-mix(in oklab, #F0F0F2, #2C2C2E var(--mix));
+  --tint: color-mix(in oklab, rgba(255,255,255,.3), rgba(24,24,26,.34) var(--mix));   /* Liquid Glass: a light veil, not a frosted pane */
+  --pill: color-mix(in oklab, rgba(0,0,0,.075), rgba(255,255,255,.13) var(--mix));
+  --rim-hi: color-mix(in oklab, rgba(255,255,255,1), rgba(255,255,255,.26) var(--mix));
+  --rim-lo: color-mix(in oklab, rgba(255,255,255,.55), rgba(255,255,255,.08) var(--mix));
+  --rim-dark: color-mix(in oklab, rgba(0,0,0,.14), rgba(0,0,0,.5) var(--mix));
+  --shadow: color-mix(in oklab, rgba(0,0,0,.2), rgba(0,0,0,.7) var(--mix));
+  color-scheme: light dark;
+  &:has(> head > meta[name="color-scheme"][content="dark"]) { color-scheme: dark; }
+  &:has(> head > meta[name="color-scheme"][content="light"]) { color-scheme: light; }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; }
+body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif; background: var(--bg); color: var(--fg); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; }
+[hidden] { display: none !important; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ── Glass pane (see glassPane in core.js). Never put filter/opacity on an ancestor: the glass would go blind. ── */
+.glass { position: relative; clip-path: var(--sq); background: var(--tint);
+  backdrop-filter: blur(5px) saturate(1.8) brightness(1.06); -webkit-backdrop-filter: blur(5px) saturate(1.8) brightness(1.06); }   /* Safari/Firefox: no refraction, so a little more frost */
+.glass .glass-rim .glow { mix-blend-mode: soft-light; }
+.tab, .sw-a .track-icons { text-shadow: 0 0 10px color-mix(in oklab, var(--bg), transparent 30%); }   /* keeps labels legible over busy pages, like Apple's vibrancy */
+.glass-rim { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 4; }
+.gw { position: relative; display: block; isolation: isolate; }
+.glass-shadow { position: absolute; inset: 0; z-index: -1; pointer-events: none; border-radius: 30px; background: var(--shadow); filter: blur(18px); translate: 0 8px; scale: .94 .9; }
+
+/* ── Dock: tab bar + day/night switch, floating ── */
+.dock { position: fixed; left: 50%; top: max(16px, env(safe-area-inset-top)); translate: -50% 0; z-index: 50; display: flex; gap: 10px; align-items: center; }
+.bar { display: flex; align-items: center; height: 64px; padding: 6px 8px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.pill { position: absolute; left: 0; top: 6px; height: 52px; z-index: 0; pointer-events: none; }
+.pill i { position: absolute; inset: 0; clip-path: var(--sq); background: var(--pill); }
+.lens { position: absolute; left: 0; top: 6px; height: 52px; z-index: 3; pointer-events: none; clip-path: var(--sq); opacity: 0;
+  backdrop-filter: blur(.5px) brightness(1.08) saturate(1.4); -webkit-backdrop-filter: blur(.5px) brightness(1.08) saturate(1.4); }
+.lens svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.tab { -webkit-user-drag: none; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 74px; height: 52px; font-size: 11px; font-weight: 600; letter-spacing: .01em; color: var(--muted); transition: color .3s; -webkit-tap-highlight-color: transparent; }
+.tab svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.tab.on { color: var(--fg); }
+.tab:focus-visible, .sw:focus-visible { outline: 2px solid var(--heart); outline-offset: -3px; border-radius: 16px; }
+
+/* ── Sun/moon icon ── */
+.sunmoon { display: block; width: 24px; height: 24px; }
+.sunmoon svg { width: 100%; height: 100%; overflow: visible; }
+.sunmoon .core { fill: currentColor; }
+.sunmoon .rays line { stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+
+/* Switch A — glass slider: a knob slides along a short glass track and morphs sun ↔ moon */
+.sw { position: relative; height: 64px; padding: 6px; cursor: pointer; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+.sw-a { width: 116px; }
+.sw-a .track-icons { position: absolute; inset: 6px; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; color: var(--soft); opacity: .55; }
+.sw-a .track-icons svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+.sw-a .knob { position: absolute; left: 6px; top: 6px; width: 52px; height: 52px; display: grid; place-items: center; z-index: 2; color: var(--fg); }
+.sw-a .knob i { position: absolute; inset: 0; clip-path: var(--sq); background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+.sw-a .knob .sunmoon { position: relative; }
+
+/* Switch B — segmented: sun | moon with the same bubble as the tab bar */
+.sw-b { display: flex; align-items: center; width: 122px; }
+.sw-b .seg { position: relative; z-index: 1; flex: 1; height: 52px; display: grid; place-items: center; color: var(--muted); transition: color .3s; }
+.sw-b .seg svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.sw-b .seg.on { color: var(--fg); }
+.sw-b .bub { position: absolute; top: 6px; left: 6px; height: 52px; width: 55px; z-index: 0; }
+.sw-b .bub i { position: absolute; inset: 0; clip-path: var(--sq); background: var(--pill); }
+
+/* Switch C — eclipse: one round glass button; the moon slides over the sun */
+.sw-c { width: 64px; padding: 0; display: grid; place-items: center; color: var(--fg); }
+.sw-c .sunmoon { width: 28px; height: 28px; }
+
+/* Phones: the switch floats on its own, top right (moved out of the dock by JS) */
+.sw-float { position: fixed; z-index: 50; top: max(14px, env(safe-area-inset-top)); right: 14px; }
+@media (width < 700px) {
+  .dock { top: auto; bottom: max(14px, env(safe-area-inset-bottom)); }
+  .tab { width: 56px; font-size: 10px; }
+  .bar { padding: 5px; }
+
+}
+
+/* ── Day/night slider with a scene (js/sliders.js) ── */
+.slider { padding: 0; border: 0; background: none; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; border-radius: 999px; }
+.slider:active { cursor: grabbing; }
+.slider canvas { display: block; width: var(--sw-w, 252px); height: auto; aspect-ratio: 168 / 60; }
+.slider.px canvas { image-rendering: pixelated; }
+.slider:focus-visible { outline: 3px solid var(--heart); outline-offset: 4px; }
+.dock-switch { --sw-w: 180px; display: block; border-radius: 999px; box-shadow: 0 10px 24px -8px var(--shadow); }
+.sw-float.dock-switch { --sw-w: 128px; }
+
+/* Adaptive ink (js/site.js): icons and labels follow what is under the glass */
+.glass.over-dark { --tint: rgba(18,18,20,.30); }
+.glass.over-dark .tab { color: rgba(255,255,255,.72); text-shadow: 0 0 10px rgba(0,0,0,.35); }
+.glass.over-dark .tab.on { color: #fff; }
+.glass.over-dark .pill i { background: rgba(255,255,255,.16); }
+.glass.over-light { --tint: rgba(255,255,255,.34); }
+.glass.over-light .tab { color: #3C3C43; text-shadow: 0 0 10px rgba(255,255,255,.55); }
+.glass.over-light .tab.on { color: #0A0A0A; }
+.glass.over-light .pill i { background: rgba(0,0,0,.075); }
+.glass.over-dark .sw-a .track-icons, .glass.over-dark.sw-a .track-icons { color: rgba(255,255,255,.8); }
+.glass { transition: background-color .35s; }
+.tab { transition: color .35s, text-shadow .35s; }
+
+/* Reading progress ring (js/progress.js), as on beatlabs.ae */
+.progress { position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); z-index: 45; width: 56px; height: 56px; border-radius: 50%; padding: 0; display: grid; place-items: center; cursor: pointer;
+  background: var(--card); color: var(--fg); box-shadow: 0 2px 6px rgba(0,0,0,.08), 0 12px 32px rgba(0,0,0,.14), inset 0 0 0 1px var(--line);
+  opacity: 0; translate: 0 12px; pointer-events: none; transition: opacity .3s, translate .4s cubic-bezier(.2,.8,.2,1), background-color .2s, color .2s; }
+.progress.shown { opacity: 1; translate: 0 0; pointer-events: auto; }
+.progress:hover { background: var(--heart); }
+.progress:hover .progress-bar { stroke: #fff; }
+.progress:hover .progress-num { color: #fff; }
+.progress:hover .progress-track { stroke: rgba(255,255,255,.3); }
+.progress svg { position: absolute; inset: 0; width: 100%; height: 100%; rotate: -90deg; }
+.progress circle { fill: none; stroke-width: 3; }
+.progress-track { stroke: var(--line); }
+.progress-bar { stroke: color-mix(in oklab, var(--fg), var(--heart) calc(var(--p, 0) * 100%)); stroke-linecap: round; transition: stroke-dashoffset .12s linear; }
+.progress-num { color: color-mix(in oklab, var(--fg), var(--heart) calc(var(--p, 0) * 100%)); position: relative; display: inline-flex; align-items: baseline; font-size: 12px; font-weight: 650; line-height: 1; font-variant-numeric: tabular-nums; }
+.progress-num small { font-size: 8px; font-weight: 500; margin-left: 1px; opacity: .7; }
+.progress:focus-visible { outline: 2px solid var(--heart); outline-offset: 3px; }
+@media (width < 700px) { .progress { bottom: calc(max(14px, env(safe-area-inset-bottom)) + 80px); right: 14px; width: 48px; height: 48px; } }
+body:has(#brief-app) .progress { bottom: calc(max(18px, env(safe-area-inset-bottom)) + 84px); }
+@media (width < 700px) { body:has(#brief-app) .progress { bottom: calc(max(14px, env(safe-area-inset-bottom)) + 160px); } }
+@media (prefers-reduced-motion: reduce) { .progress, .progress-bar { transition: none; } }
+
+/* Dark mode: the inner glow of the glass rim is far too visible on black, tone it down */
+.glass-rim .glow { opacity: calc(1 - var(--night) * .8); }

@@ -1,0 +1,102 @@
+{
+ "/about": {
+  "title": "About — True Love Creative · Design Studio Dubai",
+  "description": "Founded in 2015 in Dubai, True Love Creative is an independent design studio for businesses, startups and brands worldwide. Fewer clients, deeper work: web, brand, graphic and apps."
+ },
+ "/services": {
+  "title": "Services — True Love Creative · Web, Brand, Graphic & App Design",
+  "description": "Web design, brand identity, graphic design and app development. Bespoke digital work crafted by hand in Dubai since 2015."
+ },
+ "/services/web-design": {
+  "title": "Web Design Dubai — Custom Websites · True Love Creative",
+  "description": "Premium custom web design in Dubai. We build high-performance websites with Next.js, React & Tailwind CSS. Bespoke digital experiences since 2015."
+ },
+ "/services/branding": {
+  "title": "Brand Identity Dubai — Logo & Branding · True Love Creative",
+  "description": "Premium brand identity design in Dubai. Logo design, brand strategy, visual systems, and brand guidelines from a studio that builds identities with substance."
+ },
+ "/services/graphic-design": {
+  "title": "Graphic Design Dubai — Visual Identity · True Love Creative",
+  "description": "Premium graphic design in Dubai. Vinyl covers, event flyers, social media visuals, and brand collateral from a studio that lives inside the music and nightlife scene."
+ },
+ "/services/app-development": {
+  "title": "App Development Dubai — iOS & Android · True Love Creative",
+  "description": "Custom iOS and Android app development in Dubai. From concept to App Store, we build performant mobile experiences with React Native and native technologies."
+ },
+ "/work": {
+  "title": "Work — True Love Creative · Selected Projects",
+  "description": "Selected websites, brand identities and digital products by True Love Creative for businesses, brands and creators. Crafted in Dubai since 2015."
+ },
+ "/blog": {
+  "title": "Blog — True Love Creative · Design Insights from Dubai",
+  "description": "Thoughts on web design, branding, and creative direction from a Dubai-based design studio. Real talk from a decade of building digital experiences."
+ },
+ "/blog/how-much-does-a-website-cost-in-dubai": {
+  "title": "How Much Does a Website Cost in Dubai? (2026) — True Love Creative",
+  "description": "Honest pricing for websites in Dubai from a studio that's been building them for 10 years. Landing pages from AED 1,500, full sites from AED 3,000, e-commerce from AED 5,500."
+ },
+ "/blog/how-to-get-found-in-ai-search": {
+  "title": "How to Get Found When People Ask AI Instead of Google — True Love Creative",
+  "description": "ChatGPT, Perplexity and AI Overviews are answering the questions your customers used to google. A practical guide for Dubai businesses on staying visible in AI search."
+ },
+ "/blog/signs-your-website-is-costing-you-clients": {
+  "title": "7 Signs Your Website Is Costing You Clients — True Love Creative",
+  "description": "Your website might be quietly turning people away. Seven honest checks to run on your site today — speed, mobile, outdated info, AI readability and more — from a Dubai web designer."
+ },
+ "/blog/the-real-cost-of-an-ai-generated-logo": {
+  "title": "The Real Cost of an AI-Generated Logo — True Love Creative",
+  "description": "AI logo generators are fast and free — and sometimes fine. But there are legal, practical and strategic costs the demo never shows. What to check before you commit, from a Dubai brand designer."
+ },
+ "/blog/web-design-in-the-age-of-ai": {
+  "title": "Web Design in the Age of AI: Why Handmade Still Wins — True Love Creative",
+  "description": "AI builders can generate a website in minutes, and they all look the same. A designer's honest take on what AI changed, what it didn't, and why handmade design is worth more in 2026."
+ },
+ "/blog/what-to-look-for-when-hiring-a-web-designer-in-dubai": {
+  "title": "What to Look for When Hiring a Web Designer in Dubai (2026) — True Love Creative",
+  "description": "A practical guide to choosing the right web designer in Dubai. Red flags, what to ask, and how to tell the difference between good and great. Written by a designer with 10 years in the game."
+ },
+ "/blog/why-every-dj-needs-a-website": {
+  "title": "Why Every DJ and Musician Needs a Professional Website — True Love Creative",
+  "description": "Instagram is not your website. After building sites for DJs across Dubai and Europe, here's why a professional web presence changes everything for musicians."
+ },
+ "/blog/will-ai-replace-graphic-designers": {
+  "title": "Will AI Replace Graphic Designers? An Honest Answer — True Love Creative",
+  "description": "A working designer's honest answer to the question everyone is asking in 2026. What AI actually changed in graphic design, what it can't do, and why talking to a professional first will save you money."
+ },
+ "/work/kiko-navarro": {
+  "title": "Kiko Navarro — Web Design Case Study | True Love Creative",
+  "description": "How we designed and built kikonavarro.es — a premium web presence for legendary Ibiza DJ and producer Kiko Navarro. Web design case study by True Love Creative, Dubai."
+ },
+ "/work/jessica-morari": {
+  "title": "Jessica Morari — Branding & Web Case Study | True Love Creative",
+  "description": "How we built the brand identity and website for Jessica Morari, a Dubai-based coaching and wellness professional. Branding case study by True Love Creative."
+ },
+ "/work/javi-beat": {
+  "title": "Javi Beat — Identity Case Study | True Love Creative",
+  "description": "How we crafted the brand identity and web presence for Javi Beat, a Dubai-based DJ building a distinctive visual language for the international circuit."
+ },
+ "/work/estrela-photo": {
+  "title": "Estrela Photo — Portfolio Case Study | True Love Creative",
+  "description": "How we designed estrela.photo — a refined portfolio website for a photography studio capturing life across the UAE. Case study by True Love Creative, Dubai."
+ },
+ "/work/manuel-kevsax": {
+  "title": "Manuel KevSax — Web Design Case Study | True Love Creative",
+  "description": "How we designed manuelkevsax.com — a luxury web experience for Dubai&apos;s premier saxophonist, built for high-end bookings and brand partnerships."
+ },
+ "/work/julio-cuba": {
+  "title": "Julio Cuba — Identity Case Study | True Love Creative",
+  "description": "How we designed the artistic identity and portfolio for Julio Cuba, a virtuoso violinist performing at luxury events across Europe and the Middle East."
+ },
+ "/work/sergio-trumpet": {
+  "title": "Sergio Trumpet — Portfolio Case Study | True Love Creative",
+  "description": "How we designed sergiotrumpetdj.com — a dynamic portfolio for a professional trumpet player and DJ performing across the Middle East and Europe."
+ },
+ "/brief": {
+  "title": "Start a Project — Project Brief · True Love Creative",
+  "description": "Tell True Love Creative what you need: website, app, branding or design. Pick features, see an estimate in AED, EUR, GBP or USD, and send your brief in 3 minutes."
+ },
+ "/contact": {
+  "title": "Contact — True Love Creative · Design Studio Dubai",
+  "description": "Contact True Love Creative, a creative studio in Dubai: email, WhatsApp or a quick message. Reply within 24 hours, in English, Spanish or Arabic."
+ }
+}

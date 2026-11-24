@@ -1,0 +1,165 @@
+# True Love Creative — full profile
+
+> Creative studio in Dubai, UAE, for brands, businesses and anyone with an idea. Web design, brand identity, graphic design and app development since 2015. A brand of BeatLabs FZE LLC (License 53228, Ajman Media City Free Zone, UAE).
+
+## Studio
+
+- Founded: 2015, Dubai, United Arab Emirates. Serving clients worldwide.
+- Founder: Javi Beat, designer and creative director.
+- Languages: English, Spanish, Arabic. Reply within 24 hours.
+- Philosophy: design is not decoration, it is decision. Fewer clients, deeper work. Everything made by hand: no templates, no page builders.
+- Clients: businesses, startups, brands, artists and independent creators. 30+ clients served.
+- Timelines are agreed with each client after the first conversation; they depend on the design and the scope.
+
+## Services
+
+### Web Design
+URL: https://truelovecreative.es/services/web-design
+Price: From AED 8,000.
+Your website is not a brochure. It is your hardest-working employee: selling, explaining and representing you 24 hours a day. We do not use templates. We do not drag and drop. Every site we deliver is a bespoke piece of engineering, hand-coded, rigorously tested, and built for speed.
+- Discovery: We start by understanding your business, your audience, and your goals. No assumptions, just questions until we see the full picture.
+- Design: Wireframes become high-fidelity mockups. You see exactly what you are getting before a single line of code is written.
+- Development: Clean, semantic, performant code. We build component by component, testing on every device and browser as we go.
+- Launch & Support: DNS, SSL, analytics, structured data: we handle the details. Post-launch, we stay on call for edits and enhancements.
+Q: What technologies do you use?
+A: We build with Next.js, React, TypeScript, and Tailwind CSS. Our sites are deployed on Vercel for global edge performance. For CMS needs we integrate Sanity, Contentful, or headless WordPress.
+Q: Do you offer SEO?
+A: Every website we build includes technical SEO foundations: structured data, semantic HTML, Core Web Vitals optimization, meta tags, and XML sitemaps. We also offer ongoing SEO strategy as an add-on service.
+Q: How much does a website cost?
+A: Projects start from AED 8,000 for a single-page site. Multi-page custom builds typically range from AED 15,000 to AED 50,000 depending on scope. We provide a fixed quote after a discovery call so there are no surprises.
+
+### Brand Identity
+URL: https://truelovecreative.es/services/branding
+Price: After a short call.
+A brand is not a logo. A brand is a promise: the sum of every interaction your audience has when they encounter you. We have built identities for DJs, restaurants, tech startups, photographers, and luxury service providers across Dubai and beyond. The common thread is substance. Every brand we create has a reason to exist.
+- Immersion: We study your industry, your competitors, and your audience. We interview you. We absorb everything before forming an opinion.
+- Strategy: We define your positioning, personality, and messaging framework. This becomes the brief that guides all creative work.
+- Design Exploration: We present 2 to 3 distinct creative directions. Not variations of the same idea, but genuinely different approaches to your identity.
+- Refinement & Delivery: The chosen direction is refined, systematised, and documented in a brand guidelines package you can hand to any designer or printer.
+Q: What does a brand identity package include?
+A: Our standard package includes brand strategy and positioning, primary and secondary logo designs, colour palette, typography system, brand guidelines document, and a starter kit of templates. We tailor each package to the client.
+Q: Do you offer brand strategy?
+A: Yes. Every branding project starts with strategy. We define your audience, positioning, tone of voice, and competitive differentiation before touching a single pixel. Strategy without design is a document. Design without strategy is decoration.
+
+### Graphic Design
+URL: https://truelovecreative.es/services/graphic-design
+Price: Per piece.
+We come from the music industry. A decade inside Dubai's nightlife, studio and events scene, as participants, not observers. From the texture of a vinyl sleeve to the urgency of a last-minute flyer, we know what works because we have lived it. Every project gets the same attention, whether it is a global release or a Tuesday night event.
+- Brief: You tell us what you need and when you need it, and we agree the timing together.
+- Concepts: We present 2 to 3 different directions to choose from.
+- Refinement: One round of revisions is included; most clients need zero.
+- Delivery: Final files in every format you will ever need.
+Q: What types of graphic design do you offer?
+A: We specialise in vinyl and album cover art, event flyers and posters, social media content systems, brand collateral, editorial layouts, and merchandise design. If it is visual and it matters, we design it.
+Q: Can you design vinyl/album covers?
+A: Absolutely. We have designed covers for internationally released records including collaborations with Grammy-nominated artists. We understand print specifications, Pantone requirements, and the creative expectations of the music industry.
+Q: Do you work with event promoters?
+A: Yes. We work with promoters, venues, and artists across Dubai and internationally. From weekly residency flyers to full festival campaigns, we deliver on tight timelines without cutting corners on quality.
+
+### App Development
+URL: https://truelovecreative.es/services/app-development
+Price: Once scoped.
+The app graveyard is full of technically sound products that nobody wanted. We start with the problem, not the technology. We design for humans first and write code second, because a beautiful interface on a broken idea is still a broken idea. We have taken apps from napkin sketches to the App Store. We know what it takes, and more importantly, we know what to cut.
+- Discovery & Strategy: We map your users, your competitors, and your business model. We define the MVP scope ruthlessly: ship what matters, learn from real users, iterate.
+- UX & UI Design: Wireframes, user flows, and high-fidelity prototypes. You interact with the app before it is built. We validate assumptions early so we do not waste your budget.
+- Development & Testing: Agile sprints with bi-weekly demos. React Native for cross-platform efficiency, native modules where performance demands it. Continuous integration, automated testing.
+- Launch & Growth: App Store and Google Play submission, ASO optimisation, analytics setup, crash monitoring. Post-launch, we iterate based on real user data.
+Q: Do you build iOS and Android apps?
+A: Yes. We build for both platforms. For most projects we use React Native, which allows us to ship a single codebase to both the App Store and Google Play without sacrificing performance or native feel.
+Q: What is your development process?
+A: We follow a four-phase process: Discovery and strategy, UX and UI design, development with iterative testing, and deployment with App Store optimisation. You are involved at every milestone.
+
+## Selected work
+
+### Jessica Morari (2023)
+URL: https://truelovecreative.es/work/jessica-morari · Live site: https://jessicamorari.com/
+Services: Branding & Web Design · Industry: Coaching / Wellness
+A cohesive brand and digital platform for a coaching professional redefining wellness in the UAE.
+- Challenge: Jessica's previous branding was fragmented, different visual languages across social media, print materials, and an outdated website. She needed a unified identity that communicated credibility and warmth in equal measure, alongside a digital hub to handle bookings, testimonials, and content marketing.
+- Approach: We began with a full brand audit and strategy session, defining Jessica's tone of voice, colour palette, and typographic system. The resulting identity balances softness with strength, muted earth tones, refined serif typography, and clean compositions. The website was designed as a conversion-focused platform with integrated scheduling, a blog framework, and responsive layouts optimised for mobile-first audiences.
+- Result: A polished, cohesive brand system and a high-performing website that positions Jessica as a premium practitioner. Enquiry volume increased significantly within the first quarter, and the new identity now extends seamlessly across all touchpoints, from LinkedIn to printed workshop materials.
+- Client: "They understood my vision from day one. The brand feels authentic, elegant, and unmistakably mine." — Jessica Morari
+
+### Kiko Navarro (2024)
+URL: https://truelovecreative.es/work/kiko-navarro · Live site: https://kikonavarro.es/
+Services: Web Design & Development · Industry: Music / Entertainment
+A digital stage worthy of a legend. Web design for one of house music's most revered artists.
+- Challenge: Kiko's existing online presence didn't reflect the depth and prestige of his career. He needed a single destination that could house his extensive discography, upcoming tour dates, press kit, and booking information, all wrapped in a visual language that felt as warm and soulful as his music.
+- Approach: We designed a bold, immersive single-page experience with rich photography, integrated Spotify and SoundCloud players, and a clean tour-date module. The visual direction draws on vinyl sleeve aesthetics, warm tones, generous typography, and tactile textures that echo the analogue roots of Kiko's sound. Every interaction was crafted to feel effortless, so the music always takes centre stage.
+- Result: A refined, performance-optimised website that serves as Kiko's global hub, unifying his releases, tour calendar, and brand identity. The site has become the go-to reference for promoters and press worldwide, reinforcing his status as one of the genre's true originals.
+- Client: "The site captures everything, my music, my story, my vibe. It finally feels like me." — Kiko Navarro
+
+### Javi Beat (2024)
+URL: https://truelovecreative.es/work/javi-beat · Live site: https://javibeat.com/
+Services: Identity & Web Design · Industry: Music / DJing
+Forging a visual identity for a DJ who has called Dubai home for over a decade, and the world his dancefloor.
+- Challenge: Despite a strong reputation on the ground, Javi lacked a cohesive visual identity. His logo, social templates, and online presence were inconsistent, making it difficult for promoters and brands to quickly understand his positioning. The brief was clear: create an identity system that feels as polished as his performances.
+- Approach: We developed a complete identity package, logo, typographic system, colour palette, and a suite of social media templates. The design language draws on vintage record label aesthetics crossed with modern minimalism: bold serif typography, a restrained palette of ink-black and warm cream, with accents of deep red. The website was built as a fast, elegant one-page experience with integrated music players, a booking form, and a photo gallery.
+- Result: A unified brand that travels. Whether it's an Instagram story, an EPK sent to a festival, or the homepage itself, every touchpoint now speaks with the same confident voice. Javi's booking enquiries have grown steadily, and the brand has become instantly recognisable across Dubai's nightlife circuit.
+- Client: "Finally, a brand that feels like who I am behind the decks, refined, bold, and unmistakably personal." — Javi Beat
+
+### Estrela Photo (2023)
+URL: https://truelovecreative.es/work/estrela-photo · Live site: https://estrela.photo/
+Services: Portfolio Web Design · Industry: Photography
+A portfolio that lets the photographs speak. Clean, fast, and designed to convert browsers into clients.
+- Challenge: Photographers face a paradox: their portfolios must be visually rich yet lightning-fast. Estrela needed a site that could display high-resolution galleries without sacrificing load times, while also providing a clear path to enquiry. The previous site was gallery-heavy but lacked structure, making it difficult for potential clients to navigate or take action.
+- Approach: We designed a minimal, gallery-centric portfolio with aggressive image optimisation, lazy loading, responsive srcsets, and modern formats, to keep the experience fluid on any device. The layout follows a grid-masonry hybrid that lets the photographs dictate the rhythm. A subtle category filter allows visitors to browse by genre, and every gallery ends with a clear booking prompt.
+- Result: A portfolio that loads in under two seconds and looks stunning on every screen. Session bookings through the website more than doubled in the first three months, and the site has become a powerful sales tool that Estrela shares directly with prospective clients.
+- Client: "The new site does what my photos do, it captures attention instantly and doesn't let go." — Estrela Photo
+
+### Manuel KevSax (2024)
+URL: https://truelovecreative.es/work/manuel-kevsax · Live site: https://manuelkevsax.com/
+Services: Web Design & Development · Industry: Music / Entertainment
+A luxury digital presence for a saxophonist who performs at the world's most exclusive stages.
+- Challenge: Manuel needed a website that could serve as both a showcase and a sales tool, something event planners and brand managers could browse in seconds and immediately understand the calibre of his offering. The site had to feel luxurious without being heavy, and it needed to convert high-intent visitors into direct bookings.
+- Approach: We designed a cinematic, scroll-driven experience anchored by full-bleed video and photography. The site architecture is deliberately lean, hero, highlights reel, testimonials, and a direct booking enquiry, to respect the time-poor decision-makers who form Manuel's core audience. Gold and black accents reinforce the luxury positioning, while embedded audio samples let visitors experience the performance before making contact.
+- Result: A sleek, fast-loading website that positions Manuel at the top of the luxury entertainment market. The site has become his primary booking channel, with event planners frequently citing it as the deciding factor. Enquiry quality improved markedly, the site pre-qualifies visitors, attracting precisely the calibre of client Manuel wants to work with.
+- Client: "Event managers tell me the website sold them before they even heard me play. That's exactly what I wanted." — Manuel KevSax
+
+### Julio Cuba (2024)
+URL: https://truelovecreative.es/work/julio-cuba · Live site: https://juliocuba.es/
+Services: Identity & Web Design · Industry: Music / Performing Arts
+An artistic identity and digital portfolio for a violinist whose performances turn moments into memories.
+- Challenge: Julio's artistry is deeply emotional and physical, translating that into a digital experience was the core challenge. He needed a brand identity that felt as passionate as his playing, not corporate or clinical. Additionally, he required a bilingual platform (Spanish and English) that could serve both European and Gulf-based audiences.
+- Approach: We crafted an identity rooted in contrast, the precision of classical music meets the spontaneity of improvisation. The logo plays with negative space, suggesting both a bow stroke and a musical note. The colour palette draws from concert-hall warmth: deep blacks, antique golds, and parchment whites. The website features full-screen performance photography, embedded video, and an elegant repertoire section that showcases Julio's range. Every detail was designed to make the visitor feel as though they've just stepped into a private recital.
+- Result: An identity and website that resonate with the same emotion as Julio's music. The new brand has elevated his positioning in the luxury events market, and the site serves as a powerful introduction for agents and event planners who discover him online. It's art, not just a website, and that's exactly the point.
+- Client: "They didn't just design a website, they understood my music and turned it into something you can see and feel." — Julio Cuba
+
+### Sergio Trumpet (2024)
+URL: https://truelovecreative.es/work/sergio-trumpet · Live site: https://sergiotrumpetdj.com/
+Services: Portfolio & Web Design · Industry: Music / Entertainment
+A bold digital portfolio for a musician who brings the house down, trumpet in one hand, the crowd in the other.
+- Challenge: Sergio's dual identity as both a trumpet player and a DJ made positioning tricky. The website needed to communicate both skills without diluting either, while also serving as a professional booking tool for venues and event agencies across multiple time zones. Previous online efforts were scattered across social media with no central hub.
+- Approach: We built a high-energy, video-forward portfolio that opens with a full-screen performance reel, immediately establishing Sergio's unique stage presence. The site architecture separates his trumpet and DJ work into distinct sections while maintaining a unified visual identity. Embedded video clips, a curated photo gallery, and a streamlined booking form create a complete experience that moves at the same tempo as his sets.
+- Result: A portfolio that lands with impact. Sergio now sends a single link to promoters and the site does the rest, showcasing his versatility, professionalism, and stage energy within seconds. International bookings have increased, and the site has become an essential part of his pitch to new venues and festival organisers.
+- Client: "People used to ask what I do. Now I send them the site and they book me on the spot." — Sergio Trumpet
+
+## Articles
+
+- Accessible Design Is Good Business (24 November 2026, Web Design): https://truelovecreative.es/blog/accessible-design-is-good-business
+  Contrast, readable text, keyboard use, captions, dark mode, calmer motion and clear forms. Why accessible design helps every customer, plus a plain-language checklist to bring to your designer.
+- How to Write a Website Brief That Gets You an Accurate Quote (24 November 2026, Strategy): https://truelovecreative.es/blog/how-to-write-a-website-brief
+  Most quotes go wrong before any design starts. Here is what to prepare before you brief a designer or studio, the mistakes I see most often, and how our brief form asks the right questions for you.
+- Will AI Replace Graphic Designers? An Honest Answer (27 July 2026, Graphic Design): https://truelovecreative.es/blog/will-ai-replace-graphic-designers
+  I use AI in my studio every day, so this isn’t a defensive rant but an honest look at what AI changed in graphic design, what it can’t do, and why a conversation before you spend is the cheapest insurance.
+- The Real Cost of an AI-Generated Logo (24 July 2026, Branding): https://truelovecreative.es/blog/the-real-cost-of-an-ai-generated-logo
+  AI logo generators are everywhere and sometimes they’re fine, but there are costs the demo never shows: legal, practical and strategic. Read this before a generated logo goes on anything hard to change.
+- 7 Signs Your Website Is Costing You Clients (21 July 2026, Web Design): https://truelovecreative.es/blog/signs-your-website-is-costing-you-clients
+  Most owners rarely look at their own website, yet every potential client checks it before they call. Seven honest checks to run on your site today, and what to do with the results.
+- Web Design in the Age of AI: Why Handmade Still Wins (7 July 2026, Web Design): https://truelovecreative.es/blog/web-design-in-the-age-of-ai
+  AI builders produce a website in minutes, and they all look alike. Here’s how that changed what businesses should pay for, and why a site made by hand is worth more now, not less.
+- How to Get Found When People Ask AI Instead of Google (23 June 2026, SEO): https://truelovecreative.es/blog/how-to-get-found-in-ai-search
+  More people now ask ChatGPT, Perplexity or Google’s AI Overviews for recommendations. If AI can’t read your website, you don’t exist in that conversation. Here’s what any business can do about it.
+- What to Look for When Hiring a Web Designer in Dubai (9 April 2026, Web Design): https://truelovecreative.es/blog/what-to-look-for-when-hiring-a-web-designer-in-dubai
+  You searched “web designer Dubai” and now you’re drowning in options. Here’s how to tell who actually delivers, from someone who has been designing and building websites in Dubai since 2015.
+- How Much Does a Website Cost in Dubai? (2 April 2026, Web Design): https://truelovecreative.es/blog/how-much-does-a-website-cost-in-dubai
+  Everyone asks it, most agencies dodge it. Here’s what websites cost across the Dubai market, why the range is so wild, which hidden costs to ask about, and how to get a real number for your project.
+- Why Every DJ, Musician and Performer Needs a Professional Website (2 April 2026, Branding): https://truelovecreative.es/blog/why-every-dj-needs-a-website
+  Thousands of followers and zero control over your brand. Why DJs, musicians and every kind of performer need a site of their own, what it should include, and why AI assistants now make it matter more.
+
+## Contact
+
+- Start a project: https://truelovecreative.es/brief
+- Email: info@truelovecreative.es
+- WhatsApp: +971 58 532 4519
+- Instagram: https://www.instagram.com/truelove.creative

@@ -47,3 +47,6 @@ skills-lock.json
 # claude code session tooling (local)
 .claude/
 *.skill
+
+# static redesign (2026-11)
+img/blog/c/

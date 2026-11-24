@@ -1,0 +1,460 @@
+{
+ "CURRENCIES": [
+  {
+   "code": "AED",
+   "symbol": "AED",
+   "rate": 1
+  },
+  {
+   "code": "EUR",
+   "symbol": "€",
+   "rate": 0.25
+  },
+  {
+   "code": "GBP",
+   "symbol": "£",
+   "rate": 0.21
+  },
+  {
+   "code": "USD",
+   "symbol": "$",
+   "rate": 0.27
+  }
+ ],
+ "WEBSITE_TYPES": {
+  "Landing Page": {
+   "base": 2000,
+   "desc": "A single, focused page designed to convert visitors.",
+   "ideal": "Ideal if you’re launching a product, running a campaign, or need a quick online presence.",
+   "includes": "Professional design, responsive layout, 1 page"
+  },
+  "Business Website": {
+   "base": 5000,
+   "desc": "A complete multi-page website (3–7 pages) for your company.",
+   "ideal": "Ideal if you need Home, About, Services, Contact, etc.",
+   "includes": "Professional design, responsive layout, 3–7 pages"
+  },
+  "Portfolio / Personal": {
+   "base": 4000,
+   "desc": "A visual showcase for your work, personal brand, or creative career.",
+   "ideal": "Ideal if you’re an artist, photographer, DJ, freelancer, or creative professional.",
+   "includes": "Professional design, photo gallery, responsive layout"
+  },
+  "E-commerce Store": {
+   "base": 9000,
+   "desc": "A full online shop built on Shopify where customers browse, add to cart, and pay.",
+   "ideal": "Ideal if you sell physical products, digital goods, or subscriptions online.",
+   "includes": "Professional design, payment gateway, inventory management, product pages"
+  },
+  "Blog / Magazine": {
+   "base": 3500,
+   "desc": "A content-first website built around articles, news, or editorial content.",
+   "ideal": "Ideal if content is your main product — news, guides, reviews, or thought leadership.",
+   "includes": "Professional design, CMS, categories & tags, social sharing"
+  },
+  "Booking / Reservation": {
+   "base": 6000,
+   "desc": "A booking system built on Cal.com or similar, integrated into your website.",
+   "ideal": "Ideal if you’re a restaurant, salon, clinic, consultant, or event venue.",
+   "includes": "Professional design, calendar/scheduling, email confirmations"
+  },
+  "Web Application": {
+   "base": 15000,
+   "desc": "A custom interactive platform — dashboards, tools, or SaaS products.",
+   "ideal": "Ideal if you need something beyond a website: a tool people log into and use.",
+   "includes": "User authentication, database & backend, responsive design"
+  }
+ },
+ "WEB_FEATURES": [
+  {
+   "name": "Contact Form",
+   "price": 0,
+   "hint": "So visitors can reach you directly",
+   "types": [
+    "*"
+   ]
+  },
+  {
+   "name": "WhatsApp Button",
+   "price": 0,
+   "hint": "Let people message you instantly",
+   "types": [
+    "*"
+   ]
+  },
+  {
+   "name": "Live Chat Widget",
+   "price": 500,
+   "hint": "We integrate Tawk.to, Crisp, or similar — real-time chat with visitors",
+   "types": [
+    "*"
+   ]
+  },
+  {
+   "name": "CMS",
+   "price": 1500,
+   "hint": "Edit your own content without a developer. Essential for real estate, restaurants, etc.",
+   "types": [
+    "Business Website",
+    "Portfolio / Personal",
+    "E-commerce Store",
+    "Booking / Reservation",
+    "Web Application"
+   ]
+  },
+  {
+   "name": "Blog Section",
+   "price": 1000,
+   "hint": "Publish articles to attract visitors and improve SEO",
+   "types": [
+    "Landing Page",
+    "Business Website",
+    "Portfolio / Personal",
+    "E-commerce Store",
+    "Booking / Reservation"
+   ]
+  },
+  {
+   "name": "Newsletter",
+   "price": 500,
+   "hint": "Collect emails via Mailchimp, Brevo, or similar. Free tiers available",
+   "types": [
+    "Blog / Magazine",
+    "Business Website",
+    "E-commerce Store"
+   ]
+  },
+  {
+   "name": "Video Integration",
+   "price": 500,
+   "hint": "Embed your YouTube, Vimeo, or showreel content",
+   "types": [
+    "Portfolio / Personal",
+    "Landing Page",
+    "Business Website"
+   ]
+  },
+  {
+   "name": "Music Player",
+   "price": 500,
+   "hint": "Embed your Spotify, SoundCloud, or Mixcloud tracks",
+   "types": [
+    "Portfolio / Personal"
+   ]
+  },
+  {
+   "name": "Photo Gallery",
+   "price": 500,
+   "hint": "Display work in a beautiful grid or lightbox layout",
+   "types": [
+    "Business Website",
+    "Landing Page"
+   ]
+  },
+  {
+   "name": "Google Maps",
+   "price": 0,
+   "hint": "Show your physical location on the site",
+   "types": [
+    "Business Website",
+    "Booking / Reservation",
+    "Landing Page"
+   ]
+  },
+  {
+   "name": "8–12 pages",
+   "price": 500,
+   "hint": "Need more pages than the standard 3–7",
+   "types": [
+    "Business Website"
+   ]
+  },
+  {
+   "name": "CV / Resume",
+   "price": 0,
+   "hint": "A professional bio and experience section",
+   "types": [
+    "Portfolio / Personal"
+   ]
+  },
+  {
+   "name": "Shipping Setup",
+   "price": 1000,
+   "hint": "Configure shipping zones, rates, and carrier tracking",
+   "types": [
+    "E-commerce Store"
+   ]
+  },
+  {
+   "name": "Multi-currency",
+   "price": 800,
+   "hint": "Let customers pay in their local currency",
+   "types": [
+    "E-commerce Store"
+   ]
+  },
+  {
+   "name": "Product Filters",
+   "price": 500,
+   "hint": "Help shoppers find products by size, color, price, etc.",
+   "types": [
+    "E-commerce Store"
+   ]
+  },
+  {
+   "name": "Customer Accounts",
+   "price": 800,
+   "hint": "Logged-in users can track orders and save favorites",
+   "types": [
+    "E-commerce Store"
+   ]
+  },
+  {
+   "name": "Discount Codes",
+   "price": 500,
+   "hint": "Run promotions and offer coupon codes",
+   "types": [
+    "E-commerce Store"
+   ]
+  },
+  {
+   "name": "Product Upload (50+)",
+   "price": 2500,
+   "hint": "We upload your catalog from a spreadsheet you provide",
+   "types": [
+    "E-commerce Store"
+   ]
+  },
+  {
+   "name": "Author Profiles",
+   "price": 500,
+   "hint": "Multiple writers? Each gets their own bio and page",
+   "types": [
+    "Blog / Magazine"
+   ]
+  },
+  {
+   "name": "Comments",
+   "price": 500,
+   "hint": "Reader discussions via Disqus or similar third-party widget",
+   "types": [
+    "Blog / Magazine"
+   ]
+  },
+  {
+   "name": "Online Payment",
+   "price": 800,
+   "hint": "Charge deposits or full payment at booking",
+   "types": [
+    "Booking / Reservation"
+   ]
+  },
+  {
+   "name": "SMS / WhatsApp Reminders",
+   "price": 600,
+   "hint": "Reduce no-shows with automatic reminders. Small per-message cost applies",
+   "types": [
+    "Booking / Reservation"
+   ]
+  },
+  {
+   "name": "Multi-staff / Multi-room",
+   "price": 1000,
+   "hint": "Different availability per team member or room",
+   "types": [
+    "Booking / Reservation"
+   ]
+  },
+  {
+   "name": "Google Calendar Sync",
+   "price": 500,
+   "hint": "Bookings appear automatically in your calendar",
+   "types": [
+    "Booking / Reservation"
+   ]
+  },
+  {
+   "name": "Admin Dashboard",
+   "price": 2000,
+   "hint": "A control panel for you to manage users and data",
+   "types": [
+    "Web Application"
+   ]
+  },
+  {
+   "name": "API Integration",
+   "price": 1500,
+   "hint": "Per integration (Stripe, Google, CRM, etc.). Complex APIs quoted separately",
+   "types": [
+    "Web Application"
+   ]
+  },
+  {
+   "name": "Real-time Features",
+   "price": 2500,
+   "hint": "Live updates, chat, or collaboration. May involve ongoing hosting costs",
+   "types": [
+    "Web Application"
+   ]
+  },
+  {
+   "name": "File Uploads",
+   "price": 800,
+   "hint": "Users can upload documents, images, or media",
+   "types": [
+    "Web Application"
+   ]
+  },
+  {
+   "name": "Email Notifications",
+   "price": 1000,
+   "hint": "Automatic emails when things happen (signups, orders, alerts)",
+   "types": [
+    "Web Application"
+   ]
+  },
+  {
+   "name": "Analytics Setup",
+   "price": 300,
+   "hint": "Track who visits and what they do",
+   "types": [
+    "*"
+   ]
+  },
+  {
+   "name": "Multi-language",
+   "price": 500,
+   "hint": "Reach audiences in different languages",
+   "types": [
+    "*"
+   ]
+  }
+ ],
+ "APP_FEATURES": [
+  {
+   "name": "iOS & Android",
+   "price": 0,
+   "hint": "One codebase that works on both platforms"
+  },
+  {
+   "name": "Push Notifications",
+   "price": 0,
+   "hint": "Send alerts and updates directly to your users’ phones"
+  },
+  {
+   "name": "User Authentication",
+   "price": 0,
+   "hint": "Login, signup, and user profiles"
+  },
+  {
+   "name": "Camera / Media Access",
+   "price": 0,
+   "hint": "Let users take photos or upload files from their phone"
+  },
+  {
+   "name": "GPS / Location",
+   "price": 0,
+   "hint": "Maps, location tracking, or nearby search features"
+  },
+  {
+   "name": "App Store Submission",
+   "price": 0,
+   "hint": "We handle the publishing process to Apple & Google stores"
+  },
+  {
+   "name": "Offline Mode",
+   "price": 1500,
+   "hint": "App works without internet and syncs when back online"
+  },
+  {
+   "name": "In-app Payments",
+   "price": 2500,
+   "hint": "Sell products or subscriptions inside the app. Payment gateway fees handled by you"
+  },
+  {
+   "name": "Admin Dashboard",
+   "price": 2500,
+   "hint": "A web panel for you to manage app content and users"
+  },
+  {
+   "name": "Analytics Setup",
+   "price": 300,
+   "hint": "Track downloads, usage, and retention"
+  }
+ ],
+ "APP_BASE": 20000,
+ "REDESIGN_FEATURES": [
+  {
+   "name": "Keep Current Content",
+   "price": 0,
+   "hint": "We migrate your existing text and images"
+  },
+  {
+   "name": "New Content Needed",
+   "price": 1200,
+   "hint": "Need fresh copy and visuals? We handle it"
+  },
+  {
+   "name": "SEO Migration",
+   "price": 800,
+   "hint": "Keep your Google rankings when moving. Best for sites under 50 pages"
+  },
+  {
+   "name": "New Platform",
+   "price": 3000,
+   "hint": "Move from WordPress, Wix, etc. to a modern stack. Price varies by content volume"
+  },
+  {
+   "name": "Speed Optimization",
+   "price": 800,
+   "hint": "Make your site load fast on any device"
+  }
+ ],
+ "ADDON_PRICES": {
+  "Logo Design": 2500,
+  "Full Brand Identity": 5500,
+  "Flyer / Poster Design": 600,
+  "Business Card Design": 400,
+  "SEO & AI Setup": 1500
+ },
+ "URGENCY_MULT": {
+  "4": 1.15,
+  "5": 1.25
+ },
+ "GOALS": [
+  "Generate Leads",
+  "Sell Products",
+  "Build Credibility",
+  "Showcase Work",
+  "Increase Bookings",
+  "Online Presence",
+  "SEO / Visibility",
+  "Attract Investors"
+ ],
+ "VIBES": [
+  "Luxury / Premium",
+  "Minimal / Clean",
+  "Bold / Edgy",
+  "Warm / Friendly",
+  "Corporate / Trust",
+  "Creative / Artistic",
+  "Modern / Tech",
+  "Vintage / Classic"
+ ],
+ "CONTENT_HAVE": [
+  "Logo",
+  "Brand Colors",
+  "Professional Photos",
+  "Written Copy",
+  "Domain Name",
+  "Nothing yet"
+ ],
+ "FIELD_LABELS": {
+  "name": "Name",
+  "email": "Email",
+  "phone": "Phone / WhatsApp",
+  "audience": "Who is it for?",
+  "_service": "What are you building",
+  "_websiteType": "Website type"
+ }
+}
