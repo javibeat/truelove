@@ -6,8 +6,9 @@ export function enhanceWork(root = document) {
   root.querySelectorAll('.case').forEach(el => {
     Squircle.watch(el);
     const win = el.querySelector('.window');
-    if (!win || !win.querySelector('.page img')) return;   // the «Your project» card has no site inside
-    Squircle.watch(win, .5);
+    if (!win) return;
+    Squircle.watch(win, .5);   // every window gets its own corners, or it would inherit the card's (bigger) path
+    if (!win.querySelector('.page img')) return;   // the «Your project» card has no site inside
     const img = win.querySelector('img'), page = win.querySelector('.page');
     const start = () => { el.classList.add('live'); const t = Math.max(0, img.offsetHeight - page.offsetHeight); img.style.transitionDuration = `${Math.max(2, t / 160)}s`; img.style.transform = `translateY(${-t}px)`; };
     const stop = () => { el.classList.remove('live'); img.style.transitionDuration = '.9s'; img.style.transform = 'translateY(0)'; };

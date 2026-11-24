@@ -20,7 +20,7 @@ export function initChrome({ active, onGo } = {}) {
   phone.addEventListener('change', place); place();
   // every card-like surface gets the traced squircle corner
   document.querySelectorAll('.card, .sq').forEach(el => Squircle.watch(el, el.dataset.sq ? +el.dataset.sq : 1));
-  document.querySelectorAll('.mark-s, .mark').forEach(el => { if (!el.childElementCount) drawWordmark(el); });
+  document.querySelectorAll('.mark-s, .mark').forEach(el => { if (!el.childElementCount) drawWordmark(el, el.classList.contains('mark-s') ? { slit: 7 } : {}); });   // small footer mark: wider slits so the letters still read
   adaptiveGlass([document.getElementById('bar'), sw]);
   progressRing(() => glideTo(null));
   return bar;

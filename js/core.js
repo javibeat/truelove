@@ -166,9 +166,9 @@ export const Theme = (() => {
 })();
 
 /* ── Wordmark «TRUE LOVE CREATIVE»: blocky letters with slit counters, LOVE in the heart red ── */
-export function drawWordmark(svg) {
+export function drawWordmark(svg, { slit = 3.6 } = {}) {
   const HEART = '#E80707';
-  const H = 100, s = 3.6, TOP = 12, BOT = 92, R = 2.6, GAP = 2.8, SPACE = 13, W = 34, xc = (W - s) / 2;
+  const H = 100, s = slit, TOP = 12, BOT = 92, R = 2.6, GAP = 2.8, SPACE = 13, W = 34, xc = (W - s) / 2;
   const box = (x, w) => `M${x + R},0H${x + w - R}Q${x + w},0 ${x + w},${R}V${H - R}Q${x + w},${H} ${x + w - R},${H}H${x + R}Q${x},${H} ${x},${H - R}V${R}Q${x},0 ${x + R},0Z`;
   const v = (y1, y2) => [xc, y1, s, y2 - y1];
   const h = y => [xc, y, W + 1 - xc, s];
