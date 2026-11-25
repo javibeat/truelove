@@ -5,6 +5,9 @@ import fs from 'fs';
 import { estimateAED, formatMoney } from '../js/brief-calc.js';
 import { parseSubscribeInput, HONEYPOT_FIELD } from '../lib/subscribe.js';
 import { scrollProgress } from '../js/progress.js';
+import { tiltAt } from '../js/tilt.js';
+import { nextIndex } from '../js/rotate.js';
+import { superellipse } from '../js/superellipse.js';
 
 const DATA = JSON.parse(fs.readFileSync(new URL('../content/brief.json', import.meta.url)));
 const AED = DATA.CURRENCIES.find(c => c.code === 'AED'), EUR = DATA.CURRENCIES.find(c => c.code === 'EUR');
@@ -60,4 +63,25 @@ test('scroll progress: 0 when the page does not scroll, clamped 0..1', () => {
   assert.equal(scrollProgress(500, 2000, 1000), .5);
   assert.equal(scrollProgress(5000, 2000, 1000), 1);
   assert.equal(scrollProgress(-20, 2000, 1000), 0);
+});
+
+test('tilt: centre is flat, corners lean up to the max, outside is clamped', () => {
+  assert.deepEqual(tiltAt(50, 50, 100, 100), { rx: 0, ry: 0, mx: 50, my: 50 });
+  assert.deepEqual(tiltAt(0, 0, 100, 100), { rx: 5, ry: -5, mx: 0, my: 0 });
+  assert.deepEqual(tiltAt(300, -40, 100, 100), { rx: 5, ry: 5, mx: 100, my: 0 });
+  assert.deepEqual(tiltAt(10, 10, 0, 0), { rx: 0, ry: 0, mx: 50, my: 50 });
+});
+
+test('rotate: steps through the slides and wraps around', () => {
+  assert.equal(nextIndex(0, 7), 1);
+  assert.equal(nextIndex(6, 7), 0);
+  assert.equal(nextIndex(0, 0), 0);
+});
+
+test('superellipse: icon shape in the CSS matches n = 3.6 and stays inside the box', () => {
+  const v = superellipse(3.6);
+  assert.ok(fs.readFileSync(new URL('../css/pages.css', import.meta.url), 'utf8').includes(`--icon-shape: ${v};`));
+  const nums = [...v.matchAll(/(-?[\d.]+)%/g)].map(m => +m[1]);
+  assert.ok(nums.every(n => n >= 0 && n <= 100));
+  assert.ok(v.startsWith('polygon(100% 50%'));
 });

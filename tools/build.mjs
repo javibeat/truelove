@@ -10,6 +10,7 @@ const read = f => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const SERVICES = read('content/services.json');
 const POSTS = read('content/posts.json');
 const WORK = read('content/work.json');
+const APPS = read('content/apps.json');   // real store screenshots, same set as beatlabs.ae (public/apps/PROVENANCE.md there)
 const META = read('content/meta.json');          // titles and descriptions of the current live pages
 const SITE = 'https://truelovecreative.es';
 const FORMSPREE = 'https://formspree.io/f/mwvwnkow';   // same endpoint as the live brief form
@@ -28,6 +29,16 @@ const SVC = [
   { slug: 'graphic-design', name: 'Graphic Design', desc: 'Covers, posters, flyers and social systems with intention behind every pixel.' },
   { slug: 'app-development', name: 'App Development', desc: 'iOS, Android and web apps, from the first sketch to the store.' },
 ];
+/* Hover on a work card: the logo as it really looks on the client's own site (colours measured from their live sites), on that site's background */
+const LOGO_REAL = {
+  jessica: { bg: '#FFFFFF', ink: 'linear-gradient(90deg, #2A2B22 0 49.5%, #6B7562 49.5%)' },
+  kiko: { bg: '#180A0A', ink: '#FFFFFF' },
+  javi: { bg: '#080808', ink: '#FFFFFF', fx: 'drop-shadow(-.05em .04em 0 #2EE6F0) drop-shadow(.05em -.02em 0 #FF2A55)' },
+  estrela: { bg: '#E2E0D2', ink: '#111111' },
+  manuel: { bg: '#FFFFFF' },
+  julio: { bg: '#FFFFFF' },
+  sergio: { bg: '#181818', ink: 'linear-gradient(90deg, #FFFFFF 0 17%, #C8F010 17% 31.5%, #FFFFFF 31.5%)' },
+};
 const GRAY = new Set(['julio', 'manuel']);   // logos with filled boxes: grey, not a flat silhouette
 const INK = new Set(['estrela']);            // white script logo: stays black on hover
 
@@ -136,6 +147,7 @@ ${footer()}
 }
 
 const head = (kicker, h1, sub, crumb) => `<header class="wrap page-head">
+  <canvas class="field" aria-hidden="true"></canvas>
   ${crumb ? `<nav class="crumb" aria-label="Breadcrumb">${crumb}</nav>` : `<p class="kicker">${esc(kicker)}</p>`}
   <h1>${esc(h1)}</h1>
   ${sub ? `<p class="sub">${esc(sub)}</p>` : ''}
@@ -145,10 +157,9 @@ const ctaBand = (h = 'Have something in mind?', p = 'Tell us what you need. You 
 const svcCards = (tag = 'h3') => `<div class="svc-grid">${SVC.map((s, i) => `
   <a class="card svc" href="/services/${s.slug}"><span class="num">${String(i + 1).padStart(2, '0')}</span><${tag} class="svc-t">${s.name}</${tag}><p>${esc(s.desc)}</p>
     <span class="link">Explore ${arrow}</span></a>`).join('')}</div>`;
-const caseCard = w => `<a class="case" id="case-${w.id}" href="/work/${w.slug}" style="--acc:${w.accent};--tile:${w.tile}">
+const caseCard = w => `<a class="case" id="case-${w.id}" href="/work/${w.slug}" style="--acc:${w.accent};--tile:${w.tile};--site:${LOGO_REAL[w.id].bg}">
     <span class="window" aria-hidden="true">
-      <span class="page"><img src="/img/full/${w.id}-1000.webp" srcset="/img/full/${w.id}-1000.webp 1000w, /img/full/${w.id}.webp 1600w" sizes="(width < 700px) 92vw, (width < 1100px) 45vw, 22vw" alt="" width="1000" loading="lazy" decoding="async"></span>
-      <span class="logo-face${GRAY.has(w.id) ? ' gray' : ''}"><img src="/${w.logo}" alt="" loading="lazy" decoding="async" draggable="false"></span>
+      <span class="logo-face${GRAY.has(w.id) ? ' gray' : ''}"><img src="/${w.logo}" alt="" loading="lazy" decoding="async" draggable="false">${GRAY.has(w.id) ? '' : `<span class="logo-ink" style="--ink:${LOGO_REAL[w.id].ink};${LOGO_REAL[w.id].fx ? `--fx:${LOGO_REAL[w.id].fx}` : ''}"><i style="--logo:url(/${w.logo})"></i></span>`}</span><span class="sheen"></span>
     </span>
     <span class="case-top"><span class="case-name">${esc(w.name)}</span><span class="case-meta">${esc(w.year)}</span></span>
     <span class="case-idea">${esc(w.services)}</span>
@@ -160,7 +171,45 @@ const invite = () => `<a class="case invite" href="/brief">
   </a>`;
 const casesGrid = () => `<div class="cases">${WORK.map(caseCard).join('')}${invite()}</div>`;
 const steps = list => `<div class="steps-grid${list.length === 5 ? ' n5' : ''}">${list.map((s, i) => `<div class="card step"><span class="num">${esc(s.num ?? String(i + 1).padStart(2, '0'))}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`).join('')}</div>`;
-const items = list => `<div class="items">${list.map(s => `<div class="card"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`).join('')}</div>`;
+/* ── Service pages: a real piece of work under the title, with a glass label on top (glass only reads over an image) ── */
+const glassTag = (k, t) => `<span class="glass-tag sq" data-sq=".6"><span class="kicker">${esc(k)}</span><span>${esc(t)}</span></span>`;
+const byId = id => WORK.find(w => w.id === id);
+/* an iPhone (the frame Javi supplied) with a screenshot behind its glass */
+const iphone = (src, alt, cls = '', lazy = true) => `<span class="iphone ${cls}"><img class="scr" src="${src}" alt="${esc(alt)}" decoding="async"${lazy ? ' loading="lazy"' : ''}><img class="frm" src="/img/frames/iphone.png" alt="" decoding="async"></span>`;
+const SHOWCASE = {
+  // the sites rotate: desktop and phone change together, and so does the label
+  'web-design': () => `<div class="stage stage-web sq" data-rotate>${WORK.map((w, i) => `<a class="slide${i ? '' : ' on'}" href="/work/${w.slug}" aria-label="${esc(w.name)} case study"${i ? ' tabindex="-1"' : ''}>
+    <img class="desk sq" data-sq=".5" src="/img/live/${w.id}-d.webp" alt="${esc(w.name)} website on desktop" width="1600" height="1000" decoding="async"${i ? ' loading="lazy"' : ''}>
+    ${iphone(`/img/live/${w.id}-m.webp`, `${w.name} website on a phone`, 'phone', !!i)}
+    ${glassTag('Recent work', `${w.name} · ${w.services}`)}</a>`).join('')}</div>`,
+  // each identity exactly as it lives on the client's own site: real colours, real background
+  branding: () => `<div class="stage stage-brand sq">${WORK.map(w => { const r = LOGO_REAL[w.id]; return `<a class="tile sq" data-sq=".5" href="/work/${w.slug}" style="background:${r.bg}" aria-label="${esc(w.name)}">${r.ink
+      ? `<span class="ink" style="--ink:${r.ink};${r.fx ? `--fx:${r.fx}` : ''}"><i style="--logo:url(/${w.logo})"></i></span>`
+      : `<img src="/${w.logo}" alt="" loading="lazy" decoding="async">`}</a>`; }).join('')}
+    <a class="tile tile-next sq" data-sq=".5" href="/brief"><span class="kicker">Your brand</span><span>Could be the next one here.</span></a></div>`,
+  'graphic-design': () => `<div class="stage stage-art sq">${[['el-silencio-front', 'El Silencio cover, Buika × Kiko Navarro', ''], ['mama-calling-front', 'Mama Calling cover, Buika × Kiko Navarro', 'trim'], ['varadero-sq', 'Varadero event artwork', '']].map(([f, a, c]) => `<span class="art sq" data-sq=".5"><img class="${c}" src="/img/graphic/${f}.jpg" alt="${a}" decoding="async"></span>`).join('')}
+    ${glassTag('Released on vinyl', 'Buika × Kiko Navarro')}</div>`,
+  // like beatlabs.ae: each app on a grey panel, three straight screens; the apps take turns and the buttons pick one
+  'app-development': () => `<div class="stage stage-app sq" id="apps-stage" data-rotate>${APPS.map((a, i) => `<div class="slide${i ? '' : ' on'}" role="tabpanel" id="app-${a.id}" aria-label="${esc(a.name)}">${a.screens.map((t, n) => `<img src="/img/apps/${a.id}-${n + 1}.webp" alt="${esc(`${a.name}: ${t}`)}" width="720" height="1421" decoding="async"${i ? ' loading="lazy"' : ''}>`).join('')}</div>`).join('')}</div>
+  <div class="app-tabs" role="tablist" aria-label="Apps" data-for="apps-stage">${APPS.map((a, i) => `<button type="button" role="tab" class="sq" data-sq=".4" data-i="${i}" aria-controls="app-${a.id}" aria-selected="${i ? 'false' : 'true'}"><img src="/img/apps/${a.id}-icon.webp" alt="" width="28" height="28">${esc(a.name)}</button>`).join('')}</div>`,
+};
+const appCards = () => block('Apps we’ve shipped.', `<div class="app-cards">${APPS.map(a => `<a class="card app-card" href="${a.site}" target="_blank" rel="noopener noreferrer">
+  <span class="app-top"><span><b>${esc(a.name)}</b><small>${esc(a.type)}</small></span><span class="live">Live</span></span>
+  <img class="app-ico" src="/img/apps/${a.id}-icon.webp" alt="${esc(a.name)} app icon" width="96" height="96" loading="lazy" decoding="async">
+  <p>${esc(a.oneLiner)}</p><span class="app-meta">${esc(a.platforms)} <span>${esc(a.site.replace('https://', ''))} ↗</span></span></a>`).join('')}</div>`);
+const logoStrip = () => `<section class="wrap block" aria-label="Clients"><div class="logo-strip">${WORK.map(w => `<a href="/work/${w.slug}" style="--acc:${w.accent}" aria-label="${esc(w.name)}"><img src="/${w.logo}" alt="" loading="lazy" decoding="async" class="${GRAY.has(w.id) ? 'own' : ''}"></a>`).join('')}</div></section>`;
+/* small line icons for "what's included" cards, picked by a word in the title */
+const ICONS = [
+  [/strategy/i, '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6"/>'],
+  [/logo/i, '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/>'],
+  [/visual|colour|color/i, '<circle cx="8" cy="9" r="3.2"/><circle cx="16" cy="9" r="3.2"/><circle cx="12" cy="15.5" r="3.2"/>'],
+  [/guideline|collateral/i, '<path d="M6 3h9l3 3v15H6z"/><path d="M9 10h6M9 14h6M9 18h4"/>'],
+  [/vinyl|album/i, '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 0 1 9 9"/>'],
+  [/flyer|poster/i, '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 15l3-4 2 3 2-2 2 3"/><circle cx="9" cy="8" r="1.4"/>'],
+  [/social/i, '<rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="16.8" cy="7.2" r=".7"/>'],
+];
+const iconFor = t => { const m = ICONS.find(([re]) => re.test(t)); return m ? `<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${m[1]}</svg></span>` : ''; };
+const items = list => `<div class="items">${list.map(s => `<div class="card">${iconFor(s.title)}<h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`).join('')}</div>`;
 const chips = list => `<ul class="chips">${list.map(s => `<li>${esc(s)}</li>`).join('')}</ul>`;
 const faq = list => `<div class="faq">${list.map(f => `<details class="sq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</div>`;
 const block = (h, inner) => `<section class="wrap block"><div class="sec-head"><h2>${esc(h)}</h2></div>${inner}</section>`;
@@ -257,7 +306,7 @@ for (const s of SVC) {
   if (d.capabilities) sections += block(d.heads[1], chips(d.capabilities));
   if (d.faqs.length) sections += block(d.heads[d.heads.length - 1], faq(d.faqs));
   page({
-    url, file: `services/${s.slug}/index.html`, active: 'services', priority: .9,
+    url, file: `services/${s.slug}/index.html`, active: 'services', priority: .9, pageId: `svc-${s.slug}`,
     title: m.title ?? `${s.name} — True Love Creative`, description: m.description ?? s.desc,
     og: d.gallery ? { image: '/img/graphic/el-silencio.jpg', alt: 'El Silencio vinyl cover' } : {},
     ld: [
@@ -266,7 +315,9 @@ for (const s of SVC) {
       ...(d.faqs.length ? [{ '@type': 'FAQPage', mainEntity: d.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : []),
     ],
     body: `${head('', s.name, subtitleFix[s.slug] ?? d.subtitle, `<a href="/services">Services</a> / ${s.name}`)}
+<section class="wrap block showcase" aria-label="Recent work">${SHOWCASE[s.slug]()}</section>
 <section class="wrap block" aria-label="Overview"><div class="intro"><div class="card"><p class="lede">${esc(d.lede)}</p><p class="body">${esc(d.body)}</p></div>${aside}</div></section>
+${s.slug === 'web-design' ? logoStrip() : s.slug === 'app-development' ? appCards() : ''}
 ${sections}
 ${ctaBand(`Let’s talk about your ${s.name.toLowerCase()}.`)}`,
   });
@@ -297,10 +348,7 @@ WORK.forEach((w, i) => {
     }],
     body: `${head('', w.name, w.subtitle, `<a href="/work">Work</a> / ${esc(w.name)}`)}
 <section class="wrap block" aria-label="Project"><div class="case-hero" style="--acc:${w.accent}">
-  <a class="window sq" data-sq=".5" href="${w.live}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(host(w.live))} in a new tab">
-    <span class="chrome"><i style="background:${w.accent}"></i><i></i><i></i><span>${esc(host(w.live))}</span></span>
-    <span class="page"><img src="/img/full/${w.id}.webp" srcset="/img/full/${w.id}-1000.webp 1000w, /img/full/${w.id}.webp 1600w" sizes="(width < 1100px) 92vw, 55vw" alt="${esc(w.name)} website, full page" width="1600" decoding="async" style="transition-duration:${9 + i}s"></span>
-  </a>
+  <a class="shot sq" data-sq=".5" href="${w.live}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(host(w.live))} in a new tab"><img src="/img/live/${w.id}-d.webp" alt="${esc(w.name)} website, home page" width="1600" height="1000" decoding="async" fetchpriority="high"></a>
   <div class="card"><dl class="facts">
     <div><dt>Client</dt><dd>${esc(w.name)}</dd></div><div><dt>Year</dt><dd>${esc(w.year)}</dd></div>
     <div><dt>Services</dt><dd>${esc(w.services)}</dd></div><div><dt>Industry</dt><dd>${esc(w.industry)}</dd></div><div><dt>Built with</dt><dd>${esc(w.tech)}</dd></div>

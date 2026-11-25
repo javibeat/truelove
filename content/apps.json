@@ -1,0 +1,14 @@
+[
+ { "id": "nibango", "name": "Nibango", "type": "Marketplace App", "platforms": "iOS · Android · Web", "site": "https://nibango.com",
+   "oneLiner": "A local marketplace to buy, sell, bid and give away near you, with groups for your area and your interests. Zero commission.",
+   "screens": ["Home", "Product", "Chat"] },
+ { "id": "curb", "name": "Curb", "type": "Finance App", "platforms": "iOS · Android", "site": "https://getcurbapp.com",
+   "oneLiner": "Track all your subscriptions in one place. Know exactly what you’re paying, when, and cancel what you don’t need.",
+   "screens": ["Subscriptions", "Calendar", "Detail"] },
+ { "id": "raved", "name": "Raved", "type": "Lifestyle App", "platforms": "iOS · Android", "site": "https://raved.app",
+   "oneLiner": "An inbox for recommendations. Save every film, show, book, album, podcast and place your friends rave about, and actually get to them.",
+   "screens": ["Home", "Surprise me", "Skins"] },
+ { "id": "blab", "name": "Blab", "type": "Social App", "platforms": "iOS · Android · Web", "site": "https://blab.day",
+   "oneLiner": "A small social network for saying what you think, in worlds of people who share your interests. One daily challenge for everyone.",
+   "screens": ["Today", "Worlds", "Ranking"] }
+]

@@ -1,20 +1,22 @@
 /* Work cards are written into the HTML by tools/build.mjs (so search engines and AI read them);
-   this only adds the behaviour: squircle corners and the site scrolling inside its window. */
-import { Squircle } from './core.js';
+   this only adds the behaviour: squircle corners and the poster tilt that follows the pointer. */
+import { Squircle, reduceMotion } from './core.js';
+import { tiltAt } from './tilt.js';
 
 export function enhanceWork(root = document) {
+  const still = reduceMotion.matches || matchMedia('(hover: none)').matches;
   root.querySelectorAll('.case').forEach(el => {
     Squircle.watch(el);
     const win = el.querySelector('.window');
     if (!win) return;
     Squircle.watch(win, .5);   // every window gets its own corners, or it would inherit the card's (bigger) path
-    if (!win.querySelector('.page img')) return;   // the «Your project» card has no site inside
-    const img = win.querySelector('img'), page = win.querySelector('.page');
-    const start = () => { el.classList.add('live'); const t = Math.max(0, img.offsetHeight - page.offsetHeight); img.style.transitionDuration = `${Math.max(2, t / 160)}s`; img.style.transform = `translateY(${-t}px)`; };
-    const stop = () => { el.classList.remove('live'); img.style.transitionDuration = '.9s'; img.style.transform = 'translateY(0)'; };
-    el.addEventListener('pointerenter', start); el.addEventListener('pointerleave', stop);
-    el.addEventListener('focus', start); el.addEventListener('blur', stop);
-    // phones have no hover: the site scrolls by itself while the card is on screen
-    if (matchMedia('(hover: none)').matches) new IntersectionObserver(([e]) => (e.isIntersecting ? start : stop)(), { threshold: .6 }).observe(win);
+    if (still) return;
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect(), t = tiltAt(e.clientX - r.left, e.clientY - r.top, r.width, r.height);
+      el.classList.add('tilting');
+      el.style.setProperty('--rx', `${t.rx}deg`); el.style.setProperty('--ry', `${t.ry}deg`);
+      el.style.setProperty('--mx', `${t.mx}%`); el.style.setProperty('--my', `${t.my}%`);
+    });
+    el.addEventListener('pointerleave', () => { el.classList.remove('tilting'); ['--rx', '--ry'].forEach(k => el.style.removeProperty(k)); });
   });
 }

@@ -14,23 +14,19 @@ if (page === 'home') {
   ['top', 'work', 'services', 'studio', 'blog', 'contact'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
 } else {
   initChrome({ active });
+  // the same quiet dot field as the home hero, behind every page title
+  const field = document.querySelector('.page-head .field');
+  if (field) import('./neural.js').then(({ neural }) => neural(field));
 }
 
 enhanceWork();
 
+// Web design showcase: the sites take turns
+document.querySelectorAll('[data-rotate]').forEach(el => import('./rotate.js').then(({ rotate }) => rotate(el)));
+
 // Project brief (the client's starting form)
 const briefRoot = document.getElementById('brief-app');
 if (briefRoot) import('./brief.js').then(({ brief }) => brief(briefRoot));
-
-// Case study: the site in the big window scrolls slowly on hover (by itself on phones)
-const win = document.querySelector('.case-hero .window');
-if (win) {
-  const img = win.querySelector('img'), pg = win.querySelector('.page');
-  const run = () => { img.style.transform = `translateY(${-(img.offsetHeight - pg.offsetHeight)}px)`; };
-  const back = () => { img.style.transform = 'translateY(0)'; };
-  win.addEventListener('pointerenter', run); win.addEventListener('pointerleave', back);
-  if (matchMedia('(hover: none)').matches) (img.complete ? run() : img.addEventListener('load', run));
-}
 
 // Contact form → Formspree (same endpoint as the current site), with a clear error if it fails
 const form = document.getElementById('contact-form');
