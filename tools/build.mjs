@@ -53,7 +53,7 @@ const ORG = {
   founder: { '@type': 'Person', name: 'Javi Beat', jobTitle: 'Creative Director & Founder' },
   parentOrganization: { '@type': 'Organization', name: 'BeatLabs FZE LLC', url: 'https://beatlabs.ae' },
   serviceType: ['Web Design', 'Brand Identity', 'Graphic Design', 'App Development', 'Creative Direction'],
-  sameAs: ['https://www.instagram.com/truelove.creative'],
+  sameAs: ['https://www.instagram.com/beatlabs.ae'],
 };
 const crumbs = list => ({ '@type': 'BreadcrumbList', itemListElement: list.map(([name, url], i) => ({ '@type': 'ListItem', position: i + 1, name, item: SITE + url })) });
 
@@ -78,7 +78,7 @@ const footer = () => `<footer class="foot">
     <div><svg class="mark-s" role="img" aria-label="True Love Creative"></svg><p style="margin-top:14px;max-width:34ch">A creative studio for brands, businesses and anyone with an idea. Dubai, since 2015.</p></div>
     <nav aria-label="Studio"><h2 class="fh">Studio</h2><ul><li><a href="/work">Work</a></li><li><a href="/services">Services</a></li><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li></ul></nav>
     <nav aria-label="Services"><h2 class="fh">Services</h2><ul>${SVC.map(s => `<li><a href="/services/${s.slug}">${s.name}</a></li>`).join('')}</ul></nav>
-    <div><h2 class="fh">Contact</h2><ul><li><a href="mailto:info@truelovecreative.es">info@truelovecreative.es</a></li><li><a href="https://wa.me/971585324519" target="_blank" rel="noopener noreferrer">WhatsApp +971 58 532 4519</a></li><li><a href="https://www.instagram.com/truelove.creative" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="/contact">Contact</a></li><li><a href="/brief">Start a project</a></li></ul></div>
+    <div><h2 class="fh">Contact</h2><ul><li><a href="mailto:info@truelovecreative.es">info@truelovecreative.es</a></li><li><a href="https://wa.me/971585324519" target="_blank" rel="noopener noreferrer">WhatsApp +971 58 532 4519</a></li><li><a href="https://www.instagram.com/beatlabs.ae" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="/contact">Contact</a></li><li><a href="/brief">Start a project</a></li></ul></div>
     <p class="legal">True Love Creative is a brand of <a href="https://beatlabs.ae" target="_blank" rel="noopener noreferrer">beatLabs</a> · BeatLabs FZE LLC · License 53228 · Ajman Media City Free Zone, UAE · © 2015–2026</p>
   </div>
 </footer>`;
@@ -232,7 +232,7 @@ const hasCover = p => fs.existsSync(path.join(ROOT, `img/blog/covers/${p.slug}.j
 const postImg = p => hasCover(p) ? `/img/blog/covers/${p.slug}.jpg` : '/' + p.image.replace('img/blog/', 'img/blog/c/');
 const postDims = p => hasCover(p) ? `srcset="/img/blog/covers/${p.slug}.jpg 1600w, /img/blog/covers/${p.slug}@2x.jpg 3200w" sizes="(width < 700px) 92vw, (width < 1100px) 46vw, 30vw" width="1600" height="800"` : 'width="1548" height="748"';
 const postCards = (list, tag = 'h3') => `<div class="posts">${list.map(p => `
-  <a class="card post" href="/blog/${p.slug}"><img class="sq" data-sq=".5" src="${postImg(p)}" alt="" ${postDims(p)} loading="lazy" decoding="async"><span class="pm">${esc(p.category)} · <time datetime="${iso(p.date)}">${esc(p.date)}</time> · ${esc(p.readTime)}</span><${tag} class="post-t">${esc(p.title)}</${tag}><p>${esc(p.excerpt)}</p><span class="link">Continue reading ${arrow}</span></a>`).join('')}</div>`;
+  <a class="card post" href="/blog/${p.slug}" data-cat="${esc(p.category)}"><img class="sq" data-sq=".5" src="${postImg(p)}" alt="" ${postDims(p)} loading="lazy" decoding="async"><span class="pm">${esc(p.category)} · <time datetime="${iso(p.date)}">${esc(p.date)}</time> · ${esc(p.readTime)}</span><${tag} class="post-t">${esc(p.title)}</${tag}><p>${esc(p.excerpt)}</p><span class="link">Continue reading ${arrow}</span></a>`).join('')}</div>`;
 
 /* ── Home ── */
 page({
@@ -374,6 +374,10 @@ page({
   title: meta('/about').title, description: meta('/about').description,
   ld: [crumbs([['Home', '/'], ['Studio', '/about']]), { '@type': 'AboutPage', name: 'About True Love Creative', url: `${SITE}/about`, mainEntity: { '@id': `${SITE}/#studio` } }],
   body: `${head('Studio', 'Design is not decoration. It is decision.', 'An independent creative studio, born in Dubai in 2015. A decade of making digital work that refuses to be ordinary.')}
+<section class="wrap block showcase" aria-label="The studio"><div class="stage stage-studio sq">
+  <span class="who sq" data-sq=".5"><img src="/img/beat/javi-portrait.webp" alt="Javi Beat, founder and creative director of True Love Creative" width="1200" height="1208" decoding="async">${glassTag('Founder & creative director', 'Javi Beat')}</span>
+  <span class="wall">${['kiko', 'sergio', 'jessica', 'estrela'].map(id => { const w = byId(id); return `<a class="sq" data-sq=".5" href="/work/${w.slug}" aria-label="${esc(w.name)} case study"><img src="/img/live/${w.id}-d.webp" alt="" width="1600" height="1000" loading="lazy" decoding="async"></a>`; }).join('')}</span>
+</div></section>
 <section class="wrap block" aria-label="How we work"><div class="intro">
   <div class="card"><h2 class="lede">Fewer clients, deeper work.</h2>
     <p class="body">We don’t run an assembly line. Each project gets the full attention of the studio, from concept to launch, because that is the only way to make work that truly matters.</p>
@@ -383,6 +387,7 @@ page({
     <div><dt>Languages</dt><dd>EN · ES · AR</dd></div><div><dt>Clients served</dt><dd>30+</dd></div><div><dt>Part of</dt><dd><a href="https://beatlabs.ae" target="_blank" rel="noopener noreferrer">beatLabs</a></dd></div>
   </dl></div>
 </div></section>
+${logoStrip()}
 ${block('Four steps. No shortcuts.', steps([
   { title: 'Discovery', text: 'We listen. We research your industry, your competitors and your audience before sketching a single line.' },
   { title: 'Concept', text: 'Strategic direction and visual exploration. We present ideas, not templates.' },
@@ -400,7 +405,10 @@ page({
   ld: [crumbs([['Home', '/'], ['Blog', '/blog']]), { '@type': 'Blog', name: 'True Love Creative — Blog', url: `${SITE}/blog`, publisher: { '@id': `${SITE}/#studio` },
     blogPost: POSTS.map(p => ({ '@type': 'BlogPosting', headline: p.title, url: `${SITE}/blog/${p.slug}`, datePublished: iso(p.date) })) }],
   body: `${head('Blog', 'Notes from the studio.', 'Straight answers on websites, branding, AI and what actually brings clients. Written from Dubai.')}
-<section class="wrap block" aria-label="Articles">${postCards(POSTS, 'h2')}</section>
+<section class="wrap block" aria-label="Latest article">${(p => `<a class="card post-feature" href="/blog/${p.slug}"><img class="sq" data-sq=".5" src="${postImg(p)}" alt="" ${postDims(p)} decoding="async" fetchpriority="high">
+  <span class="pf-text"><span class="kicker">Latest · ${esc(p.category)}</span><h2>${esc(p.title)}</h2><p>${esc(p.excerpt)}</p><span class="pm"><time datetime="${iso(p.date)}">${esc(p.date)}</time></span><span class="link">Read ${arrow}</span></span></a>`)(POSTS[0])}</section>
+<section class="wrap block" aria-label="Articles"><div class="filters" role="group" aria-label="Filter by topic" data-filter-for="all-posts">${['All', ...new Set(POSTS.map(p => p.category))].map((c, i) => `<button type="button" class="sq" data-sq=".4" data-cat="${esc(c)}" aria-pressed="${i ? 'false' : 'true'}">${esc(c)}</button>`).join('')}</div>
+<div id="all-posts">${postCards(POSTS.slice(1), 'h2')}</div></section>
 ${newsletterBox()}`,
 });
 
@@ -463,11 +471,12 @@ page({
     <p class="form-done" role="status">Thank you. We have your message and will reply within 24 hours.</p>
   </form>
   <div class="ways">
-    <a class="sq ways-brief" href="/brief">Start a project <span>Brief + estimate in 3 minutes →</span></a>
-    <a class="sq" href="mailto:info@truelovecreative.es">Email <span>info@truelovecreative.es</span></a>
-    <a class="sq" href="https://wa.me/971585324519" target="_blank" rel="noopener noreferrer">WhatsApp <span>+971 58 532 4519</span></a>
-    <a class="sq" href="https://www.instagram.com/truelove.creative" target="_blank" rel="noopener noreferrer">Instagram <span>@truelove.creative</span></a>
-    <div class="card"><dl class="facts"><div><dt>Studio</dt><dd>Dubai, UAE</dd></div><div><dt>Working</dt><dd>Worldwide</dd></div><div><dt>Reply</dt><dd>Within 24 h</dd></div></dl></div>
+    <a class="sq ways-brief" href="/brief"><b><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M9 10h6M9 14h6M9 18h4"/></svg></span>Start a project</b> <span>Brief + estimate in 3 minutes →</span></a>
+    <a class="sq" href="mailto:info@truelovecreative.es"><b><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg></span>Email</b> <span>info@truelovecreative.es</span></a>
+    <a class="sq" href="https://wa.me/971585324519" target="_blank" rel="noopener noreferrer"><b><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9.5 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.2 1.8.8-.4 1.6c-3.4.4-7.3-3.4-7-7l1.6-.4.8 1.8z"/></svg></span>WhatsApp</b> <span>+971 58 532 4519</span></a>
+    <a class="sq" href="https://www.instagram.com/beatlabs.ae" target="_blank" rel="noopener noreferrer"><b><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="16.8" cy="7.2" r=".7"/></svg></span>Instagram</b> <span>@beatlabs.ae</span></a>
+    <div class="card"><p class="who-you"><img class="avatar" src="/img/beat/javi-avatar.webp" alt="" width="160" height="160"><span><b>You’ll talk to Javi</b><small>Founder & creative director</small></span></p>
+      <dl class="facts"><div><dt>Studio</dt><dd>Dubai, UAE</dd></div><div><dt>Time in Dubai</dt><dd><span data-dubai-time>GMT+4</span></dd></div><div><dt>Working</dt><dd>Worldwide</dd></div><div><dt>Reply</dt><dd>Within 24 h</dd></div></dl></div>
   </div>
 </div></section>`,
 });
@@ -521,7 +530,7 @@ ${POSTS.map(p => `- [${p.title}](${SITE}/blog/${p.slug}): ${p.excerpt}`).join('\
 - [Contact](${SITE}/contact)
 - Email: info@truelovecreative.es
 - WhatsApp: +971 58 532 4519
-- Instagram: https://www.instagram.com/truelove.creative
+- Instagram: https://www.instagram.com/beatlabs.ae
 
 ## Optional
 
@@ -571,7 +580,7 @@ ${POSTS.map(p => `- ${p.title} (${p.date}, ${p.category}): ${SITE}/blog/${p.slug
 - Start a project: ${SITE}/brief
 - Email: info@truelovecreative.es
 - WhatsApp: +971 58 532 4519
-- Instagram: https://www.instagram.com/truelove.creative
+- Instagram: https://www.instagram.com/beatlabs.ae
 `);
 
 /* ── vercel.json: clean URLs, the old /index.html redirect and security headers ── */

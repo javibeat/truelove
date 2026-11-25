@@ -8,6 +8,8 @@ import { scrollProgress } from '../js/progress.js';
 import { tiltAt } from '../js/tilt.js';
 import { nextIndex } from '../js/rotate.js';
 import { superellipse } from '../js/superellipse.js';
+import { dubaiTime } from '../js/clock.js';
+import { visibleFor } from '../js/filter.js';
 
 const DATA = JSON.parse(fs.readFileSync(new URL('../content/brief.json', import.meta.url)));
 const AED = DATA.CURRENCIES.find(c => c.code === 'AED'), EUR = DATA.CURRENCIES.find(c => c.code === 'EUR');
@@ -84,4 +86,17 @@ test('superellipse: icon shape in the CSS matches n = 3.6 and stays inside the b
   const nums = [...v.matchAll(/(-?[\d.]+)%/g)].map(m => +m[1]);
   assert.ok(nums.every(n => n >= 0 && n <= 100));
   assert.ok(v.startsWith('polygon(100% 50%'));
+});
+
+test('clock: Dubai is UTC+4 and wraps past midnight', () => {
+  assert.equal(dubaiTime(new Date(Date.UTC(2026, 10, 25, 10, 5))), '14:05');
+  assert.equal(dubaiTime(new Date(Date.UTC(2026, 10, 25, 21, 30))), '01:30');
+  assert.equal(dubaiTime(new Date(Date.UTC(2026, 10, 25, 20, 0))), '00:00');
+});
+
+test('blog filter: All shows everything, a topic shows only its cards', () => {
+  const cats = ['Web Design', 'Branding', 'Web Design', 'SEO'];
+  assert.deepEqual(visibleFor(cats, 'All'), [true, true, true, true]);
+  assert.deepEqual(visibleFor(cats, 'Web Design'), [true, false, true, false]);
+  assert.deepEqual(visibleFor([], 'SEO'), []);
 });

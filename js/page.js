@@ -28,6 +28,12 @@ document.querySelectorAll('[data-rotate]').forEach(el => import('./rotate.js').t
 const briefRoot = document.getElementById('brief-app');
 if (briefRoot) import('./brief.js').then(({ brief }) => brief(briefRoot));
 
+// Blog: filter by topic
+document.querySelectorAll('[data-filter-for]').forEach(el => import('./filter.js').then(({ filter }) => filter(el)));
+
+// Contact: the time in Dubai
+document.querySelectorAll('[data-dubai-time]').forEach(el => import('./clock.js').then(({ clock }) => clock(el)));
+
 // Contact form → Formspree (same endpoint as the current site), with a clear error if it fails
 const form = document.getElementById('contact-form');
 if (form) {
