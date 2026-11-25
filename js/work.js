@@ -1,22 +1,21 @@
 /* Work cards are written into the HTML by tools/build.mjs (so search engines and AI read them);
-   this only adds the behaviour: squircle corners and the poster tilt that follows the pointer. */
-import { Squircle, reduceMotion } from './core.js';
-import { tiltAt } from './tilt.js';
+   this only adds the squircle corners and the hairline that follows them. */
+import { Squircle } from './core.js';
+
+const NS = 'http://www.w3.org/2000/svg';
+/** A 1px line drawn on the window's own squircle, kept in step with its size. */
+function rim(win) {
+  const svg = document.createElementNS(NS, 'svg'), path = document.createElementNS(NS, 'path');
+  svg.setAttribute('class', 'rim'); svg.setAttribute('aria-hidden', 'true'); svg.append(path); win.append(svg);
+  new ResizeObserver(() => { const w = win.offsetWidth, h = win.offsetHeight; if (!w) return; svg.setAttribute('viewBox', `0 0 ${w} ${h}`); path.setAttribute('d', Squircle.d(w - 1, h - 1, .5, .5)); }).observe(win);
+}
 
 export function enhanceWork(root = document) {
-  const still = reduceMotion.matches || matchMedia('(hover: none)').matches;
   root.querySelectorAll('.case').forEach(el => {
     Squircle.watch(el);
     const win = el.querySelector('.window');
     if (!win) return;
     Squircle.watch(win, .5);   // every window gets its own corners, or it would inherit the card's (bigger) path
-    if (still) return;
-    el.addEventListener('pointermove', e => {
-      const r = el.getBoundingClientRect(), t = tiltAt(e.clientX - r.left, e.clientY - r.top, r.width, r.height);
-      el.classList.add('tilting');
-      el.style.setProperty('--rx', `${t.rx}deg`); el.style.setProperty('--ry', `${t.ry}deg`);
-      el.style.setProperty('--mx', `${t.mx}%`); el.style.setProperty('--my', `${t.my}%`);
-    });
-    el.addEventListener('pointerleave', () => { el.classList.remove('tilting'); ['--rx', '--ry'].forEach(k => el.style.removeProperty(k)); });
+    if (!el.classList.contains('invite')) rim(win);
   });
 }

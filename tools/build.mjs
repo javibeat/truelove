@@ -40,7 +40,6 @@ const LOGO_REAL = {
   sergio: { bg: '#181818', ink: 'linear-gradient(90deg, #FFFFFF 0 17%, #C8F010 17% 31.5%, #FFFFFF 31.5%)' },
 };
 const GRAY = new Set(['julio', 'manuel']);   // logos with filled boxes: grey, not a flat silhouette
-const INK = new Set(['estrela']);            // white script logo: stays black on hover
 
 /* ── Structured data (schema.org) ── */
 const ORG = {
@@ -157,11 +156,10 @@ const ctaBand = (h = 'Have something in mind?', p = 'Tell us what you need. You 
 const svcCards = (tag = 'h3') => `<div class="svc-grid">${SVC.map((s, i) => `
   <a class="card svc" href="/services/${s.slug}"><span class="num">${String(i + 1).padStart(2, '0')}</span><${tag} class="svc-t">${s.name}</${tag}><p>${esc(s.desc)}</p>
     <span class="link">Explore ${arrow}</span></a>`).join('')}</div>`;
-const caseCard = w => `<a class="case" id="case-${w.id}" href="/work/${w.slug}" style="--acc:${w.accent};--tile:${w.tile};--site:${LOGO_REAL[w.id].bg}">
-    <span class="window" aria-hidden="true">
-      <span class="logo-face${GRAY.has(w.id) ? ' gray' : ''}"><img src="/${w.logo}" alt="" loading="lazy" decoding="async" draggable="false">${GRAY.has(w.id) ? '' : `<span class="logo-ink" style="--ink:${LOGO_REAL[w.id].ink};${LOGO_REAL[w.id].fx ? `--fx:${LOGO_REAL[w.id].fx}` : ''}"><i style="--logo:url(/${w.logo})"></i></span>`}</span><span class="sheen"></span>
-    </span>
-    <span class="case-top"><span class="case-name">${esc(w.name)}</span><span class="case-meta">${esc(w.year)}</span></span>
+/* the client's home page, whole and still (16:10, the shape it was captured in, so nothing is cut), with the logo small beside the name */
+const caseCard = (w, i) => `<a class="case" id="case-${w.id}" href="/work/${w.slug}" style="--acc:${w.accent};--site:${LOGO_REAL[w.id].bg}">
+    <span class="window" aria-hidden="true"><img class="site" src="/img/live/${w.id}-d.webp" alt="" width="1600" height="1000" decoding="async"${i > 1 ? ' loading="lazy"' : ''}></span>
+    <span class="case-top"><span class="case-id"><span class="logo-chip${GRAY.has(w.id) ? ' gray' : ''}"><img src="/${w.logo}" alt="" loading="lazy" decoding="async"></span><span class="case-name">${esc(w.name)}</span></span><span class="case-meta">${esc(w.year)}</span></span>
     <span class="case-idea">${esc(w.services)}</span>
   </a>`;
 const invite = () => `<a class="case invite" href="/brief">

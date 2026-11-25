@@ -5,7 +5,6 @@ import fs from 'fs';
 import { estimateAED, formatMoney } from '../js/brief-calc.js';
 import { parseSubscribeInput, HONEYPOT_FIELD } from '../lib/subscribe.js';
 import { scrollProgress } from '../js/progress.js';
-import { tiltAt } from '../js/tilt.js';
 import { nextIndex } from '../js/rotate.js';
 import { superellipse } from '../js/superellipse.js';
 import { dubaiTime } from '../js/clock.js';
@@ -67,13 +66,6 @@ test('scroll progress: 0 when the page does not scroll, clamped 0..1', () => {
   assert.equal(scrollProgress(-20, 2000, 1000), 0);
 });
 
-test('tilt: centre is flat, corners lean up to the max, outside is clamped', () => {
-  assert.deepEqual(tiltAt(50, 50, 100, 100), { rx: 0, ry: 0, mx: 50, my: 50 });
-  assert.deepEqual(tiltAt(0, 0, 100, 100), { rx: 5, ry: -5, mx: 0, my: 0 });
-  assert.deepEqual(tiltAt(300, -40, 100, 100), { rx: 5, ry: 5, mx: 100, my: 0 });
-  assert.deepEqual(tiltAt(10, 10, 0, 0), { rx: 0, ry: 0, mx: 50, my: 50 });
-});
-
 test('rotate: steps through the slides and wraps around', () => {
   assert.equal(nextIndex(0, 7), 1);
   assert.equal(nextIndex(6, 7), 0);
@@ -100,3 +92,4 @@ test('blog filter: All shows everything, a topic shows only its cards', () => {
   assert.deepEqual(visibleFor(cats, 'Web Design'), [true, false, true, false]);
   assert.deepEqual(visibleFor([], 'SEO'), []);
 });
+
