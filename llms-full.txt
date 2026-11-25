@@ -15,7 +15,6 @@
 
 ### Web Design
 URL: https://truelovecreative.es/services/web-design
-Price: From AED 8,000.
 Your website is not a brochure. It is your hardest-working employee: selling, explaining and representing you 24 hours a day. We do not use templates. We do not drag and drop. Every site we deliver is a bespoke piece of engineering, hand-coded, rigorously tested, and built for speed.
 - Discovery: We start by understanding your business, your audience, and your goals. No assumptions, just questions until we see the full picture.
 - Design: Wireframes become high-fidelity mockups. You see exactly what you are getting before a single line of code is written.
@@ -26,11 +25,10 @@ A: We build with Next.js, React, TypeScript, and Tailwind CSS. Our sites are dep
 Q: Do you offer SEO?
 A: Every website we build includes technical SEO foundations: structured data, semantic HTML, Core Web Vitals optimization, meta tags, and XML sitemaps. We also offer ongoing SEO strategy as an add-on service.
 Q: How much does a website cost?
-A: Projects start from AED 8,000 for a single-page site. Multi-page custom builds typically range from AED 15,000 to AED 50,000 depending on scope. We provide a fixed quote after a discovery call so there are no surprises.
+A: It depends on the pages, features, content and languages you need. Fill in the project brief to see a live estimate as you answer, and after a short call we send a fixed quote so there are no surprises.
 
 ### Brand Identity
 URL: https://truelovecreative.es/services/branding
-Price: After a short call.
 A brand is not a logo. A brand is a promise: the sum of every interaction your audience has when they encounter you. We have built identities for DJs, restaurants, tech startups, photographers, and luxury service providers across Dubai and beyond. The common thread is substance. Every brand we create has a reason to exist.
 - Immersion: We study your industry, your competitors, and your audience. We interview you. We absorb everything before forming an opinion.
 - Strategy: We define your positioning, personality, and messaging framework. This becomes the brief that guides all creative work.
@@ -43,7 +41,6 @@ A: Yes. Every branding project starts with strategy. We define your audience, po
 
 ### Graphic Design
 URL: https://truelovecreative.es/services/graphic-design
-Price: Per piece.
 We come from the music industry. A decade inside Dubai's nightlife, studio and events scene, as participants, not observers. From the texture of a vinyl sleeve to the urgency of a last-minute flyer, we know what works because we have lived it. Every project gets the same attention, whether it is a global release or a Tuesday night event.
 - Brief: You tell us what you need and when you need it, and we agree the timing together.
 - Concepts: We present 2 to 3 different directions to choose from.
@@ -58,7 +55,6 @@ A: Yes. We work with promoters, venues, and artists across Dubai and internation
 
 ### App Development
 URL: https://truelovecreative.es/services/app-development
-Price: Once scoped.
 The app graveyard is full of technically sound products that nobody wanted. We start with the problem, not the technology. We design for humans first and write code second, because a beautiful interface on a broken idea is still a broken idea. We have taken apps from napkin sketches to the App Store. We know what it takes, and more importantly, we know what to cut.
 - Discovery & Strategy: We map your users, your competitors, and your business model. We define the MVP scope ruthlessly: ship what matters, learn from real users, iterate.
 - UX & UI Design: Wireframes, user flows, and high-fidelity prototypes. You interact with the app before it is built. We validate assumptions early so we do not waste your budget.

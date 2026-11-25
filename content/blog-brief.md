@@ -14,7 +14,7 @@ You are updating the blog of **True Love Creative**, an independent creative stu
 ## Facts and honesty (very important)
 - Do not invent statistics, studies, client names, testimonials or awards. If you mention a trend, keep it general and true. No precise percentages unless they were already in the post AND are plausible; when in doubt, remove the number.
 - **Timelines:** the studio no longer promises durations ("4–8 weeks" etc.). Timing "depends on the design and the scope" and is agreed after the first conversation. Remove or rephrase any duration promises about True Love's own work. Market-wide observations ("some agencies take months") are fine if vague.
-- **Prices:** do not invent new True Love prices. You may keep the general *market* price ranges already used in the cost article (they are market context), but for True Love's own price point the user to the brief (`/brief`) for an estimate. The services page says web design starts "from AED 8,000"; do not contradict it. If the existing text contradicts it, rewrite that sentence and list it in your report.
+- **Prices:** never write True Love prices anywhere on the site (no "from AED…", no price per service). Javi's rule: prices live only in the brief (`/brief`), where the estimate is calculated. You may keep the general *market* price ranges already used in the cost article (they are market context); for True Love's own cost, point the user to the brief.
 - Technology: the studio builds custom sites by hand (no templates, no page builders). Don't claim specific tools unless already in the text.
 - It is now late 2026. AI search (ChatGPT, Perplexity, Google AI Overviews, Claude) and AI tools are mainstream; keep that perspective current but not hype.
 

@@ -6,10 +6,10 @@ True Love Creative designs and builds by hand: no templates, no page builders. T
 
 ## Services
 
-- [Web Design](https://truelovecreative.es/services/web-design): Fast, precise websites built by hand. No templates, no page builders. Price: From AED 8,000.
-- [Brand Identity](https://truelovecreative.es/services/branding): Logo, type, colour and voice: the kit a brand needs to be recognised at a glance. Price: After a short call.
-- [Graphic Design](https://truelovecreative.es/services/graphic-design): Covers, posters, flyers and social systems with intention behind every pixel. Price: Per piece.
-- [App Development](https://truelovecreative.es/services/app-development): iOS, Android and web apps, from the first sketch to the store. Price: Once scoped.
+- [Web Design](https://truelovecreative.es/services/web-design): Fast, precise websites built by hand. No templates, no page builders.
+- [Brand Identity](https://truelovecreative.es/services/branding): Logo, type, colour and voice: the kit a brand needs to be recognised at a glance.
+- [Graphic Design](https://truelovecreative.es/services/graphic-design): Covers, posters, flyers and social systems with intention behind every pixel.
+- [App Development](https://truelovecreative.es/services/app-development): iOS, Android and web apps, from the first sketch to the store.
 
 ## Work
 

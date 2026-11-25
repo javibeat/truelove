@@ -21,12 +21,12 @@ const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 
 const host = u => u.replace(/^https?:\/\//, '').replace(/\/$/, '');
 const iso = d => { const t = new Date(d + ' UTC'); return isNaN(t) ? TODAY : t.toISOString().slice(0, 10); };
 
-/* Services: order, short copy and prices (timings are agreed with each client, so they are not shown) */
+/* Services: order and short copy. No prices or timings on the site: the estimate lives only in /brief */
 const SVC = [
-  { slug: 'web-design', name: 'Web Design', desc: 'Fast, precise websites built by hand. No templates, no page builders.', price: 'From AED 8,000' },
-  { slug: 'branding', name: 'Brand Identity', desc: 'Logo, type, colour and voice: the kit a brand needs to be recognised at a glance.', price: 'After a short call' },
-  { slug: 'graphic-design', name: 'Graphic Design', desc: 'Covers, posters, flyers and social systems with intention behind every pixel.', price: 'Per piece' },
-  { slug: 'app-development', name: 'App Development', desc: 'iOS, Android and web apps, from the first sketch to the store.', price: 'Once scoped' },
+  { slug: 'web-design', name: 'Web Design', desc: 'Fast, precise websites built by hand. No templates, no page builders.' },
+  { slug: 'branding', name: 'Brand Identity', desc: 'Logo, type, colour and voice: the kit a brand needs to be recognised at a glance.' },
+  { slug: 'graphic-design', name: 'Graphic Design', desc: 'Covers, posters, flyers and social systems with intention behind every pixel.' },
+  { slug: 'app-development', name: 'App Development', desc: 'iOS, Android and web apps, from the first sketch to the store.' },
 ];
 const GRAY = new Set(['julio', 'manuel']);   // logos with filled boxes: grey, not a flat silhouette
 const INK = new Set(['estrela']);            // white script logo: stays black on hover
@@ -144,7 +144,6 @@ const ctaBand = (h = 'Have something in mind?', p = 'Tell us what you need. You 
   `<section class="wrap block" aria-label="Start a project"><div class="cta-band sq"><div><h2>${esc(h)}</h2><p>${esc(p)}</p></div><a class="btn white" href="/brief">Start a project ${arrow}</a></div></section>`;
 const svcCards = (tag = 'h3') => `<div class="svc-grid">${SVC.map((s, i) => `
   <a class="card svc" href="/services/${s.slug}"><span class="num">${String(i + 1).padStart(2, '0')}</span><${tag} class="svc-t">${s.name}</${tag}><p>${esc(s.desc)}</p>
-    <span class="meta"><span>Price</span><span><b>${esc(s.price)}</b></span></span>
     <span class="link">Explore ${arrow}</span></a>`).join('')}</div>`;
 const caseCard = w => `<a class="case" id="case-${w.id}" href="/work/${w.slug}" style="--acc:${w.accent};--tile:${w.tile}">
     <span class="window" aria-hidden="true">
@@ -267,8 +266,7 @@ for (const s of SVC) {
       ...(d.faqs.length ? [{ '@type': 'FAQPage', mainEntity: d.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : []),
     ],
     body: `${head('', s.name, subtitleFix[s.slug] ?? d.subtitle, `<a href="/services">Services</a> / ${s.name}`)}
-<section class="wrap block" aria-label="Overview"><div class="intro"><div class="card"><p class="lede">${esc(d.lede)}</p><p class="body">${esc(d.body)}</p>
-  <p class="muted price-line">Price <b>${esc(s.price)}</b></p></div>${aside}</div></section>
+<section class="wrap block" aria-label="Overview"><div class="intro"><div class="card"><p class="lede">${esc(d.lede)}</p><p class="body">${esc(d.body)}</p></div>${aside}</div></section>
 ${sections}
 ${ctaBand(`Let’s talk about your ${s.name.toLowerCase()}.`)}`,
   });
@@ -459,7 +457,7 @@ True Love Creative designs and builds by hand: no templates, no page builders. T
 
 ## Services
 
-${SVC.map(s => `- [${s.name}](${SITE}/services/${s.slug}): ${s.desc} Price: ${s.price}.`).join('\n')}
+${SVC.map(s => `- [${s.name}](${SITE}/services/${s.slug}): ${s.desc}`).join('\n')}
 
 ## Work
 
@@ -501,7 +499,6 @@ fs.writeFileSync(path.join(ROOT, 'llms-full.txt'), `# True Love Creative — ful
 
 ${SVC.map(s => { const d = SERVICES[s.slug]; return `### ${s.name}
 URL: ${SITE}/services/${s.slug}
-Price: ${s.price}.
 ${d.lede} ${d.body}
 ${(d.steps ?? d.process ?? d.phases).map(x => `- ${x.title}: ${x.text}`).join('\n')}
 ${d.faqs.map(f => `Q: ${f.q}\nA: ${f.a}`).join('\n')}`; }).join('\n\n')}

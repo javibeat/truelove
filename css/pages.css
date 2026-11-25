@@ -83,9 +83,7 @@ body { overflow-x: clip; }
 .svc .num { font-size: 13px; font-weight: 700; color: var(--heart-ink); }
 .svc h3 { margin-top: clamp(40px, 4vw, 64px); font-size: clamp(22px, 1.8vw, 28px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; }
 .svc p { font-size: 15px; line-height: 1.5; color: var(--muted); min-height: 4.5em; }   /* three lines, so every title sits at the same height */
-.svc .meta { margin-top: auto; }
-.svc .meta { display: flex; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--soft); }
-.svc .meta b { color: var(--fg); font-weight: 600; }
+.svc .link { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); }
 .svc:hover .link { color: var(--fg); }
 
 /* Case cards — minimal: the site moving in a squircle window, then logo, year and one line */
@@ -235,8 +233,6 @@ body { overflow-x: clip; }
 .story3 h2 { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--heart-ink); }
 .case-quote { font-size: clamp(22px, 2.2vw, 34px); font-weight: 650; letter-spacing: -.025em; line-height: 1.2; text-wrap: balance; }
 figure.card figcaption { margin-top: 14px; color: var(--soft); }
-.price-line { margin-top: 22px; font-size: 14px; }
-.price-line b { color: var(--fg); }
 .intro h2.lede { margin: 0; }
 .btn.white.outline { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px #fff; }
 .btn.white.outline:hover { background: #fff; color: #0A0A0A; }
